@@ -1,4 +1,4 @@
-What is Notepad++ ?
+What is Mikepad++ ?
 ===================
 
 [![GitHub release](https://img.shields.io/github/release/notepad-plus-plus/notepad-plus-plus.svg)](../../releases/latest)
