@@ -164,7 +164,8 @@ private :
 	};
 
 	int whichTabColourIndex();
-
+	bool isDocumentMapStyle();
+	void move2CtrlRight(int ctrlID, HWND handle2Move, int handle2MoveWidth, int handle2MoveHeight);
 	void updateColour(bool which);
 	void updateFontStyleStatus(fontStyleType whitchStyle);
 	void updateExtension();

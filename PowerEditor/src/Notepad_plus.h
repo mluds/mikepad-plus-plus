@@ -264,7 +264,7 @@ public:
 	void minimizeDialogs();
 	void restoreMinimizeDialogs();
 
-	void refreshDarkMode();
+	void refreshDarkMode(bool resetStyle = false);
 
 private:
 	Notepad_plus_Window *_pPublicInterface = nullptr;
@@ -402,7 +402,7 @@ private:
 
 	AnsiCharPanel* _pAnsiCharPanel = nullptr;
 	ClipboardHistoryPanel* _pClipboardHistoryPanel = nullptr;
-	VerticalFileSwitcher* _pFileSwitcherPanel = nullptr;
+	VerticalFileSwitcher* _pDocumentListPanel = nullptr;
 	ProjectPanel* _pProjectPanel_1 = nullptr;
 	ProjectPanel* _pProjectPanel_2 = nullptr;
 	ProjectPanel* _pProjectPanel_3 = nullptr;
@@ -467,6 +467,7 @@ private:
 	int doReloadOrNot(const TCHAR *fn, bool dirty);
 	int doCloseOrNot(const TCHAR *fn);
 	int doDeleteOrNot(const TCHAR *fn);
+	int doSaveAll();
 
 	void enableMenu(int cmdID, bool doEnable) const;
 	void enableCommand(int cmdID, bool doEnable, int which) const;
@@ -591,6 +592,7 @@ private:
 	Style * getStyleFromName(const TCHAR *styleName);
 	bool dumpFiles(const TCHAR * outdir, const TCHAR * fileprefix = TEXT(""));	//helper func
 	void drawTabbarColoursFromStylerArray();
+	void drawDocumentMapColoursFromStylerArray();
 
 	std::vector<generic_string> loadCommandlineParams(const TCHAR * commandLine, const CmdLineParams * pCmdParams) {
 		const CmdLineParamsDTO dto = CmdLineParamsDTO::FromCmdLineParams(*pCmdParams);
@@ -608,7 +610,7 @@ private:
 	void removeDuplicateLines();
 	void launchAnsiCharPanel();
 	void launchClipboardHistoryPanel();
-	void launchFileSwitcherPanel();
+	void launchDocumentListPanel();
 	void checkProjectMenuItem();
 	void launchProjectPanel(int cmdID, ProjectPanel ** pProjPanel, int panelID);
 	void launchDocMap();
@@ -642,5 +644,3 @@ private:
 	void monitoringStartOrStopAndUpdateUI(Buffer* pBuf, bool isStarting);
 	void updateCommandShortcuts();
 };
-
-

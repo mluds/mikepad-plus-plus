@@ -15,10 +15,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-
-#include <shlobj.h>
-#include <uxtheme.h>
-
 #include "AboutDlg.h"
 #include "Parameters.h"
 #include "localization.h"
@@ -31,6 +27,8 @@ INT_PTR CALLBACK AboutDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM lPara
 	{
         case WM_INITDIALOG :
 		{
+			NppDarkMode::autoSubclassAndThemeChildControls(_hSelf);
+
 			HWND compileDateHandle = ::GetDlgItem(_hSelf, IDC_BUILD_DATETIME);
 			generic_string buildTime = TEXT("Build time : ");
 
@@ -60,24 +58,43 @@ INT_PTR CALLBACK AboutDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM lPara
 
 			getClientRect(_rc);
 
-			ETDTProc enableDlgTheme = (ETDTProc)nppParam.getEnableThemeDlgTexture();
-			if (enableDlgTheme)
-			{
-				enableDlgTheme(_hSelf, ETDT_ENABLETAB);
-				redraw();
-			}
+			return TRUE;
+		}
 
+		case WM_CTLCOLORDLG:
+		case WM_CTLCOLORSTATIC:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+			}
+			break;
+		}
+
+		case NPPM_INTERNAL_REFRESHDARKMODE:
+		{
+			NppDarkMode::autoThemeChildControls(_hSelf);
 			return TRUE;
 		}
 
 		case WM_DRAWITEM :
 		{
-			HICON hIcon = (HICON)::LoadImage(_hInst, MAKEINTRESOURCE(IDI_CHAMELEON), IMAGE_ICON, 64, 64, LR_DEFAULTSIZE);
+			DPIManager& dpiManager = NppParameters::getInstance()._dpiManager;
+			int iconSideSize = 80;
+			int w = dpiManager.scaleX(iconSideSize);
+			int h = dpiManager.scaleY(iconSideSize);
+
+			HICON hIcon;
+			if (NppDarkMode::isEnabled())
+				hIcon = (HICON)::LoadImage(_hInst, MAKEINTRESOURCE(IDI_CHAMELEON_DM), IMAGE_ICON, w, h, LR_DEFAULTSIZE);
+			else
+				hIcon = (HICON)::LoadImage(_hInst, MAKEINTRESOURCE(IDI_CHAMELEON), IMAGE_ICON, w, h, LR_DEFAULTSIZE);
+
 			//HICON hIcon = (HICON)::LoadImage(_hInst, MAKEINTRESOURCE(IDI_JESUISCHARLIE), IMAGE_ICON, 64, 64, LR_DEFAULTSIZE);
 			//HICON hIcon = (HICON)::LoadImage(_hInst, MAKEINTRESOURCE(IDI_GILETJAUNE), IMAGE_ICON, 64, 64, LR_DEFAULTSIZE);
 			//HICON hIcon = (HICON)::LoadImage(_hInst, MAKEINTRESOURCE(IDI_SAMESEXMARRIAGE), IMAGE_ICON, 64, 64, LR_DEFAULTSIZE);
 			DRAWITEMSTRUCT *pdis = (DRAWITEMSTRUCT *)lParam;
-			::DrawIconEx(pdis->hDC, 0, 0, hIcon, 64, 64, 0, NULL, DI_NORMAL);
+			::DrawIconEx(pdis->hDC, 0, 0, hIcon, w, h, 0, NULL, DI_NORMAL);
 			return TRUE;
 		}
 
@@ -121,6 +138,8 @@ INT_PTR CALLBACK DebugInfoDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM /
 		{
 			NppParameters& nppParam = NppParameters::getInstance();
 
+			NppDarkMode::autoSubclassAndThemeChildControls(_hSelf);
+
 			// Notepad++ version
 			_debugInfoStr = NOTEPAD_PLUS_VERSION;
 			_debugInfoStr += nppParam.archType() == IMAGE_FILE_MACHINE_I386 ? TEXT("   (32-bit)") : (nppParam.archType() == IMAGE_FILE_MACHINE_AMD64 ? TEXT("   (64-bit)") : TEXT("   (ARM 64-bit)"));
@@ -135,6 +154,14 @@ INT_PTR CALLBACK DebugInfoDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM /
 			buildTime += wmc.char2wchar(__TIME__, CP_ACP);
 			_debugInfoStr += buildTime;
 			_debugInfoStr += TEXT("\r\n");
+
+#if defined(__GNUC__)
+			_debugInfoStr += TEXT("Built with : GCC ");
+			_debugInfoStr += wmc.char2wchar(__VERSION__, CP_ACP);
+			_debugInfoStr += TEXT("\r\n");
+#elif !defined(_MSC_VER)
+			_debugInfoStr += TEXT("Built with : (unknown)\r\n");
+#endif
 
 			// Binary path
 			_debugInfoStr += TEXT("Path : ");
@@ -270,6 +297,22 @@ INT_PTR CALLBACK DebugInfoDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM /
 			return TRUE;
 		}
 
+		case WM_CTLCOLORDLG:
+		case WM_CTLCOLORSTATIC:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+			}
+			break;
+		}
+
+		case NPPM_INTERNAL_REFRESHDARKMODE:
+		{
+			NppDarkMode::autoThemeChildControls(_hSelf);
+			return TRUE;
+		}
+
 		case WM_COMMAND:
 		{
 			switch (wParam)
@@ -337,7 +380,7 @@ void DoSaveOrNotBox::changeLang()
 	{
 		const unsigned char len = 255;
 		TCHAR text[len];
-		::GetDlgItemText(_hSelf, IDC_DOSAVEORNOTTEX, text, len);
+		::GetDlgItemText(_hSelf, IDC_DOSAVEORNOTTEXT, text, len);
 		msg = text;
 	}
 
@@ -345,7 +388,7 @@ void DoSaveOrNotBox::changeLang()
 		msg = defaultMessage;
 
 	msg = stringReplace(msg, TEXT("$STR_REPLACE$"), _fn);
-	::SetDlgItemText(_hSelf, IDC_DOSAVEORNOTTEX, msg.c_str());
+	::SetDlgItemText(_hSelf, IDC_DOSAVEORNOTTEXT, msg.c_str());
 }
 
 INT_PTR CALLBACK DoSaveOrNotBox::run_dlgProc(UINT message, WPARAM wParam, LPARAM /*lParam*/)
@@ -354,11 +397,23 @@ INT_PTR CALLBACK DoSaveOrNotBox::run_dlgProc(UINT message, WPARAM wParam, LPARAM
 	{
 		case WM_INITDIALOG :
 		{
+			NppDarkMode::autoSubclassAndThemeChildControls(_hSelf);
+
 			changeLang();
 			::EnableWindow(::GetDlgItem(_hSelf, IDRETRY), _isMulti);
 			::EnableWindow(::GetDlgItem(_hSelf, IDIGNORE), _isMulti);
 			goToCenter();
 			return TRUE;
+		}
+
+		case WM_CTLCOLORDLG:
+		case WM_CTLCOLORSTATIC:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+			}
+			break;
 		}
 
 		case WM_COMMAND:
@@ -404,4 +459,102 @@ INT_PTR CALLBACK DoSaveOrNotBox::run_dlgProc(UINT message, WPARAM wParam, LPARAM
 		default:
 			return FALSE;
 	}
+	return FALSE;
+}
+
+
+void DoSaveAllBox::doDialog(bool isRTL)
+{
+
+	if (isRTL)
+	{
+		DLGTEMPLATE* pMyDlgTemplate = NULL;
+		HGLOBAL hMyDlgTemplate = makeRTLResource(IDD_DOSAVEALLBOX, &pMyDlgTemplate);
+		::DialogBoxIndirectParam(_hInst, pMyDlgTemplate, _hParent, dlgProc, reinterpret_cast<LPARAM>(this));
+		::GlobalFree(hMyDlgTemplate);
+	}
+	else
+		::DialogBoxParam(_hInst, MAKEINTRESOURCE(IDD_DOSAVEALLBOX), _hParent, dlgProc, reinterpret_cast<LPARAM>(this));
+}
+
+void DoSaveAllBox::changeLang()
+{
+	generic_string msg;
+	generic_string defaultMessage = TEXT("Are you sure you want to save all modified documents?\r\rChoose \"Always Yes\" if you don't want to see this dialog again.\rYou can re-activate this dialog in Preferences later.");
+	NativeLangSpeaker* nativeLangSpeaker = NppParameters::getInstance().getNativeLangSpeaker();
+
+	if (nativeLangSpeaker->changeDlgLang(_hSelf, "DoSaveAll"))
+	{
+		const size_t len = 1024;
+		TCHAR text[len];
+		::GetDlgItemText(_hSelf, IDC_DOSAVEALLTEXT, text, len);
+		msg = text;
+	}
+
+	if (msg.empty())
+		msg = defaultMessage;
+
+	::SetDlgItemText(_hSelf, IDC_DOSAVEALLTEXT, msg.c_str());
+}
+
+INT_PTR CALLBACK DoSaveAllBox::run_dlgProc(UINT message, WPARAM wParam, LPARAM /*lParam*/)
+{
+	switch (message)
+	{
+	case WM_INITDIALOG:
+	{
+		NppDarkMode::autoSubclassAndThemeChildControls(_hSelf);
+
+		changeLang();
+		goToCenter();
+		return TRUE;
+	}
+
+	case WM_CTLCOLORDLG:
+	case WM_CTLCOLORSTATIC:
+	{
+		if (NppDarkMode::isEnabled())
+		{
+			return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+		}
+		break;
+	}
+
+	case WM_COMMAND:
+	{
+		switch (LOWORD(wParam))
+		{
+			case IDCANCEL:
+			{
+				::EndDialog(_hSelf, -1);
+				clickedButtonId = IDCANCEL;
+				return TRUE;
+			}
+
+			case IDYES:
+			{
+				::EndDialog(_hSelf, 0);
+				clickedButtonId = IDYES;
+				return TRUE;
+			}
+
+			case IDNO:
+			{
+				::EndDialog(_hSelf, 0);
+				clickedButtonId = IDNO;
+				return TRUE;
+			}
+
+			case IDRETRY:
+			{
+				::EndDialog(_hSelf, 0);
+				clickedButtonId = IDRETRY;
+				return TRUE;
+			}
+		}
+	}
+	default:
+		return FALSE;
+	}
+	return FALSE;
 }

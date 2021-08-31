@@ -15,6 +15,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include <memory>
+#include <regex>
 #include <shlwapi.h>
 #include "Notepad_plus_Window.h"
 #include "EncodingMapper.h"
@@ -63,6 +64,53 @@ void Notepad_plus::command(int id)
 		case IDM_FILE_NEW:
 		{
 			fileNew();
+		}
+		break;
+
+		case IDM_EDIT_INSERT_DATETIME_SHORT:
+		case IDM_EDIT_INSERT_DATETIME_LONG:
+		{
+			SYSTEMTIME currentTime = { 0 };
+			::GetLocalTime(&currentTime);
+
+			wchar_t dateStr[128] = { 0 };
+			wchar_t timeStr[128] = { 0 };
+
+			int dateFlag = (id == IDM_EDIT_INSERT_DATETIME_SHORT) ? DATE_SHORTDATE : DATE_LONGDATE;
+			GetDateFormatEx(LOCALE_NAME_USER_DEFAULT, dateFlag, &currentTime, NULL, dateStr, sizeof(dateStr) / sizeof(dateStr[0]), NULL);
+			GetTimeFormatEx(LOCALE_NAME_USER_DEFAULT, TIME_NOSECONDS, &currentTime, NULL, timeStr, sizeof(timeStr) / sizeof(timeStr[0]));
+
+			generic_string dateTimeStr;
+			if (NppParameters::getInstance().getNppGUI()._dateTimeReverseDefaultOrder)
+			{
+				// reverse default order: DATE + TIME
+				dateTimeStr = dateStr;
+				dateTimeStr += TEXT(" ");
+				dateTimeStr += timeStr;
+			}
+			else
+			{
+				// default: TIME + DATE (Microsoft Notepad behaviour)
+				dateTimeStr = timeStr;
+				dateTimeStr += TEXT(" ");
+				dateTimeStr += dateStr;
+			}
+
+			_pEditView->execute(SCI_REPLACESEL, 0, reinterpret_cast<LPARAM>(""));
+			_pEditView->addGenericText(dateTimeStr.c_str());
+		}
+		break;
+
+		case IDM_EDIT_INSERT_DATETIME_CUSTOMIZED:
+		{
+			SYSTEMTIME currentTime = { 0 };
+			::GetLocalTime(&currentTime);
+
+			NppGUI& nppGUI = NppParameters::getInstance().getNppGUI();
+			generic_string dateTimeStr = getDateTimeStrFrom(nppGUI._dateTimeFormat, currentTime);
+
+			_pEditView->execute(SCI_REPLACESEL, 0, reinterpret_cast<LPARAM>(""));
+			_pEditView->addGenericText(dateTimeStr.c_str());
 		}
 		break;
 
@@ -171,19 +219,19 @@ void Notepad_plus::command(int id)
 			fileReload();
 			break;
 
-		case IDM_FILESWITCHER_FILESCLOSE:
-		case IDM_FILESWITCHER_FILESCLOSEOTHERS:
-			if (_pFileSwitcherPanel)
+		case IDM_DOCLIST_FILESCLOSE:
+		case IDM_DOCLIST_FILESCLOSEOTHERS:
+			if (_pDocumentListPanel)
 			{
-				vector<SwitcherFileInfo> files = _pFileSwitcherPanel->getSelectedFiles(id == IDM_FILESWITCHER_FILESCLOSEOTHERS);
+				vector<SwitcherFileInfo> files = _pDocumentListPanel->getSelectedFiles(id == IDM_DOCLIST_FILESCLOSEOTHERS);
 				for (size_t i = 0, len = files.size(); i < len; ++i)
 				{
 					fileClose((BufferID)files[i]._bufID, files[i]._iView);
 				}
-				if (id == IDM_FILESWITCHER_FILESCLOSEOTHERS)
+				if (id == IDM_DOCLIST_FILESCLOSEOTHERS)
 				{
 					// Get current buffer and its view
-					_pFileSwitcherPanel->activateItem(_pEditView->getCurrentBufferID(), currentView());
+					_pDocumentListPanel->activateItem(_pEditView->getCurrentBufferID(), currentView());
 				}
 			}
 			break;
@@ -737,9 +785,41 @@ void Notepad_plus::command(int id)
 		}
 		break;
 
-		case IDM_VIEW_FILESWITCHER_PANEL:
+		case IDM_VIEW_SWITCHTO_DOCLIST:
 		{
-			launchFileSwitcherPanel();
+			if (_pDocumentListPanel && _pDocumentListPanel->isVisible())
+			{
+				_pDocumentListPanel->getFocus();
+			}
+			else
+			{
+				checkMenuItem(IDM_VIEW_DOCLIST, true);
+				_toolBar.setCheck(IDM_VIEW_DOCLIST, true);
+				launchDocumentListPanel();
+				_pDocumentListPanel->setClosed(false);
+			}
+		}
+		break;
+
+		case IDM_VIEW_DOCLIST:
+		{
+			if (_pDocumentListPanel && (!_pDocumentListPanel->isClosed()))
+			{
+				_pDocumentListPanel->display(false);
+				_pDocumentListPanel->setClosed(true);
+				checkMenuItem(IDM_VIEW_DOCLIST, false);
+				_toolBar.setCheck(IDM_VIEW_DOCLIST, false);
+			}
+			else
+			{
+				launchDocumentListPanel();
+				if (_pDocumentListPanel)
+				{
+					checkMenuItem(IDM_VIEW_DOCLIST, true);
+					_toolBar.setCheck(IDM_VIEW_DOCLIST, true);
+					_pDocumentListPanel->setClosed(false);
+				}
+			}
 		}
 		break;
 
@@ -860,7 +940,7 @@ void Notepad_plus::command(int id)
 			}
 		}
 		break;
-		
+
 		case IDM_VIEW_FUNC_LIST:
 		{
 			if (_pFuncList && (!_pFuncList->isClosed()))
@@ -1117,6 +1197,10 @@ void Notepad_plus::command(int id)
 		{
 			const int strSize = FINDREPLACE_MAXLENGTH;
 			TCHAR str[strSize];
+
+			bool isFirstTime = !_incrementFindDlg.isCreated();
+			if (isFirstTime)
+				_nativeLangSpeaker.changeDlgLang(_incrementFindDlg.getHSelf(), "IncrementalFind");
 
 			_pEditView->getGenericSelectedText(str, strSize, false);
 			if (0 != str[0])         // the selected text is not empty, then use it
@@ -1545,8 +1629,8 @@ void Notepad_plus::command(int id)
                             pWindow = &_subSplitter;
                         else
                             pWindow = _pDocTab;
-
-                        _pMainSplitter->create(pWindow, ScintillaEditView::getUserDefineDlg(), 8, SplitterMode::RIGHT_FIX, 45);
+						int splitterSizeDyn = NppParameters::getInstance()._dpiManager.scaleX(splitterSize);
+                        _pMainSplitter->create(pWindow, ScintillaEditView::getUserDefineDlg(), splitterSizeDyn, SplitterMode::RIGHT_FIX, 45);
                     }
 
 					_pMainWindow = _pMainSplitter;
@@ -3301,6 +3385,7 @@ void Notepad_plus::command(int id)
         case IDM_LANG_SPICE :
         case IDM_LANG_TXT2TAGS :
         case IDM_LANG_VISUALPROLOG:
+		case IDM_LANG_TYPESCRIPT:
 		case IDM_LANG_USER :
 		{
             setLanguage(menuID2LangType(id));

@@ -3,7 +3,7 @@
 The comments are here for explanation, it's not necessary to translate them.
 -->
 <NotepadPlus>
-    <Native-Langue name="English" filename="english.xml" version="7.9.5">
+    <Native-Langue name="English" filename="english.xml" version="8.1.4">
         <Menu>
             <Main>
                 <!-- Main Menu Entries -->
@@ -26,7 +26,8 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item subMenuId="file-openFolder" name="Open Containing &amp;Folder"/>
                     <Item subMenuId="file-closeMore" name="Close &amp;More"/>
                     <Item subMenuId="file-recentFiles" name="&amp;Recent Files"/>
-                    <Item subMenuId="edit-copyToClipboard"  name="Cop&amp;y to Clipboard"/>
+                    <Item subMenuId="edit-insert" name="Insert"/>
+                    <Item subMenuId="edit-copyToClipboard" name="Cop&amp;y to Clipboard"/>
                     <Item subMenuId="edit-indent" name="&amp;Indent"/>
                     <Item subMenuId="edit-convertCaseTo" name="Con&amp;vert Case to"/>
                     <Item subMenuId="edit-lineOperations" name="&amp;Line Operations"/>
@@ -36,9 +37,9 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item subMenuId="edit-blankOperations" name="&amp;Blank Operations"/>
                     <Item subMenuId="edit-pasteSpecial" name="&amp;Paste Special"/>
                     <Item subMenuId="edit-onSelection" name="&amp;On Selection"/>
-                    <Item subMenuId="search-markAll" name="Mark &amp;All"/>
-                    <Item subMenuId="search-markOne" name="Mark &amp;One"/>
-                    <Item subMenuId="search-unmarkAll" name="&amp;Unmark All"/>
+                    <Item subMenuId="search-markAll" name="Style &amp;All Occurrences of Token"/>
+                    <Item subMenuId="search-markOne" name="Style &amp;One Token"/>
+                    <Item subMenuId="search-unmarkAll" name="Clear Style"/>
                     <Item subMenuId="search-jumpUp" name="&amp;Jump Up"/>
                     <Item subMenuId="search-jumpDown" name="Jump &amp;Down"/>
                     <Item subMenuId="search-copyStyledText" name="&amp;Copy Styled Text"/>
@@ -110,6 +111,9 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="42006" name="&amp;Delete"/>
                     <Item id="42007" name="&amp;Select All"/>
                     <Item id="42020" name="Begin/End &amp;Select"/>
+                    <Item id="42084" name="Date Time (short)"/>
+                    <Item id="42085" name="Date Time (long)"/>
+                    <Item id="42086" name="Date Time (customized)"/>
                     <Item id="42008" name="Increase Line Indent"/>
                     <Item id="42009" name="Decrease Line Indent"/>
                     <Item id="42010" name="Duplicate Current Line"/>
@@ -220,20 +224,20 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="43035" name="3rd style"/>
                     <Item id="43036" name="4th style"/>
                     <Item id="43037" name="5th style"/>
-                    <Item id="43038" name="Find style"/>
+                    <Item id="43038" name="Find Mark Style"/>
                     <Item id="43039" name="1st style"/>
                     <Item id="43040" name="2nd style"/>
                     <Item id="43041" name="3rd style"/>
                     <Item id="43042" name="4th style"/>
                     <Item id="43043" name="5th style"/>
-                    <Item id="43044" name="Find style"/>
+                    <Item id="43044" name="Find Mark Style"/>
                     <Item id="43055" name="1st Style"/>
                     <Item id="43056" name="2nd Style"/>
                     <Item id="43057" name="3rd Style"/>
                     <Item id="43058" name="4th Style"/>
                     <Item id="43059" name="5th Style"/>
                     <Item id="43060" name="All Styles"/>
-                    <Item id="43061" name="Find Style (Marked)"/>
+                    <Item id="43061" name="Find Mark Style"/>
                     <Item id="43062" name="Using 1st Style"/>
                     <Item id="43063" name="Using 2nd Style"/>
                     <Item id="43064" name="Using 3rd Style"/>
@@ -260,6 +264,7 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="44031" name="Uncollapse Current Level"/>
                     <Item id="44049" name="Summary..."/>
                     <Item id="44080" name="Document Map"/>
+                    <Item id="44070" name="Document List"/>
                     <Item id="44084" name="Function List"/>
                     <Item id="44085" name="Folder as Workspace"/>
                     <Item id="44086" name="1st Tab"/>
@@ -427,6 +432,12 @@ The comments are here for explanation, it's not necessary to translate them.
                 <Item id="1725" name="Copy Marked Text"/>
             </Find>
 
+            <IncrementalFind title="">
+                <Item id="1681" name="Find"/>
+                <Item id="1685" name="Match case"/>
+                <Item id="1690" name="Highlight all"/>
+            </IncrementalFind>
+
             <FindCharsInRange title="Find Characters in Range...">
                 <Item id="2" name="Close"/>
                 <Item id="2901" name="Non-ASCII Characters (128-255)"/>
@@ -546,41 +557,41 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="45001" name="EOL Conversion to Windows (CR LF)"/>
                     <Item id="45002" name="EOL Conversion to Unix (LF)"/>
                     <Item id="45003" name="EOL Conversion to Macintosh (CR)"/>
-                    <Item id="43022" name="Mark all using 1st style"/>
-                    <Item id="43024" name="Mark all using 2nd style"/>
-                    <Item id="43026" name="Mark all using 3rd style"/>
-                    <Item id="43028" name="Mark all using 4th style"/>
-                    <Item id="43030" name="Mark all using 5th style"/>
-                    <Item id="43062" name="Mark one using 1st style"/>
-                    <Item id="43063" name="Mark one using 2nd style"/>
-                    <Item id="43064" name="Mark one using 3rd style"/>
-                    <Item id="43065" name="Mark one using 4th style"/>
-                    <Item id="43066" name="Mark one using 5th style"/>
-                    <Item id="43023" name="Clear marks using 1st style"/>
-                    <Item id="43025" name="Clear marks using 2nd style"/>
-                    <Item id="43027" name="Clear marks using 3rd style"/>
-                    <Item id="43029" name="Clear marks using 4th style"/>
-                    <Item id="43031" name="Clear marks using 5th style"/>
-                    <Item id="43032" name="Clear marks using any style"/>
-                    <Item id="43033" name="Previous mark using 1st style"/>
-                    <Item id="43034" name="Previous mark using 2nd style"/>
-                    <Item id="43035" name="Previous mark using 3rd style"/>
-                    <Item id="43036" name="Previous mark using 4th style"/>
-                    <Item id="43037" name="Previous mark using 5th style"/>
-                    <Item id="43038" name="Previous mark created with Mark"/>
-                    <Item id="43039" name="Next mark using 1st style"/>
-                    <Item id="43040" name="Next mark using 2nd style"/>
-                    <Item id="43041" name="Next mark using 3rd style"/>
-                    <Item id="43042" name="Next mark using 4th style"/>
-                    <Item id="43043" name="Next mark using 5th style"/>
-                    <Item id="43044" name="Next mark created with Mark"/>
-                    <Item id="43055" name="Copy Styled Text - 1st Style"/>
-                    <Item id="43056" name="Copy Styled Text - 2nd Style"/>
-                    <Item id="43057" name="Copy Styled Text - 3rd Style"/>
-                    <Item id="43058" name="Copy Styled Text - 4th Style"/>
-                    <Item id="43059" name="Copy Styled Text - 5th Style"/>
-                    <Item id="43060" name="Copy Styled Text - All Styles"/>
-                    <Item id="43061" name="Copy Styled Text - Find Style (Marked)"/>
+                    <Item id="43022" name="Style all using 1st style"/>
+                    <Item id="43024" name="Style all using 2nd style"/>
+                    <Item id="43026" name="Style all using 3rd style"/>
+                    <Item id="43028" name="Style all using 4th style"/>
+                    <Item id="43030" name="Style all using 5th style"/>
+                    <Item id="43062" name="Style one using 1st style"/>
+                    <Item id="43063" name="Style one using 2nd style"/>
+                    <Item id="43064" name="Style one using 3rd style"/>
+                    <Item id="43065" name="Style one using 4th style"/>
+                    <Item id="43066" name="Style one using 5th style"/>
+                    <Item id="43023" name="Clear 1st style"/>
+                    <Item id="43025" name="Clear 2nd style"/>
+                    <Item id="43027" name="Clear 3rd style"/>
+                    <Item id="43029" name="Clear 4th style"/>
+                    <Item id="43031" name="Clear 5th style"/>
+                    <Item id="43032" name="Clear all styles"/>
+                    <Item id="43033" name="Previous style of 1st style"/>
+                    <Item id="43034" name="Previous style of 2nd style"/>
+                    <Item id="43035" name="Previous style of 3rd style"/>
+                    <Item id="43036" name="Previous style of 4th style"/>
+                    <Item id="43037" name="Previous style of 5th style"/>
+                    <Item id="43038" name="Previous style of Find Mark style"/>
+                    <Item id="43039" name="Next style of 1st style"/>
+                    <Item id="43040" name="Next style of 2nd style"/>
+                    <Item id="43041" name="Next style of 3rd style"/>
+                    <Item id="43042" name="Next style of 4th style"/>
+                    <Item id="43043" name="Next style of 5th style"/>
+                    <Item id="43044" name="Next style of Find Mark style"/>
+                    <Item id="43055" name="Copy Styled Text of 1st Style"/>
+                    <Item id="43056" name="Copy Styled Text of 2nd Style"/>
+                    <Item id="43057" name="Copy Styled Text of 3rd Style"/>
+                    <Item id="43058" name="Copy Styled Text of 4th Style"/>
+                    <Item id="43059" name="Copy Styled Text of 5th Style"/>
+                    <Item id="43060" name="Copy Styled Text of All Styles"/>
+                    <Item id="43061" name="Copy Styled Text of Find Mark style"/>
                     <Item id="44100" name="View current file in Firefox"/>
                     <Item id="44101" name="View current file in Chrome"/>
                     <Item id="44103" name="View current file in IE"/>
@@ -608,12 +619,14 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="44083" name="Toggle Project Panel 3"/>
                     <Item id="44085" name="Toggle Folder as Workspace"/>
                     <Item id="44080" name="Toggle Document Map"/>
+                    <Item id="44070" name="Toggle Document List"/>
                     <Item id="44084" name="Toggle Function List"/>
                     <Item id="50005" name="Toggle macro recording"/>
                     <Item id="44104" name="Switch to Project Panel 1"/>
                     <Item id="44105" name="Switch to Project Panel 2"/>
                     <Item id="44106" name="Switch to Project Panel 3"/>
                     <Item id="44107" name="Switch to Folder as Workspace"/>
+                    <Item id="44109" name="Switch to Document List"/>
                     <Item id="44108" name="Switch to Function List"/>
                 </MainCommandNames>
             </ShortcutMapper>
@@ -826,7 +839,6 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="6123" name="Localization"/>
 
                     <Item id="6125" name="Document List Panel"/>
-                    <Item id="6126" name="Show"/>
                     <Item id="6127" name="Disable extension column"/>
 
                     <Item id="6128" name="Alternate icons"/>
@@ -867,7 +879,7 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="7121" name="Text"/>
                     <Item id="7122" name="Darker text"/>
                     <Item id="7123" name="Disabled text"/>
-                    <Item id="7124" name="Tab edge"/>
+                    <Item id="7124" name="Edge"/>
                     <Item id="7130" name="Reset"/>
                 </DarkMode>
 
@@ -936,7 +948,7 @@ You can define several column markers by using white space to separate the diffe
                 </Language>
 
                 <Highlighting title="Highlighting">
-                    <Item id="6351" name="Mark All"/>
+                    <Item id="6351" name="Style All Occurrences of Token"/>
                     <Item id="6352" name="Match case"/>
                     <Item id="6353" name="Match whole word only"/>
                     <Item id="6333" name="Smart Highlighting"/>
@@ -1037,12 +1049,15 @@ You can define several column markers by using white space to separate the diffe
                     <Item id="6866" name="Matched pair 3:"/>
                 </AutoCompletion>
 
-                <MultiInstance title="Multi-Instance">
+                <MultiInstance title="Multi-Instance &amp; Date">
                     <Item id="6151" name="Multi-instance settings"/>
                     <Item id="6152" name="Open session in a new instance of Notepad++"/>
                     <Item id="6153" name="Always in multi-instance mode"/>
                     <Item id="6154" name="Default (mono-instance)"/>
                     <Item id="6155" name="* The modification of this setting needs to restart Notepad++"/>
+                    <Item id="6171" name="Customize insert Date Time"/>
+                    <Item id="6175" name="Reverse default date time order (short &amp;&amp; long formats)"/>
+                    <Item id="6172" name="Custom format:"/>
                 </MultiInstance>
 
                 <Delimiter title="Delimiter">
@@ -1155,6 +1170,15 @@ You can define several column markers by using white space to separate the diffe
                 <Item id="4" name="Yes to &amp;all"/>
                 <Item id="5" name="N&amp;o to all"/>
             </DoSaveOrNot>
+            <DoSaveAll title="Save All Confirmation">
+                <Item id="1766" name="Are you sure you want to save all modified documents?
+
+Choose &quot;Always Yes&quot; if you don't want to see this dialog again.
+You can re-activate this dialog in Preferences later."/>
+                <Item id="6" name="&amp;Yes"/>
+                <Item id="7" name="&amp;No"/>
+                <Item id="4" name="Always Yes"/>
+            </DoSaveAll> <!-- HowToReproduce: Check the 'Enable Save All confirm dialog' checkbox in Preference->MISC, now click 'Save all' -->
         </Dialog>
         <MessageBox> <!-- $INT_REPLACE$ is a place holder, don't translate it -->
             <ContextMenuXmlEditWarning title="Editing contextMenu" message="Editing contextMenu.xml allows you to modify your Notepad++ popup context menu.
@@ -1250,25 +1274,23 @@ Do you want to launch Notepad++ in Administrator mode?"/>
 Notepad++ will be restarted after all the operations are terminated.
 Continue?"/>
             <NeedToRestartToLoadPlugins title="Notepad++ need to be relaunched" message="You have to restart Notepad++ to load plugins you installed."/> <!-- HowToReproduce: Import a plugin via menu "Settings->Import->Import Plugin(s)...". -->
-            <SaveAllConfirm title="Save All Confirmation" message="Are you sure you want to save all documents?
-
-Choose &quot;Cancel&quot; if your answer will always be &quot;Yes&quot; and you won't be asked this question again.
-You can re-activate this dialog in Preferences dialog later." /> <!-- HowToReproduce: Check the 'Enable Save All confirm dialog' checkbox in Preference->MISC, now click 'Save all' -->
         </MessageBox>
         <ClipboardHistory>
             <PanelTitle name="Clipboard History"/>
         </ClipboardHistory>
-        <DocSwitcher>
-            <PanelTitle name="Doc Switcher"/>
+        <DocList>
+            <PanelTitle name="Document List"/>
             <ColumnName name="Name"/>
             <ColumnExt name="Ext."/>
-        </DocSwitcher>
+        </DocList>
         <WindowsDlg>
             <ColumnName name="Name"/>
             <ColumnPath name="Path"/>
             <ColumnType name="Type"/>
             <ColumnSize name="Size"/>
             <NbDocsTotal name="total documents:"/>
+            <MenuCopyName name="Copy Name(s)"/>
+            <MenuCopyPath name="Copy Pathname(s)"/>
         </WindowsDlg>
         <AsciiInsertion>
             <PanelTitle name="ASCII Codes Insertion Panel"/>
@@ -1460,6 +1482,10 @@ Find in all files except exe, obj &amp;&amp; log:
             <tab-untitled-string value="new " />
             <file-save-assign-type value="&amp;Append extension" />
             <close-panel-tip value="Close" />
+            <IncrementalFind-FSFound value="$INT_REPLACE$ matches" />
+            <IncrementalFind-FSNotFound value="Phrase not found" />
+            <IncrementalFind-FSTopReached value="Reached top of page, continued from bottom" />
+            <IncrementalFind-FSEndReached value="Reached end of page, continued from top" />
         </MiscStrings>
     </Native-Langue>
 </NotepadPlus>

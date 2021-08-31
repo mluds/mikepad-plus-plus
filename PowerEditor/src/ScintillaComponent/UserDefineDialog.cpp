@@ -106,6 +106,34 @@ INT_PTR CALLBACK SharedParametersDialog::run_dlgProc(UINT Message, WPARAM wParam
             return TRUE;
         }
 
+        case WM_CTLCOLOREDIT:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColorSofter(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_CTLCOLORDLG:
+        case WM_CTLCOLORSTATIC:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_PRINTCLIENT:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return TRUE;
+            }
+            break;
+        }
+
         case WM_COMMAND :
         {
             if (HIWORD(wParam) == EN_CHANGE)
@@ -837,30 +865,30 @@ UserDefineDialog::UserDefineDialog(): SharedParametersDialog()
 {
     _pCurrentUserLang = new UserLangContainer();
 
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DEFAULT,              globalMappper().styleNameMapper[SCE_USER_STYLE_DEFAULT].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_COMMENT,              globalMappper().styleNameMapper[SCE_USER_STYLE_COMMENT].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_COMMENTLINE,          globalMappper().styleNameMapper[SCE_USER_STYLE_COMMENTLINE].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_NUMBER,               globalMappper().styleNameMapper[SCE_USER_STYLE_NUMBER].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD1,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD1].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD2,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD2].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD3,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD3].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD4,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD4].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD5,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD5].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD6,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD6].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD7,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD7].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_KEYWORD8,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD8].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_OPERATOR,             globalMappper().styleNameMapper[SCE_USER_STYLE_OPERATOR].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_FOLDER_IN_CODE1,      globalMappper().styleNameMapper[SCE_USER_STYLE_FOLDER_IN_CODE1].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_FOLDER_IN_CODE2,      globalMappper().styleNameMapper[SCE_USER_STYLE_FOLDER_IN_CODE2].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_FOLDER_IN_COMMENT,    globalMappper().styleNameMapper[SCE_USER_STYLE_FOLDER_IN_COMMENT].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER1,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER1].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER2,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER2].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER3,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER3].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER4,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER4].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER5,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER5].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER6,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER6].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER7,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER7].c_str());
-    _pCurrentUserLang->_styleArray.addStyler(SCE_USER_STYLE_DELIMITER8,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER8].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DEFAULT,              globalMappper().styleNameMapper[SCE_USER_STYLE_DEFAULT].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_COMMENT,              globalMappper().styleNameMapper[SCE_USER_STYLE_COMMENT].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_COMMENTLINE,          globalMappper().styleNameMapper[SCE_USER_STYLE_COMMENTLINE].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_NUMBER,               globalMappper().styleNameMapper[SCE_USER_STYLE_NUMBER].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD1,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD1].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD2,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD2].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD3,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD3].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD4,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD4].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD5,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD5].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD6,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD6].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD7,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD7].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_KEYWORD8,             globalMappper().styleNameMapper[SCE_USER_STYLE_KEYWORD8].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_OPERATOR,             globalMappper().styleNameMapper[SCE_USER_STYLE_OPERATOR].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_FOLDER_IN_CODE1,      globalMappper().styleNameMapper[SCE_USER_STYLE_FOLDER_IN_CODE1].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_FOLDER_IN_CODE2,      globalMappper().styleNameMapper[SCE_USER_STYLE_FOLDER_IN_CODE2].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_FOLDER_IN_COMMENT,    globalMappper().styleNameMapper[SCE_USER_STYLE_FOLDER_IN_COMMENT].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER1,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER1].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER2,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER2].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER3,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER3].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER4,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER4].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER5,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER5].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER6,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER6].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER7,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER7].c_str());
+    _pCurrentUserLang->_styles.addStyler(SCE_USER_STYLE_DELIMITER8,           globalMappper().styleNameMapper[SCE_USER_STYLE_DELIMITER8].c_str());
 }
 
 UserDefineDialog::~UserDefineDialog()
@@ -946,7 +974,9 @@ INT_PTR CALLBACK UserDefineDialog::run_dlgProc(UINT message, WPARAM wParam, LPAR
             _pUserLang = _pCurrentUserLang;
 
             _ctrlTab.init(_hInst, _hSelf, false);
-			int tabDpiDynamicalHeight = nppParam._dpiManager.scaleY(13);
+            NppDarkMode::subclassTabControl(_ctrlTab.getHSelf());
+
+            int tabDpiDynamicalHeight = nppParam._dpiManager.scaleY(13);
             _ctrlTab.setFont(TEXT("Tahoma"), tabDpiDynamicalHeight);
 
             _folderStyleDlg.init(_hInst, _hSelf);
@@ -1026,6 +1056,53 @@ INT_PTR CALLBACK UserDefineDialog::run_dlgProc(UINT message, WPARAM wParam, LPAR
 
             ::SetWindowText(_hSelf, udlVersion.c_str());
 
+            NppDarkMode::autoSubclassAndThemeChildControls(_hSelf);
+            NppDarkMode::setDarkScrollBar(_hSelf);
+
+            return TRUE;
+        }
+
+        case WM_CTLCOLOREDIT:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColorSofter(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_CTLCOLORLISTBOX:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColor(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_CTLCOLORDLG:
+        case WM_CTLCOLORSTATIC:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_PRINTCLIENT:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return TRUE;
+            }
+            break;
+        }
+
+        case NPPM_INTERNAL_REFRESHDARKMODE:
+        {
+            NppDarkMode::autoThemeChildControls(_hSelf);
+            NppDarkMode::setDarkScrollBar(_hSelf);
             return TRUE;
         }
 
@@ -1437,6 +1514,8 @@ INT_PTR CALLBACK StringDlg::run_dlgProc(UINT Message, WPARAM wParam, LPARAM)
     {
         case WM_INITDIALOG :
         {
+			NppDarkMode::autoSubclassAndThemeChildControls(_hSelf);
+
 			// Re-route to Subclassed the edit control's proc if needed
 			if (_restrictedChars.length())
 			{
@@ -1465,7 +1544,53 @@ INT_PTR CALLBACK StringDlg::run_dlgProc(UINT Message, WPARAM wParam, LPARAM)
 				goToCenter();
 
 			return TRUE;
-        }
+		}
+
+		case WM_CTLCOLOREDIT:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				return NppDarkMode::onCtlColorSofter(reinterpret_cast<HDC>(wParam));
+			}
+			break;
+		}
+
+		case WM_CTLCOLORDLG:
+		case WM_CTLCOLORSTATIC:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+			}
+			break;
+		}
+
+		case WM_PRINTCLIENT:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				return TRUE;
+			}
+			break;
+		}
+
+		case WM_ERASEBKGND:
+		{
+			if (NppDarkMode::isEnabled())
+			{
+				RECT rc = { 0 };
+				getClientRect(rc);
+				::FillRect(reinterpret_cast<HDC>(wParam), &rc, NppDarkMode::getDarkerBackgroundBrush());
+				return TRUE;
+			}
+			break;
+		}
+
+		case NPPM_INTERNAL_REFRESHDARKMODE:
+		{
+			NppDarkMode::autoThemeChildControls(_hSelf);
+			return TRUE;
+		}
 
         case WM_COMMAND :
         {
@@ -1492,6 +1617,7 @@ INT_PTR CALLBACK StringDlg::run_dlgProc(UINT Message, WPARAM wParam, LPARAM)
         default :
             return FALSE;
     }
+	return FALSE;
 }
 
 LRESULT StringDlg::customEditProc(HWND hEdit, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -1570,6 +1696,19 @@ void StringDlg::HandlePaste(HWND hEdit)
 	}
 }
 
+void StylerDlg::move2CtrlRight(HWND hwndDlg, int ctrlID, HWND handle2Move, int handle2MoveWidth, int handle2MoveHeight)
+{
+    POINT p;
+    RECT rc;
+    ::GetWindowRect(::GetDlgItem(hwndDlg, ctrlID), &rc);
+
+    p.x = rc.right + NppParameters::getInstance()._dpiManager.scaleX(5);
+    p.y = rc.top + ((rc.bottom - rc.top) / 2) - handle2MoveHeight / 2;
+
+    ::ScreenToClient(hwndDlg, &p);
+    ::MoveWindow(handle2Move, p.x, p.y, handle2MoveWidth, handle2MoveHeight, TRUE);
+}
+
 INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     StylerDlg * dlg = (StylerDlg *)::GetProp(hwnd, TEXT("Styler dialog prop"));
@@ -1579,12 +1718,15 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
     {
         case WM_INITDIALOG :
         {
+            NppDarkMode::setDarkTitleBar(hwnd);
+            NppDarkMode::autoSubclassAndThemeChildControls(hwnd);
+
             NativeLangSpeaker *pNativeLangSpeaker = nppParam.getNativeLangSpeaker();
             pNativeLangSpeaker->changeUserDefineLangPopupDlg(hwnd);
 
             ::SetProp(hwnd, TEXT("Styler dialog prop"), (HANDLE)lParam);
             dlg = (StylerDlg *)::GetProp(hwnd, TEXT("Styler dialog prop"));
-            Style & style = SharedParametersDialog::_pUserLang->_styleArray.getStyler(dlg->_stylerIndex);
+            Style & style = SharedParametersDialog::_pUserLang->_styles.getStyler(dlg->_stylerIndex);
 
             // move dialog over UDL GUI (position 0,0 of UDL window) so it wouldn't cover the code
             RECT wrc;
@@ -1626,9 +1768,6 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
                 i = 0;
             ::SendMessage(hFontNameCombo, CB_SETCURSEL, i, 0);
 
-            HWND hFgColourStaticText = ::GetDlgItem(hwnd, IDC_STYLER_FG_STATIC);
-            HWND hBgColourStaticText = ::GetDlgItem(hwnd, IDC_STYLER_BG_STATIC);
-
             if (style._fgColor == COLORREF(-1))
                 style._fgColor = black;
 
@@ -1640,26 +1779,12 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
             dlg->_pBgColour->init(dlg->_hInst, hwnd);
             dlg->_pBgColour->setColour(style._bgColor);
 
-            POINT p1, p2;
-            RECT rc1, rc2;
+            int w = nppParam._dpiManager.scaleX(25);
+            int h = nppParam._dpiManager.scaleY(25);
 
-            ::GetWindowRect(hFgColourStaticText, &rc1);
-            ::GetWindowRect(hBgColourStaticText, &rc2);
+            dlg->move2CtrlRight(hwnd, IDC_STYLER_FG_STATIC, dlg->_pFgColour->getHSelf(), w, h);
+            dlg->move2CtrlRight(hwnd, IDC_STYLER_BG_STATIC, dlg->_pBgColour->getHSelf(), w, h);
 
-            p1.x = rc1.left;    p1.y = rc1.top;
-            p2.x = rc2.left;    p2.y = rc2.top;
-
-            p1.x += rc1.right - rc1.left;
-            p2.x += rc2.right - rc2.left;
-
-            ::ScreenToClient(hwnd, &p1);
-            ::ScreenToClient(hwnd, &p2);
-
-            p1.x += 10; p2.x += 10;
-            p1.y -= 6; p2.y -= 6;
-
-            ::MoveWindow(dlg->_pFgColour->getHSelf(), p1.x, p1.y, 30, 30, TRUE);
-            ::MoveWindow(dlg->_pBgColour->getHSelf(), p2.x, p2.y, 30, 30, TRUE);
 
             dlg->_pFgColour->display();
             dlg->_pBgColour->display();
@@ -1673,12 +1798,57 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
             return TRUE;
         }
 
+        case WM_CTLCOLOREDIT:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColorSofter(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_CTLCOLORLISTBOX:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColor(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_CTLCOLORDLG:
+        case WM_CTLCOLORSTATIC:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return NppDarkMode::onCtlColorDarker(reinterpret_cast<HDC>(wParam));
+            }
+            break;
+        }
+
+        case WM_PRINTCLIENT:
+        {
+            if (NppDarkMode::isEnabled())
+            {
+                return TRUE;
+            }
+            break;
+        }
+
+        case NPPM_INTERNAL_REFRESHDARKMODE:
+        {
+            NppDarkMode::setDarkTitleBar(hwnd);
+            NppDarkMode::autoThemeChildControls(hwnd);
+            ::SetWindowPos(hwnd, nullptr, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+            return TRUE;
+        }
+
         case WM_COMMAND :
         {
 			if (dlg == nullptr)
 				return FALSE;
 
-            Style & style = SharedParametersDialog::_pUserLang->_styleArray.getStyler(dlg->_stylerIndex);
+            Style & style = SharedParametersDialog::_pUserLang->_styles.getStyler(dlg->_stylerIndex);
             if (HIWORD(wParam) == CBN_SELCHANGE)
             {
                 auto i = ::SendDlgItemMessage(hwnd, LOWORD(wParam), CB_GETCURSEL, 0, 0);
@@ -1783,4 +1953,5 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
         default :
             return FALSE;
     }
+    return FALSE;
 }

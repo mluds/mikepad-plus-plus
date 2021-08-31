@@ -1297,6 +1297,15 @@ void trim(generic_string& str)
 	else str.erase(str.begin(), str.end());
 }
 
+bool endsWith(const generic_string& s, const generic_string& suffix)
+{
+#if defined(_MSVC_LANG) && (_MSVC_LANG > 201402L)
+#error Replace this function with basic_string::ends_with
+#endif
+	size_t pos = s.find(suffix);
+	return pos != s.npos && ((s.length() - pos) == suffix.length());
+}
+
 int nbDigitsFromNbLines(size_t nbLines)
 {
 	int nbDigits = 0; // minimum number of digit should be 4
@@ -1318,4 +1327,27 @@ int nbDigitsFromNbLines(size_t nbLines)
 		}
 	}
 	return nbDigits;
+}
+
+generic_string getDateTimeStrFrom(const generic_string& dateTimeFormat, const SYSTEMTIME& st)
+{
+	generic_string dateTimeStr = dateTimeFormat;
+	dateTimeStr = stringReplace(dateTimeStr, TEXT("Y"), std::to_wstring(st.wYear));
+	wchar_t buf[3];
+	_snwprintf(buf, sizeof(buf), TEXT("%02d"), st.wMonth);
+	dateTimeStr = stringReplace(dateTimeStr, TEXT("M"), buf);
+
+	_snwprintf(buf, sizeof(buf), TEXT("%02d"), st.wDay);
+	dateTimeStr = stringReplace(dateTimeStr, TEXT("D"), buf);
+
+	_snwprintf(buf, sizeof(buf), TEXT("%02d"), st.wHour);
+	dateTimeStr = stringReplace(dateTimeStr, TEXT("h"), buf);
+
+	_snwprintf(buf, sizeof(buf), TEXT("%02d"), st.wMinute);
+	dateTimeStr = stringReplace(dateTimeStr, TEXT("m"), buf);
+
+	_snwprintf(buf, sizeof(buf), TEXT("%02d"), st.wSecond);
+	dateTimeStr = stringReplace(dateTimeStr, TEXT("s"), buf);
+
+	return dateTimeStr;
 }
