@@ -140,7 +140,7 @@ generic_string TreeView::getItemDisplayName(HTREEITEM Item2Set) const
 {
 	if (!Item2Set)
 		return TEXT("");
-	TCHAR textBuffer[MAX_PATH];
+	TCHAR textBuffer[MAX_PATH] = { '\0' };
 	TVITEM tvItem;
 	tvItem.hItem = Item2Set;
 	tvItem.mask = TVIF_TEXT;
@@ -245,7 +245,7 @@ HTREEITEM TreeView::searchSubItemByName(const TCHAR *itemName, HTREEITEM hParent
 
 	for ( ; hItem != NULL; hItem = getNextSibling(hItem))
 	{
-		TCHAR textBuffer[MAX_PATH];
+		TCHAR textBuffer[MAX_PATH] = { '\0' };
 		TVITEM tvItem;
 		tvItem.hItem = hItem;
 		tvItem.pszText = textBuffer;
@@ -259,6 +259,42 @@ HTREEITEM TreeView::searchSubItemByName(const TCHAR *itemName, HTREEITEM hParent
 		}
 	}
 	return NULL;
+}
+
+BOOL TreeView::setImageList(int w, int h, int nbImage, int image_id, ...)
+{
+	HBITMAP hbmp;
+	COLORREF maskColour = RGB(192, 192, 192);
+
+	// Creation of image list
+	int bmDpiDynW = NppParameters::getInstance()._dpiManager.scaleX(w);
+	int bmDpiDynH = NppParameters::getInstance()._dpiManager.scaleY(h);
+	if ((_hImaLst = ImageList_Create(bmDpiDynW, bmDpiDynH, ILC_COLOR32 | ILC_MASK, nbImage, 0)) == NULL)
+		return FALSE;
+
+	// Add the bmp in the list
+	va_list argLst;
+	va_start(argLst, image_id);
+	int imageID = image_id;
+
+	for (int i = 0; i < nbImage; i++)
+	{
+		if (i > 0)
+			imageID = va_arg(argLst, int);
+
+		hbmp = (HBITMAP)::LoadImage(_hInst, MAKEINTRESOURCE(imageID), IMAGE_BITMAP, bmDpiDynW, bmDpiDynH, 0);
+		if (hbmp == NULL)
+			return FALSE;
+		ImageList_AddMasked(_hImaLst, hbmp, maskColour);
+		DeleteObject(hbmp);
+	}
+	va_end(argLst);
+
+	// Set image list to the tree view
+	TreeView_SetImageList(_hSelf, _hImaLst, TVSIL_NORMAL);
+	//TreeView_SetImageList(_treeViewSearchResult.getHSelf(), _hTreeViewImaLst, TVSIL_NORMAL);
+
+	return TRUE;
 }
 
 void TreeView::cleanSubEntries(HTREEITEM hTreeItem)
@@ -596,7 +632,7 @@ bool TreeView::searchLeafRecusivelyAndBuildTree(HTREEITEM tree2Build, const gene
 	if (!tree2Search)
 		return false;
 
-	TCHAR textBuffer[MAX_PATH];
+	TCHAR textBuffer[MAX_PATH] = { '\0' };
 	TVITEM tvItem;
 	tvItem.hItem = tree2Search;
 	tvItem.pszText = textBuffer;
@@ -638,7 +674,7 @@ bool TreeView::retrieveFoldingStateTo(TreeStateNode & treeState2Construct, HTREE
 	if (!treeviewNode)
 		return false;
 
-	TCHAR textBuffer[MAX_PATH];
+	TCHAR textBuffer[MAX_PATH] = { '\0' };
 	TVITEM tvItem;
 	tvItem.hItem = treeviewNode;
 	tvItem.pszText = textBuffer;

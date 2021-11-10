@@ -24,9 +24,6 @@
 #include "ReadDirectoryChanges.h"
 #include "menuCmdID.h"
 
-#define CX_BITMAP         16
-#define CY_BITMAP         16
-
 #define INDEX_OPEN_ROOT      0
 #define INDEX_CLOSE_ROOT     1
 #define INDEX_OPEN_NODE	     2
@@ -159,7 +156,7 @@ INT_PTR CALLBACK FileBrowser::run_dlgProc(UINT message, WPARAM wParam, LPARAM lP
 			FileBrowser::initPopupMenus();
 
 			_treeView.init(_hInst, _hSelf, ID_FILEBROWSERTREEVIEW);
-			setImageList(IDI_FB_ROOTOPEN, IDI_FB_ROOTCLOSE, IDI_PROJECT_FOLDEROPEN, IDI_PROJECT_FOLDERCLOSE, IDI_PROJECT_FILE);
+			_treeView.setImageList(CX_BITMAP, CY_BITMAP, 5, IDI_FB_ROOTOPEN, IDI_FB_ROOTCLOSE, IDI_PROJECT_FOLDEROPEN, IDI_PROJECT_FOLDERCLOSE, IDI_PROJECT_FILE);
 
 			_treeView.addCanNotDropInList(INDEX_OPEN_ROOT);
 			_treeView.addCanNotDropInList(INDEX_CLOSE_ROOT);
@@ -418,63 +415,12 @@ bool FileBrowser::selectItemFromPath(const generic_string& itemPath) const
 
 bool FileBrowser::selectCurrentEditingFile() const
 {
-	TCHAR currentDocPath[MAX_PATH] = { '0' };
+	TCHAR currentDocPath[MAX_PATH] = { '\0' };
 	::SendMessage(_hParent, NPPM_GETFULLCURRENTPATH, MAX_PATH, reinterpret_cast<LPARAM>(currentDocPath));
 	generic_string currentDocPathStr = currentDocPath;
 
 	return selectItemFromPath(currentDocPathStr);
 }
-
-BOOL FileBrowser::setImageList(int root_clean_id, int root_dirty_id, int open_node_id, int closed_node_id, int leaf_id) 
-{
-	HBITMAP hbmp;
-	COLORREF maskColour = RGB(192, 192, 192);
-	const int nbBitmaps = 5;
-
-	// Creation of image list
-	if ((_hImaLst = ImageList_Create(CX_BITMAP, CY_BITMAP, ILC_COLOR32 | ILC_MASK, nbBitmaps, 0)) == NULL) 
-		return FALSE;
-
-	// Add the bmp in the list
-	hbmp = LoadBitmap(_hInst, MAKEINTRESOURCE(root_clean_id));
-	if (hbmp == NULL)
-		return FALSE;
-	ImageList_AddMasked(_hImaLst, hbmp, maskColour);
-	DeleteObject(hbmp);
-
-	hbmp = LoadBitmap(_hInst, MAKEINTRESOURCE(root_dirty_id));
-	if (hbmp == NULL)
-		return FALSE;
-	ImageList_AddMasked(_hImaLst, hbmp, maskColour);
-	DeleteObject(hbmp);
-
-	hbmp = LoadBitmap(_hInst, MAKEINTRESOURCE(open_node_id));
-	if (hbmp == NULL)
-		return FALSE;
-	ImageList_AddMasked(_hImaLst, hbmp, maskColour);
-	DeleteObject(hbmp);
-
-	hbmp = LoadBitmap(_hInst, MAKEINTRESOURCE(closed_node_id));
-	if (hbmp == NULL)
-		return FALSE;
-	ImageList_AddMasked(_hImaLst, hbmp, maskColour);
-	DeleteObject(hbmp);
-
-	hbmp = LoadBitmap(_hInst, MAKEINTRESOURCE(leaf_id));
-	if (hbmp == NULL)
-		return FALSE;
-	ImageList_AddMasked(_hImaLst, hbmp, maskColour);
-	DeleteObject(hbmp);
-
-	if (ImageList_GetImageCount(_hImaLst) < nbBitmaps)
-		return FALSE;
-
-	// Set image list to the tree view
-	TreeView_SetImageList(_treeView.getHSelf(), _hImaLst, TVSIL_NORMAL);
-
-	return TRUE;
-}
-
 
 void FileBrowser::destroyMenus() 
 {
@@ -567,7 +513,7 @@ void FileBrowser::notified(LPNMHDR notification)
 	}
 	else if ((notification->hwndFrom == _treeView.getHSelf()))
 	{
-		TCHAR textBuffer[MAX_PATH];
+		TCHAR textBuffer[MAX_PATH] = { '\0' };
 		TVITEM tvItem;
 		tvItem.mask = TVIF_TEXT | TVIF_PARAM;
 		tvItem.pszText = textBuffer;
@@ -777,7 +723,9 @@ void FileBrowser::showContextMenu(int x, int y)
 
 	if (tvHitInfo.hItem == nullptr)
 	{
-		TrackPopupMenu(_hGlobalMenu, TPM_LEFTALIGN, x, y, 0, _hSelf, NULL);
+		TrackPopupMenu(_hGlobalMenu, 
+			NppParameters::getInstance().getNativeLangSpeaker()->isRTL() ? TPM_RIGHTALIGN | TPM_LAYOUTRTL : TPM_LEFTALIGN,
+			x, y, 0, _hSelf, NULL);
 	}
 	else
 	{
@@ -794,7 +742,9 @@ void FileBrowser::showContextMenu(int x, int y)
 		else //nodeType_file
 			hMenu = _hFileMenu;
 
-		TrackPopupMenu(hMenu, TPM_LEFTALIGN, x, y, 0, _hSelf, NULL);
+		TrackPopupMenu(hMenu, 
+			NppParameters::getInstance().getNativeLangSpeaker()->isRTL() ? TPM_RIGHTALIGN | TPM_LAYOUTRTL : TPM_LEFTALIGN,
+			x, y, 0, _hSelf, NULL);
 	}
 }
 
@@ -1068,7 +1018,7 @@ void FileBrowser::addRootFolder(generic_string rootFolderPath)
 	patterns2Match.push_back(TEXT("*.*"));
 
 	TCHAR *label = ::PathFindFileName(rootFolderPath.c_str());
-	TCHAR rootLabel[MAX_PATH];
+	TCHAR rootLabel[MAX_PATH] = {'\0'};
 	wcscpy_s(rootLabel, label);
 	size_t len = lstrlen(rootLabel);
 	if (rootLabel[len - 1] == '\\')
@@ -1087,7 +1037,7 @@ HTREEITEM FileBrowser::createFolderItemsFromDirStruct(HTREEITEM hParentItem, con
 	HTREEITEM hFolderItem = nullptr;
 	if (directoryStructure._parent == nullptr && hParentItem == nullptr)
 	{
-		TCHAR rootPath[MAX_PATH];
+		TCHAR rootPath[MAX_PATH] = { '\0' };
 		wcscpy_s(rootPath, directoryStructure._rootPath.c_str());
 		size_t len = lstrlen(rootPath);
 		if (rootPath[len - 1] == '\\')
@@ -1149,7 +1099,7 @@ HTREEITEM FileBrowser::findChildNodeFromName(HTREEITEM parent, const generic_str
 		hItemNode != NULL;
 		hItemNode = _treeView.getNextSibling(hItemNode))
 	{
-		TCHAR textBuffer[MAX_PATH];
+		TCHAR textBuffer[MAX_PATH] = { '\0' };
 		TVITEM tvItem;
 		tvItem.mask = TVIF_TEXT;
 		tvItem.pszText = textBuffer;
@@ -1309,7 +1259,7 @@ bool FileBrowser::addToTree(FilesToChange & group, HTREEITEM node)
 			hItemNode != NULL;
 			hItemNode = _treeView.getNextSibling(hItemNode))
 		{
-			TCHAR textBuffer[MAX_PATH];
+			TCHAR textBuffer[MAX_PATH] = { '\0' };
 			TVITEM tvItem;
 			tvItem.mask = TVIF_TEXT;
 			tvItem.pszText = textBuffer;
@@ -1370,7 +1320,7 @@ HTREEITEM FileBrowser::findInTree(const generic_string& rootPath, HTREEITEM node
 			hItemNode != NULL;
 			hItemNode = _treeView.getNextSibling(hItemNode))
 		{
-			TCHAR textBuffer[MAX_PATH];
+			TCHAR textBuffer[MAX_PATH] = { '\0' };
 			TVITEM tvItem;
 			tvItem.mask = TVIF_TEXT;
 			tvItem.pszText = textBuffer;
@@ -1411,7 +1361,7 @@ std::vector<HTREEITEM> FileBrowser::findInTree(FilesToChange & group, HTREEITEM 
 			hItemNode != NULL;
 			hItemNode = _treeView.getNextSibling(hItemNode))
 		{
-			TCHAR textBuffer[MAX_PATH];
+			TCHAR textBuffer[MAX_PATH] = {'\0'};
 			TVITEM tvItem;
 			tvItem.mask = TVIF_TEXT;
 			tvItem.pszText = textBuffer;

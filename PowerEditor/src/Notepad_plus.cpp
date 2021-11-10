@@ -681,13 +681,11 @@ LRESULT Notepad_plus::init(HWND hwnd)
 	// Initialize the default foreground & background color
 	//
 	{
-		StyleArray & globalStyles = nppParam.getGlobalStylers();
-		int i = globalStyles.getStylerIndexByID(STYLE_DEFAULT);
-		if (i != -1)
+		const Style * pStyle = nppParam.getGlobalStylers().findByID(STYLE_DEFAULT);
+		if (pStyle)
 		{
-			Style & style = globalStyles.getStyler(i);
-			nppParam.setCurrentDefaultFgColor(style._fgColor);
-			nppParam.setCurrentDefaultBgColor(style._bgColor);
+			nppParam.setCurrentDefaultFgColor(pStyle->_fgColor);
+			nppParam.setCurrentDefaultBgColor(pStyle->_bgColor);
 		}
 	}
 
@@ -928,14 +926,17 @@ void Notepad_plus::saveDockingParams()
 			else
 				floatCont = nppGUI._dockingData._pluginDockInfo[i]._prevContainer;
 
-			if (floatContArray[floatCont] == 0)
+			if (floatCont >= 0)
 			{
-				RECT rc;
-				if (nppGUI._dockingData.getFloatingRCFrom(floatCont, rc))
+				if (floatContArray[floatCont] == 0)
 				{
-					vFloatingWindowInfo.push_back(FloatingWindowInfo(floatCont, rc.left, rc.top, rc.right, rc.bottom));
+					RECT rc;
+					if (nppGUI._dockingData.getFloatingRCFrom(floatCont, rc))
+					{
+						vFloatingWindowInfo.push_back(FloatingWindowInfo(floatCont, rc.left, rc.top, rc.right, rc.bottom));
+					}
+					floatContArray[floatCont] = 1;
 				}
-				floatContArray[floatCont] = 1;
 			}
 			if (i < nppGUI._dockingData._pluginDockInfo.size()) // to prevent from crash in debug mode
 				vPluginDockInfo.push_back(nppGUI._dockingData._pluginDockInfo[i]);
@@ -2256,12 +2257,9 @@ void Notepad_plus::setupColorSampleBitmapsOnMainMenuItems()
 
 	for (int j = 0; j < sizeof(bitmapOnStyleMenuItemsInfo) / sizeof(bitmapOnStyleMenuItemsInfo[0]); ++j)
 	{
-		StyleArray& stylers = NppParameters::getInstance().getMiscStylerArray();
-		int iFind = stylers.getStylerIndexByID(bitmapOnStyleMenuItemsInfo[j].styleIndic);
-		
-		if (iFind != -1)
+		const Style * pStyle = NppParameters::getInstance().getMiscStylerArray().findByID(bitmapOnStyleMenuItemsInfo[j].styleIndic);
+		if (pStyle)
 		{
-			Style const* pStyle = &(stylers.getStyler(iFind));
 
 			HDC hDC = GetDC(NULL);
 			const int bitmapXYsize = 16;
@@ -2460,6 +2458,7 @@ void Notepad_plus::pasteToMarkedLines()
 	HANDLE clipboardData = ::GetClipboardData(clipFormat);
 	::GlobalSize(clipboardData);
 	LPVOID clipboardDataPtr = ::GlobalLock(clipboardData);
+	if (!clipboardDataPtr) return;
 
 	generic_string clipboardStr = (const TCHAR *)clipboardDataPtr;
 
@@ -5770,7 +5769,7 @@ bool Notepad_plus::dumpFiles(const TCHAR * outdir, const TCHAR * fileprefix)
 			somedirty = true;
 
 		const TCHAR * unitext = (docbuf->getUnicodeMode() != uni8Bit)?TEXT("_utf8"):TEXT("");
-		wsprintf(savePath, TEXT("%s\\%s%03d%s.dump"), outdir, fileprefix, i, unitext);
+		wsprintf(savePath, TEXT("%s\\%s%03d%s.dump"), outdir, fileprefix, static_cast<int>(i), unitext);
 
 		SavingStatus res = MainFileManager.saveBuffer(docbuf->getID(), savePath);
 
@@ -5875,11 +5874,18 @@ void Notepad_plus::notifyBufferChanged(Buffer * buffer, int mask)
 						// Since the file content has changed but the user doesn't want to reload it, set state to dirty
 						buffer->setDirty(true);
 
+						// buffer in Notepad++ is not syncronized anymore with the file on disk
+						buffer->setUnsync(true);
+
 						break;	//abort
 					}
 				}
 				// Set _isLoadedDirty false so when the document clean state is reached the icon will be set to blue
 				buffer->setLoadedDirty(false);
+
+				// buffer in Notepad++ is syncronized with the file on disk
+				buffer->setUnsync(false);
+
 				doReload(buffer->getID(), false);
 				if (mainActive || subActive)
 				{
@@ -5925,6 +5931,12 @@ void Notepad_plus::notifyBufferChanged(Buffer * buffer, int mask)
 					doClose(buffer->getID(), currentView(), isSnapshotMode);
 					return;
 				}
+				else
+				{
+					// buffer in Notepad++ is not syncronized anymore with the file on disk
+					buffer->setUnsync(true);
+				}
+
 				break;
 			}
 		}
@@ -6366,16 +6378,7 @@ generic_string Notepad_plus::getLangFromMenu(const Buffer * buf)
 
 Style * Notepad_plus::getStyleFromName(const TCHAR *styleName)
 {
-	StyleArray & stylers = (NppParameters::getInstance()).getMiscStylerArray();
-
-	int i = stylers.getStylerIndexByName(styleName);
-	Style * st = NULL;
-	if (i != -1)
-	{
-		Style & style = stylers.getStyler(i);
-		st = &style;
-	}
-	return st;
+	return NppParameters::getInstance().getMiscStylerArray().findByName(styleName);
 }
 
 bool Notepad_plus::noOpenedDoc() const
@@ -7182,7 +7185,7 @@ static const QuoteParams quotes[] =
 	{TEXT("Anonymous #157"), QuoteParams::rapid, true, SC_CP_UTF8, L_TEXT, TEXT("I can't see an end. I have no control and I don't think there's any escape. I don't even have a home anymore.\nI think it's time for a new keyboard.")},
 	{TEXT("Anonymous #158"), QuoteParams::slow, false, SC_CP_UTF8, L_TEXT, TEXT("6.9\nA little fun interrupted by a period.")},
 	{TEXT("Anonymous #159"), QuoteParams::slow, false, SC_CP_UTF8, L_TEXT, TEXT("I love anal\n-yzing all data before making assumptions.")},
-	{TEXT("Anonymous #160"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("So I took off her shirt. Then she said,\n\"Take off my shirt.\"\nI took off her shirt.\n\"Take off my shoes.\"\nI took off her shoes.\n\"Now take off my bra and panties.\"\nand so I took them off.\nThen she looked at me and said\n\"I don't want to catch you wearing my things ever again.\"")},
+	{TEXT("Anonymous #160"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("So my wife said\n\"take off my shirt\".\nI did as she said and take off her shirt.\nThen she said,\n\"Take off my skirt.\"\nI took off her skirt.\n\"Take off my shoes.\"\nI took off her shoes.\n\"Now take off my bra and panties.\"\nand so I took them off.\nThen she looked at me and said\n\"I don't want to catch you wearing my things ever again.\"")},
 	{TEXT("Anonymous #161"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("Do you know:\nSpiders are the only web developers in the world that enjoy finding bugs.") },
 	{TEXT("Anonymous #162"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("Psychologist: Lie down please.\n8: No, thank you. If I do, this session will never reach the end.") },
 	{TEXT("Anonymous #163"), QuoteParams::slow, false, SC_CP_UTF8, L_TEXT, TEXT("I love the way the earth rotates,\nit really makes my day.") },
@@ -7198,6 +7201,9 @@ static const QuoteParams quotes[] =
 	{TEXT("Anonymous #173"), QuoteParams::rapid, true, SC_CP_UTF8, L_TEXT, TEXT("Q: Why do we need a backend, why not just connect front end to database???\n\nA: Yeah! And why do we eat and go to the bathroom while we can throw the food directly in the toilet? Because stuff needs to get processed. ;)\n") },
 	{TEXT("Anonymous #174"), QuoteParams::rapid, true, SC_CP_UTF8, L_TEXT, TEXT("Someday, once humans are extinct from covid-19. I hope whatever species rules Earth makes chicken nuggets in the shape of us, like we did for dinosaurs.") },
 	{TEXT("Anonymous #175"), QuoteParams::rapid, true, SC_CP_UTF8, L_TEXT, TEXT("Linkedin is basically a reversed Tinder.\nHot girls write to nerd guys and they didn't reply.") },
+	{TEXT("Anonymous #176"), QuoteParams::rapid, true, SC_CP_UTF8, L_TEXT, TEXT("A vegan said to me, \"people who sell meat are gross!\"\nI said, \"people who sell fruits and vegetables are grocer.\"\n") },
+	{TEXT("Anonymous #177"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("Documentation is a love letter that you write to your future self.\n") },
+	{TEXT("Anonymous #178"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("When I die, I hope it's early in the morning so I don't have to go to work that day for no reason.\n") },
 	{TEXT("xkcd"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("Never have I felt so close to another soul\nAnd yet so helplessly alone\nAs when I Google an error\nAnd there's one result\nA thread by someone with the same problem\nAnd no answer\nLast posted to in 2003\n\n\"Who were you, DenverCoder9?\"\n\"What did you see?!\"\n\n(ref: https://xkcd.com/979/)") },
 	{TEXT("A developer"), QuoteParams::slow, false, SC_CP_UTF8, L_TEXT, TEXT("No hugs & kisses.\nOnly bugs & fixes.") },
 	{TEXT("Elon Musk"), QuoteParams::rapid, false, SC_CP_UTF8, L_TEXT, TEXT("Don't set your password as your child's name.\nName your child after your password.") },
@@ -7590,7 +7596,8 @@ void Notepad_plus::showQuote(const QuoteParams* quote) const
 	params._pCurrentView = _pEditView;
 
 	HANDLE hThread = ::CreateThread(NULL, 0, threadTextPlayer, &params, 0, NULL);
-	::CloseHandle(hThread);
+	if (hThread)
+		::CloseHandle(hThread);
 }
 
 void Notepad_plus::minimizeDialogs()

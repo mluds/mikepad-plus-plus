@@ -3,7 +3,7 @@
 The comments are here for explanation, it's not necessary to translate them.
 -->
 <NotepadPlus>
-    <Native-Langue name="English" filename="english.xml" version="8.1.4">
+    <Native-Langue name="English" filename="english.xml" version="8.1.5">
         <Menu>
             <Main>
                 <!-- Main Menu Entries -->
@@ -838,9 +838,6 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="6122" name="Hide menu bar (use Alt or F10 key to toggle)"/>
                     <Item id="6123" name="Localization"/>
 
-                    <Item id="6125" name="Document List Panel"/>
-                    <Item id="6127" name="Disable extension column"/>
-
                     <Item id="6128" name="Alternate icons"/>
                 </Global>
                 <Scintillas title="Editing">
@@ -1282,6 +1279,7 @@ Continue?"/>
             <PanelTitle name="Document List"/>
             <ColumnName name="Name"/>
             <ColumnExt name="Ext."/>
+            <ColumnPath name="Path"/>
         </DocList>
         <WindowsDlg>
             <ColumnName name="Name"/>

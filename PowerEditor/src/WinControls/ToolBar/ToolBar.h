@@ -34,8 +34,8 @@ enum toolBarStatusType {TB_SMALL, TB_LARGE, TB_SMALL2, TB_LARGE2, TB_STANDARD};
 
 
 struct iconLocator {
-	int listIndex;
-	int iconIndex;
+	int listIndex = 0;
+	int iconIndex = 0;
 	generic_string iconLocation;
 
 	iconLocator(int iList, int iIcon, const generic_string& iconLoc)
@@ -145,6 +145,14 @@ private :
 
 	void setDisableImageListDM2() {
 		::SendMessage(_hSelf, TB_SETDISABLEDIMAGELIST, 0, reinterpret_cast<LPARAM>(_toolBarIcons.getDisableLstSetDM2()));
+	};
+	
+	void setHoveredImageListDM() {
+		::SendMessage(_hSelf, TB_SETHOTIMAGELIST, 0, reinterpret_cast<LPARAM>(_toolBarIcons.getDefaultLst()));
+	};
+
+	void setHoveredImageListDM2() {
+		::SendMessage(_hSelf, TB_SETHOTIMAGELIST, 0, reinterpret_cast<LPARAM>(_toolBarIcons.getDefaultLstSet2()));
 	};
 
 	void reset(bool create = false);

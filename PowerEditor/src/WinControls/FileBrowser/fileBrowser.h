@@ -79,7 +79,7 @@ public:
 private:
 	std::vector<FolderInfo> _subFolders;
 	std::vector<FileInfo> _files;
-	FolderInfo *_parent = nullptr;
+	FolderInfo* _parent = nullptr;
 	generic_string _name;
 	generic_string _rootPath; // set only for root folder; empty for normal folder
 };
@@ -99,7 +99,7 @@ public:
 
 private:
 	FolderInfo _rootFolder;
-	FileBrowser *_pFileBrowser = nullptr;
+	FileBrowser* _pFileBrowser = nullptr;
 	HANDLE _watchThreadHandle = nullptr;
 	HANDLE _EventHandle = nullptr;
 	static DWORD WINAPI watching(void *param);
@@ -182,7 +182,6 @@ protected:
 
 	void initPopupMenus();
 	void destroyMenus();
-	BOOL setImageList(int root_open_id, int root_close_id, int open_node_id, int closed_node_id, int leaf_id);
 
 	BrowserNodeType getNodeType(HTREEITEM hItem);
 	void popupMenuCmd(int cmdID);

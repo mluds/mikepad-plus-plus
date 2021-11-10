@@ -1134,7 +1134,7 @@ INT_PTR CALLBACK UserDefineDialog::run_dlgProc(UINT message, WPARAM wParam, LPAR
         {
             if (HIWORD(wParam) == EN_CHANGE)
             {
-                TCHAR ext[extsLenMax];
+                TCHAR ext[extsLenMax] = { '\0' };
 				::SendDlgItemMessage(_hSelf, IDC_EXT_EDIT, WM_GETTEXT, extsLenMax, reinterpret_cast<LPARAM>(ext));
                 _pUserLang->_ext = ext;
                 return TRUE;
@@ -1763,7 +1763,7 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 				::SendMessage(hFontNameCombo, CB_SETITEMDATA, k, reinterpret_cast<LPARAM>(fontlist[j].c_str()));
             }
 
-			i = ::SendMessage(hFontNameCombo, CB_FINDSTRINGEXACT, static_cast<WPARAM>(-1), reinterpret_cast<LPARAM>(style._fontName));
+			i = ::SendMessage(hFontNameCombo, CB_FINDSTRINGEXACT, static_cast<WPARAM>(-1), reinterpret_cast<LPARAM>(style._fontName.c_str()));
             if (i == CB_ERR)
                 i = 0;
             ::SendMessage(hFontNameCombo, CB_SETCURSEL, i, 0);
@@ -1776,8 +1776,10 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 
             dlg->_pFgColour->init(dlg->_hInst, hwnd);
             dlg->_pFgColour->setColour(style._fgColor);
+            dlg->_pFgColour->setEnabled((style._colorStyle & COLORSTYLE_FOREGROUND) != 0);
             dlg->_pBgColour->init(dlg->_hInst, hwnd);
             dlg->_pBgColour->setColour(style._bgColor);
+            dlg->_pBgColour->setEnabled((style._colorStyle & COLORSTYLE_BACKGROUND) != 0);
 
             int w = nppParam._dpiManager.scaleX(25);
             int h = nppParam._dpiManager.scaleY(25);
@@ -1913,15 +1915,46 @@ INT_PTR CALLBACK StylerDlg::dlgProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
                 style._fgColor = dlg->_pFgColour->getColour();
                 style._bgColor = dlg->_pBgColour->getColour();
 
-                if (dlg->_pFgColour->isEnabled())
-                    style._colorStyle |= COLORSTYLE_FOREGROUND;
-                else
-                    style._colorStyle &= ~COLORSTYLE_FOREGROUND;
-                if (dlg->_pBgColour->isEnabled())
-                    style._colorStyle |= COLORSTYLE_BACKGROUND;
-                else
-                    style._colorStyle &= ~COLORSTYLE_BACKGROUND;
+				if (wParam == IDC_STYLER_CHECK_FG_TRANSPARENT || wParam == IDC_STYLER_CHECK_BG_TRANSPARENT)
+				{
+					if (wParam == IDC_STYLER_CHECK_FG_TRANSPARENT)
+					{
+						bool isTransparent = (BST_CHECKED == ::SendDlgItemMessage(hwnd, IDC_STYLER_CHECK_FG_TRANSPARENT, BM_GETCHECK, 0, 0));
+						dlg->_pFgColour->setEnabled(!isTransparent);
+						dlg->_pFgColour->redraw();
+						style._colorStyle &= ~COLORSTYLE_FOREGROUND;
+					}
 
+					if (wParam == IDC_STYLER_CHECK_BG_TRANSPARENT)
+					{
+						bool isTransparent = (BST_CHECKED == ::SendDlgItemMessage(hwnd, IDC_STYLER_CHECK_BG_TRANSPARENT, BM_GETCHECK, 0, 0));
+						dlg->_pBgColour->setEnabled(!isTransparent);
+						dlg->_pBgColour->redraw();
+						style._colorStyle &= ~COLORSTYLE_BACKGROUND;
+					}
+				}
+				else
+				{
+					if (dlg->_pFgColour->isEnabled())
+					{
+						style._colorStyle |= COLORSTYLE_FOREGROUND;
+					}
+					else
+					{
+						style._colorStyle &= ~COLORSTYLE_FOREGROUND;
+					}
+					::SendDlgItemMessage(hwnd, IDC_STYLER_CHECK_FG_TRANSPARENT, BM_SETCHECK, !dlg->_pFgColour->isEnabled(), 0);
+
+					if (dlg->_pBgColour->isEnabled())
+					{
+						style._colorStyle |= COLORSTYLE_BACKGROUND;
+					}
+					else
+					{
+						style._colorStyle &= ~COLORSTYLE_BACKGROUND;
+					}
+					::SendDlgItemMessage(hwnd, IDC_STYLER_CHECK_BG_TRANSPARENT, BM_SETCHECK, !dlg->_pBgColour->isEnabled(), 0);
+				}
                 style._fontStyle = FONTSTYLE_NONE;
                 if (BST_CHECKED == ::SendMessage(::GetDlgItem(hwnd, IDC_STYLER_CHECK_BOLD), BM_GETCHECK, 0, 0))
                     style._fontStyle |= FONTSTYLE_BOLD;
