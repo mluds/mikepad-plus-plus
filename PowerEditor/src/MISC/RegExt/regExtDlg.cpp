@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -20,9 +20,9 @@
 
 
 
-const TCHAR* nppName   = TEXT("Notepad++_file");
-const TCHAR* nppBackup = TEXT("Notepad++_backup");
-const TCHAR* nppDoc    = TEXT("Notepad++ Document");
+const TCHAR* nppName   = TEXT("Mikepad++_file");
+const TCHAR* nppBackup = TEXT("Mikepad++_backup");
+const TCHAR* nppDoc    = TEXT("Mikepad++ Document");
 
 const int nbSupportedLang = 10;
 const int nbExtMax = 27;

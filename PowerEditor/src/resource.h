@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -17,16 +17,16 @@
 #pragma once
 
 //
-// Notepad++ version: begin
+// Mikepad++ version: begin
 //
-#define NOTEPAD_PLUS_VERSION TEXT("Notepad++ v8.1.9")
+#define NOTEPAD_PLUS_VERSION TEXT("Mikepad++ v8.1.9")
 
 // should be X.Y : ie. if VERSION_DIGITALVALUE == 4, 7, 1, 0 , then X = 4, Y = 71
 // ex : #define VERSION_VALUE TEXT("5.63\0")
 #define VERSION_VALUE TEXT("8.19\0")
 #define VERSION_DIGITALVALUE 8, 1, 9, 0
 
-// Notepad++ version: end
+// Mikepad++ version: end
 
 
 #ifndef IDC_STATIC

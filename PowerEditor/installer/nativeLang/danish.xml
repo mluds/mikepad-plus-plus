@@ -292,15 +292,15 @@
                     <Item id="46250" name="Definer dit sprog..."/>
                     <Item id="46300" name="Åbn mappe med brugerdefineret sprog..."/>
                     <Item id="46180" name="Brugerdefineret"/>
-                    <Item id="47000" name="Om Notepad++"/>
+                    <Item id="47000" name="Om Mikepad++"/>
                     <Item id="47010" name="Kommandolinjeparametre..."/>
-                    <Item id="47001" name="Notepad++ hjem"/>
-                    <Item id="47002" name="Notepad++ projektside"/>
+                    <Item id="47001" name="Mikepad++ hjem"/>
+                    <Item id="47002" name="Mikepad++ projektside"/>
                     <Item id="47003" name="Onlinedokumentation"/>
-                    <Item id="47004" name="Notepad++ community (forum)"/>
+                    <Item id="47004" name="Mikepad++ community (forum)"/>
                     <Item id="47012" name="Fejlfindingsinfo..."/>
                     <Item id="47005" name="Hent flere plugins"/>
-                    <Item id="47006" name="Opdater Notepad++"/>
+                    <Item id="47006" name="Opdater Mikepad++"/>
                     <Item id="47009" name="Sæt opdateringsproxy..."/>
                     <Item id="48005" name="Importér plugin(s)..."/>
                     <Item id="48006" name="Importér stiltema(er)..."/>
@@ -848,7 +848,7 @@ Du kan definere adskillige kolonnemarkører ved at bruge blanktegn til at adskil
                 </DefaultDir>
 
                 <FileAssoc title="Filtilknytning">
-                    <Item id="4008" name="Afslut venligst Notepad++ og start Notepad++ igen i administrator-tilstand for at bruge funktionaliteten."/>
+                    <Item id="4008" name="Afslut venligst Mikepad++ og start Mikepad++ igen i administrator-tilstand for at bruge funktionaliteten."/>
                     <Item id="4009" name="Understøttede filtyper:"/>
                     <Item id="4010" name="Tilknyttede filtyper:"/>
                 </FileAssoc>
@@ -909,7 +909,7 @@ Du kan definere adskillige kolonnemarkører ved at bruge blanktegn til at adskil
 
                 <Searching title="Søgning">
                     <Item id="6901" name="Udfyld ikke søgefeltet i dialogen Søg med de markerede ord"/>
-                    <Item id="6902" name="Brug skrifttype med fast bredde i dialogen Søg (Notepad++ skal genstartes)"/>
+                    <Item id="6902" name="Brug skrifttype med fast bredde i dialogen Søg (Mikepad++ skal genstartes)"/>
                     <Item id="6903" name="Dialogen Søg forbliver åben efter søgning som gav output i vinduet med resultater"/>
                     <Item id="6904" name="Bekræft Erstat alle i alle åbne dokumenter"/>
                 </Searching>
@@ -963,10 +963,10 @@ Du kan definere adskillige kolonnemarkører ved at bruge blanktegn til at adskil
 
                 <MultiInstance title="Multi-instans">
                     <Item id="6151" name="Multi-instansindstillinger"/>
-                    <Item id="6152" name="Åbn session i en ny instans af Notepad++"/>
+                    <Item id="6152" name="Åbn session i en ny instans af Mikepad++"/>
                     <Item id="6153" name="Altid i multi-instans-tilstand"/>
                     <Item id="6154" name="Standard (én instans)"/>
-                    <Item id="6155" name="* Notepad++ skal genstartes før ændringen træder i kraft"/>
+                    <Item id="6155" name="* Mikepad++ skal genstartes før ændringen træder i kraft"/>
                 </MultiInstance>
 
                 <Delimiter title="Afgrænser">
@@ -1011,11 +1011,11 @@ Du kan definere adskillige kolonnemarkører ved at bruge blanktegn til at adskil
                     <Item id="6319" name="Aktivér"/>
                     <Item id="6320" name="Ikke understreget"/>
                     <Item id="6322" name="Filtype for sessionsfil:"/>
-                    <Item id="6323" name="Aktivér automatisk opdatering af Notepad++"/>
+                    <Item id="6323" name="Aktivér automatisk opdatering af Mikepad++"/>
                     <Item id="6324" name="Dokumentskifter (Ctrl+Tabulator)"/>
                     <Item id="6331" name="Vis kun filnavn i titellinjen"/>
                     <Item id="6334" name="Automatisk registrering af tegnkodning"/>
-                    <Item id="6349" name="Brug DirectWrite (kan forbedre gengivelsen af specialtegn, Notepad++ skal genstartes)"/>
+                    <Item id="6349" name="Brug DirectWrite (kan forbedre gengivelsen af specialtegn, Mikepad++ skal genstartes)"/>
                     <Item id="6350" name="Aktivér fullbox-tilstand"/>
                     <Item id="6337" name="Filtype for arbejdsområde:"/>
                     <Item id="6114" name="Aktivér"/>
@@ -1078,10 +1078,10 @@ Du kan definere adskillige kolonnemarkører ved at bruge blanktegn til at adskil
             </DoSaveOrNot>
         </Dialog>
         <MessageBox> <!-- $INT_REPLACE$ is a place holder, don't translate it -->
-            <ContextMenuXmlEditWarning title="Redigering af genvejsmenu" message="Ved redigering af contextMenu.xml kan du ændre genvejsmenuen i Notepad++.
-Du skal genstarte Notepad++ før ændringerne i contextMenu.xml træder i kraft."/>
+            <ContextMenuXmlEditWarning title="Redigering af genvejsmenu" message="Ved redigering af contextMenu.xml kan du ændre genvejsmenuen i Mikepad++.
+Du skal genstarte Mikepad++ før ændringerne i contextMenu.xml træder i kraft."/>
             <NppHelpAbsentWarning title="Filen findes ikke" message="
-findes ikke. Download den venligst fra Notepad++'s websted."/>
+findes ikke. Download den venligst fra Mikepad++'s websted."/>
             <SaveCurrentModifWarning title="Gem nuværende ændring" message="Du bør gemme den nuværende ændring.
 Alle gemte ændringer kan ikke fortrydes.
 
@@ -1090,10 +1090,10 @@ Fortsæt?"/>
 Alle gemte ændringer kan ikke fortrydes.
 
 Fortsæt?"/>
-            <CannotMoveDoc title="Flyt til ny instans af Notepad++" message="Dokument er ændret. Gem det og prøv igen."/>
-            <DocReloadWarning title="Genindlæs" message="Er du sikker på, at du vil genindlæse den nuværende fil og miste de ændringer der er lavet i Notepad++?"/>
+            <CannotMoveDoc title="Flyt til ny instans af Mikepad++" message="Dokument er ændret. Gem det og prøv igen."/>
+            <DocReloadWarning title="Genindlæs" message="Er du sikker på, at du vil genindlæse den nuværende fil og miste de ændringer der er lavet i Mikepad++?"/>
             <FileLockedWarning title="Gemning mislykkedes" message="Tjek venligst om filen allerede er åbnet i et andet program"/>
-            <FileAlreadyOpenedInNpp title="" message="Filen er allerede åbnet i Notepad++."/>
+            <FileAlreadyOpenedInNpp title="" message="Filen er allerede åbnet i Mikepad++."/>
             <DeleteFileFailed title="Slet fil" message="Sletning af filen mislykkedes"/>
 
             <NbFileToOpenImportantWarning title="Du er ved at åbne et stort antal filer" message="$INT_REPLACE$ filer er ved at blive åbnet.
@@ -1123,14 +1123,14 @@ Du vil genindlæse den?"/>
             <DoReloadOrNotAndLooseChange title="Genindlæs" message="&quot;$STR_REPLACE$&quot;
 
 Filen er blevet ændret af et andet program.
-Vil du genindlæse den og miste ændringerne som er foretaget i Notepad++?"/>
+Vil du genindlæse den og miste ændringerne som er foretaget i Mikepad++?"/>
             <PrehistoricSystemDetected title="Forhistorisk system registreret" message="Det ser ud til at du stadig bruger et forhistorisk system. Funktionaliteten virker beklageligvis kun på et moderne system."/>
-            <XpUpdaterProblem title="Opdatering af Notepad++" message="Opdatering af Notepad++ er ikke kompatibel med XP pga. det forældede sikkerhedslag under XP.
-Vil du gå til Notepad++-siden for at downloade den seneste version?"/>
-            <GUpProxyConfNeedAdminMode title="Proxyinstillinger" message="Genstart venligst Notepad++ i administrator-tilstand for at konfigurere proxy."/>
+            <XpUpdaterProblem title="Opdatering af Mikepad++" message="Opdatering af Mikepad++ er ikke kompatibel med XP pga. det forældede sikkerhedslag under XP.
+Vil du gå til Mikepad++-siden for at downloade den seneste version?"/>
+            <GUpProxyConfNeedAdminMode title="Proxyinstillinger" message="Genstart venligst Mikepad++ i administrator-tilstand for at konfigurere proxy."/>
             <DocTooDirtyToMonitor title="Problem med overvågning" message="Dokumentet er beskidt. Gem venligst ændringen inden det overvåges."/>
             <DocNoExistToMonitor title="Problem med overvågning" message="Filen skal findes for at kunne overvåges."/>
-            <FileTooBigToOpen title="Problem med filstørrelse" message="Filen er for stor til at blive åbnet af Notepad++"/>
+            <FileTooBigToOpen title="Problem med filstørrelse" message="Filen er for stor til at blive åbnet af Mikepad++"/>
             <CreateNewFileOrNot title="Opret ny fil" message="&quot;$STR_REPLACE$&quot; findes ikke. Skal den oprettes?."/>
             <CreateNewFileError title="Opret ny fil" message="Kan ikke oprette filen &quot;$STR_REPLACE$&quot;."/>
             <OpenFileError title="FEJL" message="Kan ikke åbne filen &quot;$STR_REPLACE$&quot;."/>
@@ -1162,15 +1162,15 @@ giv venligst et andet."/>
             <SCMapperDoDeleteOrNot title="Er du sikker?" message="Er du sikker på, at du vil slette genvejen?"/>
             <FindCharRangeValueError title="Problem med områdeværdi" message="Du skal skrive mellem 0 og 255."/>
             <OpenInAdminMode title="Kunne ikke gemme" message="Filen kan ikke gemmes og den kan være beskyttet.
-Vil du starte Notepad++ i administrator-tilstand?"/>
+Vil du starte Mikepad++ i administrator-tilstand?"/>
             <OpenInAdminModeWithoutCloseCurrent title="Kunne ikke gemme" message="Filen kan ikke gemmes og den kan være beskyttet.
-Vil du starte Notepad++ i administrator-tilstand?"/>
-            <OpenInAdminModeFailed title="Kunne ikke åbne i administrator-tilstand" message="Notepad++ kan ikke åbnes i administrator-tilstand."/>
+Vil du starte Mikepad++ i administrator-tilstand?"/>
+            <OpenInAdminModeFailed title="Kunne ikke åbne i administrator-tilstand" message="Mikepad++ kan ikke åbnes i administrator-tilstand."/>
             <ViewInBrowser title="Vis nuværende fil i browser" message="Kan ikke finde programmet på dit system."/>
-            <ExitToUpdatePlugins title="Notepad++ er ved at afslutte" message="Hvis du klikker på JA, afsluttes Notepad++ så handlingen kan fortsætte.
-Notepad++ genstartes når alle handlingerne er færdige.
+            <ExitToUpdatePlugins title="Mikepad++ er ved at afslutte" message="Hvis du klikker på JA, afsluttes Mikepad++ så handlingen kan fortsætte.
+Mikepad++ genstartes når alle handlingerne er færdige.
 Fortsæt?"/>
-            <NeedToRestartToLoadPlugins title="Notepad++ skal genstartes" message="Du skal genstarte Notepad++ for at indlæse de plugins du har installeret."/>
+            <NeedToRestartToLoadPlugins title="Mikepad++ skal genstartes" message="Du skal genstarte Mikepad++ for at indlæse de plugins du har installeret."/>
         </MessageBox>
         <ClipboardHistory>
             <PanelTitle name="Historik for udklipsholder"/>
@@ -1272,8 +1272,8 @@ Fortsæt?"/>
             <word-chars-list-tab-warning value="$INT_REPLACE$ tabulator(er)"/>
             <word-chars-list-warning-end value="  i din tegnliste."/>
             <cloud-invalid-warning value="Ugyldig sti."/>
-            <cloud-restart-warning value="Genstart venligst Notepad++ så ændringerne kan træde i kraft."/>
-            <cloud-select-folder value="Vælg en mappe fra/til hvor Notepad++ læser/skriver sine indstillinger"/>
+            <cloud-restart-warning value="Genstart venligst Mikepad++ så ændringerne kan træde i kraft."/>
+            <cloud-select-folder value="Vælg en mappe fra/til hvor Mikepad++ læser/skriver sine indstillinger"/>
             <shift-change-direction-tip value="Brug Skift+Enter for at søge i den modsatte retning"/>
             <two-find-buttons-tip value="2 find-knapper-tilstand"/>
             <find-in-files-filter-tip value="Find i cpp, cxx, h, hxx og hpp:

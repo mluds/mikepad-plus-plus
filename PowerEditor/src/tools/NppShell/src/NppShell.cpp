@@ -19,19 +19,19 @@ HINSTANCE _hModule = NULL; // DLL Module.
 //Some global default values for registering the DLL
 
 //Menu
-TCHAR szNppName[] = TEXT("notepad++.exe");
-TCHAR szDefaultMenutext[] = TEXT("Edit with &Notepad++");
+TCHAR szNppName[] = TEXT("mikepad++.exe");
+TCHAR szDefaultMenutext[] = TEXT("Edit with &Mikepad++");
 
 #ifdef WIN64
-TCHAR szShellExtensionTitle[] = TEXT("ANotepad++64");
-TCHAR szShellExtensionKey[] = TEXT("*\\shellex\\ContextMenuHandlers\\ANotepad++64");
+TCHAR szShellExtensionTitle[] = TEXT("AMikepad++64");
+TCHAR szShellExtensionKey[] = TEXT("*\\shellex\\ContextMenuHandlers\\AMikepad++64");
 #else
-TCHAR szShellExtensionTitle[] = TEXT("ANotepad++");
-TCHAR szShellExtensionKey[] = TEXT("*\\shellex\\ContextMenuHandlers\\ANotepad++");
+TCHAR szShellExtensionTitle[] = TEXT("AMikepad++");
+TCHAR szShellExtensionKey[] = TEXT("*\\shellex\\ContextMenuHandlers\\AMikepad++");
 #endif
 
-#define szHelpTextA "Edits the selected file(s) with Notepad++"
-#define szHelpTextW L"Edits the selected file(s) with Notepad++"
+#define szHelpTextA "Edits the selected file(s) with Mikepad++"
+#define szHelpTextW L"Edits the selected file(s) with Mikepad++"
 TCHAR szMenuTitle[TITLE_SIZE];
 TCHAR szDefaultCustomcommand[] = TEXT("");
 //Icon
@@ -142,7 +142,7 @@ BOOL RegisterServer() {
 	lstrcat(szDefaultPath, szNppName);
 
 	if (!CheckNpp(szDefaultPath)) {
-		MsgBoxError(TEXT("To register the Notepad++ shell extension properly,\r\nplace NppShell.dll in the same directory as the Notepad++ executable."));
+		MsgBoxError(TEXT("To register the Mikepad++ shell extension properly,\r\nplace NppShell.dll in the same directory as the Mikepad++ executable."));
 		//return FALSE;
 	}
 
@@ -168,7 +168,7 @@ BOOL RegisterServer() {
 		// Context menu
 		{HKEY_CLASSES_ROOT,	szShellExtensionKey,	NULL,					REG_SZ,		szGUID},
 		// Icon
-		//{HKEY_CLASSES_ROOT,	TEXT("Notepad++_file\\shellex\\IconHandler"),		NULL,					REG_SZ,		szGUID},
+		//{HKEY_CLASSES_ROOT,	TEXT("Mikepad++_file\\shellex\\IconHandler"),		NULL,					REG_SZ,		szGUID},
 
 		{NULL,				NULL,												NULL,					REG_SZ,		NULL}
 	};
@@ -205,9 +205,9 @@ BOOL UnregisterServer() {
 
 	RegDeleteKey(HKEY_CLASSES_ROOT, szShellExtensionKey);
 
-	wsprintf(szKeyTemp, TEXT("Notepad++_file\\shellex\\IconHandler"));
+	wsprintf(szKeyTemp, TEXT("Mikepad++_file\\shellex\\IconHandler"));
 	RegDeleteKey(HKEY_CLASSES_ROOT, szKeyTemp);
-	wsprintf(szKeyTemp, TEXT("Notepad++_file\\shellex"));
+	wsprintf(szKeyTemp, TEXT("Mikepad++_file\\shellex"));
 	RegDeleteKey(HKEY_CLASSES_ROOT, szKeyTemp);
 
 	wsprintf(szKeyTemp, TEXT("CLSID\\%s\\InprocServer32"), szGUID);
@@ -226,7 +226,7 @@ BOOL UnregisterServer() {
 void MsgBox(LPCTSTR lpszMsg) {
 	MessageBox(NULL,
 		lpszMsg,
-		TEXT("Notepad++ Extension"),
+		TEXT("Mikepad++ Extension"),
 		MB_OK);
 }
 
@@ -236,13 +236,13 @@ void MsgBox(LPCTSTR lpszMsg) {
 void MsgBoxError(LPCTSTR lpszMsg) {
 	MessageBox(NULL,
 		lpszMsg,
-		TEXT("Notepad++ Extension: Error"),
+		TEXT("Mikepad++ Extension: Error"),
 		MB_OK | MB_ICONWARNING);
 }
 
 //---------------------------------------------------------------------------
 // CheckNpp
-// Check if the shell handler resides in the same directory as notepad++
+// Check if the shell handler resides in the same directory as mikepad++
 //---------------------------------------------------------------------------
 BOOL CheckNpp(LPCTSTR path) {
 	WIN32_FIND_DATA fd;
@@ -345,14 +345,14 @@ INT_PTR CALLBACK DlgProcSettings(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM 
 					}
 
 					if (showIcon == 1) {
-						result = RegCreateKeyEx(HKEY_CLASSES_ROOT, TEXT("Notepad++_file\\shellex\\IconHandler"), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &settingKey, NULL);
+						result = RegCreateKeyEx(HKEY_CLASSES_ROOT, TEXT("Mikepad++_file\\shellex\\IconHandler"), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &settingKey, NULL);
 						if (result == ERROR_SUCCESS) {
 							result = RegSetValueEx(settingKey, NULL, 0,REG_SZ, (LPBYTE)szGUID, (lstrlen(szGUID)+1)*sizeof(TCHAR));
 							RegCloseKey(settingKey);
 						}
 					} else if (showIcon == 0) {
-						RegDeleteKey(HKEY_CLASSES_ROOT, TEXT("Notepad++_file\\shellex\\IconHandler"));
-						RegDeleteKey(HKEY_CLASSES_ROOT, TEXT("Notepad++_file\\shellex"));
+						RegDeleteKey(HKEY_CLASSES_ROOT, TEXT("Mikepad++_file\\shellex\\IconHandler"));
+						RegDeleteKey(HKEY_CLASSES_ROOT, TEXT("Mikepad++_file\\shellex"));
 					}
 
 					PostMessage(hwndDlg, WM_CLOSE, 0, 0);
@@ -1024,7 +1024,7 @@ STDMETHODIMP CShellExt::InvokeNPP(HWND /*hParent*/, LPCSTR /*pszWorkingDir*/, LP
 	// 2048 characters in XP and 32768 characters in Win7. In the degenerate case where all
 	// paths are of length MAX_PATH, we can open at most x files at once, where:
 	// 260 * (x + 2) = 2048 or 32768 <=> x = 5 or x = 124.
-	// Note the +2 to account for the path to notepad++.exe.
+	// Note the +2 to account for the path to mikepad++.exe.
 	// http://stackoverflow.com/questions/3205027/maximum-length-of-command-line-string
 
 	const UINT kiBatchSize = m_winVer > WINVER_XP ? 100 : 4;

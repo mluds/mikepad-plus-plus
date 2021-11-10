@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -191,7 +191,7 @@ void ScintillaEditView::init(HINSTANCE hInst, HWND hPere)
 	_hSelf = ::CreateWindowEx(
 					0,\
 					TEXT("Scintilla"),\
-					TEXT("Notepad++"),\
+					TEXT("Mikepad++"),\
 					WS_CHILD | WS_VSCROLL | WS_HSCROLL | WS_CLIPCHILDREN | WS_EX_RTLREADING,\
 					0, 0, 100, 100,\
 					_hParent,\
@@ -1411,7 +1411,7 @@ void ScintillaEditView::defineDocType(LangType typeDoc)
 	pStyle = stylers.findByID(defaultIndicatorStyle._styleID);
 	setSpecialIndicator(pStyle ? *pStyle : defaultIndicatorStyle);
 
-    // Il faut surtout faire un test ici avant d'exécuter SCI_SETCODEPAGE
+    // Il faut surtout faire un test ici avant d'exï¿½cuter SCI_SETCODEPAGE
     // Sinon y'aura un soucis de performance!
 	if (isCJK())
 	{

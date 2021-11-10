@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -599,7 +599,7 @@ public:
 		, _month(month)
 		, _day(day)
 	{
-		assert(year > 0 && year <= 9999); // I don't think Notepad++ will last till AD 10000 :)
+		assert(year > 0 && year <= 9999); // I don't think Mikepad++ will last till AD 10000 :)
 		assert(month > 0 && month <= 12);
 		assert(day > 0 && day <= 31);
 		assert(!(month == 2 && day > 29) &&
@@ -618,7 +618,7 @@ public:
 
 	void now();
 
-	generic_string toString() const // Return Notepad++ date format : YYYYMMDD
+	generic_string toString() const // Return Mikepad++ date format : YYYYMMDD
 	{
 		TCHAR dateStr[16];
 		wsprintf(dateStr, TEXT("%04u%02u%02u"), _year, _month, _day);

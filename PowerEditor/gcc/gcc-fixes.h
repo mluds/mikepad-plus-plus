@@ -1,4 +1,4 @@
-// this file contains fixes needed for Notepad++ to be built by GCC
+// this file contains fixes needed for Mikepad++ to be built by GCC
 // the makefile automatically includes this file
 
 static constexpr unsigned int max(unsigned int a, unsigned int b) {

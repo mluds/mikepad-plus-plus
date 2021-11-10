@@ -27,9 +27,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>Notepad++</ProjectName>
+    <ProjectName>Mikepad++</ProjectName>
     <ProjectGuid>{FCF60E65-1B78-4D1D-AB59-4FC00AC8C248}</ProjectGuid>
-    <RootNamespace>Notepad++</RootNamespace>
+    <RootNamespace>Mikepad++</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -147,7 +147,7 @@
       <AdditionalOptions>/fixed:no %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscilexer.lib;imm32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)mikepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile>/TLBID</TypeLibraryFile>
       <TypeLibraryResourceID>5</TypeLibraryResourceID>
@@ -187,7 +187,7 @@
       <AdditionalOptions>/fixed:no %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscilexer.lib;imm32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)mikepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile>/TLBID</TypeLibraryFile>
       <TypeLibraryResourceID>5</TypeLibraryResourceID>
@@ -227,7 +227,7 @@
       <AdditionalOptions>/fixed:no %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscilexer.lib;imm32.lib;msimg32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)mikepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile>/TLBID</TypeLibraryFile>
       <TypeLibraryResourceID>5</TypeLibraryResourceID>
@@ -271,7 +271,7 @@
     <Link>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscilexer.lib;imm32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)mikepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile />
       <TypeLibraryResourceID>1</TypeLibraryResourceID>
@@ -323,7 +323,7 @@ copy ..\src\contextMenu.xml ..\bin\contextMenu.xml
     <Link>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscilexer.lib;imm32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)mikepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile>
       </TypeLibraryFile>
@@ -375,7 +375,7 @@ copy ..\src\contextMenu.xml ..\bin64\contextMenu.xml
     <Link>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscilexer.lib;imm32.lib;msimg32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)mikepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile>
       </TypeLibraryFile>
@@ -830,7 +830,7 @@ copy ..\src\contextMenu.xml ..\binarm64\contextMenu.xml
     <ClInclude Include="..\src\WinControls\ReadDirectoryChanges\ReadFileChanges.h" />
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="..\src\notepad++.exe.manifest" />
+    <Manifest Include="..\src\mikepad++.exe.manifest" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

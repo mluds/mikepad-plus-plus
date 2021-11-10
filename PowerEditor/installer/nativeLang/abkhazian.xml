@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!--  Abkhazian translation for Notepad++
+<!--  Abkhazian translation for Mikepad++
 Updated to v8.1.4:
 - added new lines
 -->
@@ -389,14 +389,14 @@ Updated to v8.1.4:
 					<Item id="48014" name="Иаарттәуп Аплагинқәа рКаталог..."/>
 
 					<Item id="47010" name="Акомандатә цәаҳәа апараметрқәа"/>
-					<Item id="47001" name="Notepad++ апроект асаит"/>
-					<Item id="47002" name="Notepad++ апроект адаҟьа"/>
+					<Item id="47001" name="Mikepad++ апроект асаит"/>
+					<Item id="47002" name="Mikepad++ апроект адаҟьа"/>
 					<Item id="47003" name="Адокументациа Онлаин"/>
-					<Item id="47004" name="Notepad++ Афорум"/>
-					<Item id="47006" name="Ирҿыцтәуп Notepad++"/>
+					<Item id="47004" name="Mikepad++ Афорум"/>
+					<Item id="47006" name="Ирҿыцтәуп Mikepad++"/>
 					<Item id="47009" name="Иазалхтәуп арҿыцра апрокси..."/>
 					<Item id="47012" name="Арҽеира иазку аинформациа"/>
-					<Item id="47000" name="Notepad++ иазкны..."/>
+					<Item id="47000" name="Mikepad++ иазкны..."/>
 					<Item id="42082" name="Икопиатәуп азхьарԥш"/>
 					<Item id="47005" name="Егьырҭ аплагинқәа..."/>
 					<Item id="50005" name="Амакрос аҭаҩра (астарт/аанкылара)"/>
@@ -959,10 +959,10 @@ Updated to v8.1.4:
 					<Item id="6413" name="Афаил Аиқәырхара/Аартра акаталог"/>
 					<Item id="6414" name="Уажәтәи адокумент акаталог"/>
 					<Item id="6415" name="Игәынкылатәуп аҵыхәтәантәи акаталог"/>
-					<Item id="6431" name="Иаартлатәуп афаилқәеи акаталог афаилқәа зегьы, Notepad++ аԥенџьыр ахь рықәырҳәазара аан"/>
+					<Item id="6431" name="Иаартлатәуп афаилқәеи акаталог афаилқәа зегьы, Mikepad++ аԥенџьыр ахь рықәырҳәазара аан"/>
 				</DefaultDir>
 				<FileAssoc title = "Афаилқәа Рассоциациа">
-					<Item id="4008" name="Ари афункциа ахархәаразы, Ҿыц идәықәышәҵа  Notepad++ Администратор ирежим ала."/>
+					<Item id="4008" name="Ари афункциа ахархәаразы, Ҿыц идәықәышәҵа  Mikepad++ Администратор ирежим ала."/>
 					<Item id="4009" name="Иаднакылақәо:"/>
 					<Item id="4010" name="Арегистрациа зызу:"/>
 				</FileAssoc>
@@ -997,7 +997,7 @@ Updated to v8.1.4:
 				</Print>
 				<Searching title="Аԥшаара">
 					<Item id="6901" name="Аԥшаара аԥенџьыр аҭакыра харҭәаалатәӡам иалкаау ажәа ала"/>
-					<Item id="6902" name="Амоноҭбааратә шрифт Аԥшаара аԥенџьыр аҟны (иаҭахуп Notepad++ аиҭадәықәҵара)"/>
+					<Item id="6902" name="Амоноҭбааратә шрифт Аԥшаара аԥенџьыр аҟны (иаҭахуп Mikepad++ аиҭадәықәҵара)"/>
 					<Item id="6903" name="Аԥшаара ашьҭахь ишаарту иааныжьлатәуп Аԥшаара аԥенџьыр"/>
 					<Item id="6904" name="Иазыҳәалатәуп ашьақәырӷәӷәара аоперациа Иалаԥсахтәуп Иаарту Адокументқәа Зегьы рҟны"/>
 					<Item id="6905" name="Алаԥсахра: ииаслатәӡам анаҩстәи аиқәшәарахь."/>
@@ -1060,7 +1060,7 @@ Updated to v8.1.4:
 					<Item id="6344" name="Адокумент Аԥхьахәаԥшра"/>
 					<Item id="6345" name="Аминиатиура Агәылаҵа аҵаҟа"/>
 					<Item id="6346" name="Иаарԥшлатәуп Адокумент Ахсаала аҟны"/>
-					<Item id="6349" name="Ихархә. DirectWrite (ари иалнаршоит испециалу асимволқәа еиӷьны раарԥшра, иаҭахуп Notepad++ аиҭадәықәҵара)"/>
+					<Item id="6349" name="Ихархә. DirectWrite (ари иалнаршоит испециалу асимволқәа еиӷьны раарԥшра, иаҭахуп Mikepad++ аиҭадәықәҵара)"/>
 					<Item id="6360" name="Иаҿыхтәуп абжьқәа зегьы"/>
 					<Item id="6361" name="Иаҿактәуп Еиқәырхатәуп Зегьы ашьақәырӷәӷәара"/>
 				</MISC>
@@ -1069,7 +1069,7 @@ Updated to v8.1.4:
 					<Item id="6152" name="Асессиақәа рымацара роуп иаатуа аԥенџьыр ҿыц аҟны"/>
 					<Item id="6153" name="Фаилцԥхьаӡа аатуеит аԥенџьыр ҿыц аҟны"/>
 					<Item id="6154" name="Афаилқәа зегьы аатуеит ԥенџьырк аҟны (иԥсахымзар)"/>
-					<Item id="6155" name="* Аԥсахрақәа амч роуеит Notepad++ аиҭадәықәҵара ашьҭахь"/>
+					<Item id="6155" name="* Аԥсахрақәа амч роуеит Mikepad++ аиҭадәықәҵара ашьҭахь"/>
 				</MultiInstance>
 				<Delimiter title = "Аиҟәшага">
 					<Item id="6251" name="Аиҟәшага апараметрқәа (Ctrl + аҳәынаԥ 2 -нтә ақәыӷәӷәара)"/>
@@ -1189,13 +1189,13 @@ Updated to v8.1.4:
 			</DoSaveOrNot>
 		</Dialog>
 		<MessageBox>
-			<ContextMenuXmlEditWarning  title="contextMenu Аредакциазура"              message="contextMenu.xml аԥсахра иалнаршоит ишәхатәу ицәырҵуа амениу архиара Notepad++ аконтексттә мениу аҟны.&#x0A;Ҿыц идәықәҵатәуп Notepad++, аԥсахрақәа амч роурц азы."/>
+			<ContextMenuXmlEditWarning  title="contextMenu Аредакциазура"              message="contextMenu.xml аԥсахра иалнаршоит ишәхатәу ицәырҵуа амениу архиара Mikepad++ аконтексттә мениу аҟны.&#x0A;Ҿыц идәықәҵатәуп Mikepad++, аԥсахрақәа амч роурц азы."/>
 			<SaveCurrentModifWarning    title="Уажәтәи Аԥсахрақәа Реиқәырхара"         message="Шәара еиқәшәырхароуп уажәтәи аԥсахрақәа.&#x0A;Еиқәырхоу аԥсахрақәа зегьы раԥыхра ауам.&#x0A;&#x0A;Иацҵатәума?"/>
 			<LoseUndoAbilityWarning     title="Шьҭахьҟа ахынҳәра Алшара Ацәыӡра"       message="Шәара еиқәшәырхароуп уажәтәи аԥсахрақәа.&#x0A;Еиқәырхоу аԥсахрақәа зегьы раԥыхра ауам.&#x0A;&#x0A;Иацҵатәума?"/>
-			<CannotMoveDoc              title="Notepad++ иҿыцу аекземплиар ахь аиасра" message="Адокумент ԥсахын, еиқәшәырха нас еиҭанашәыгӡа."/>
-			<DocReloadWarning           title="Аиҭадәықәҵара"                          message="Notepad++ аҟны иҟаҵаз аԥсахрақәа зегьы ырӡхоит!&#x0A;Иацҵатәума?"/>
+			<CannotMoveDoc              title="Mikepad++ иҿыцу аекземплиар ахь аиасра" message="Адокумент ԥсахын, еиқәшәырха нас еиҭанашәыгӡа."/>
+			<DocReloadWarning           title="Аиҭадәықәҵара"                          message="Mikepad++ аҟны иҟаҵаз аԥсахрақәа зегьы ырӡхоит!&#x0A;Иацҵатәума?"/>
 			<FileLockedWarning          title="Аиқәырхара амуӡеит"                     message="Игәашәҭ, ари афаил даҽа программак аҟны иаарту иаартыму."/>
-			<FileAlreadyOpenedInNpp     title=""                                       message="Афаил аартуп Notepad++ аҟны."/>
+			<FileAlreadyOpenedInNpp     title=""                                       message="Афаил аартуп Mikepad++ аҟны."/>
 			<DeleteFileFailed           title="Афаил Аныхра"                           message="Афаил аныхра амуӡеит"/>
 
 			<RenameTabTemporaryNameAlreadyInUse title="Иамуӡеит ахьӡ аԥсахра"           message="Иарбоу ахьӡ ахархәара амоуп егьа агәылаҵа аҟны."/>
@@ -1212,12 +1212,12 @@ Updated to v8.1.4:
 			<DoDeleteOrNot               title="Афаил Аныхра"                    message="Афаил &quot;$STR_REPLACE$&quot;&#x0A;аркны ианыххоит Аҵәахырҭахь.&#x0A;Иацҵатәума?"/>
 			<NoBackupDoSaveFile          title="Аиқәырхара ..."                  message="Арезерв копиа афаил ԥшаам (ианыхуп дәныҟала).&#x0A;Еиқәшәырха иара, мамзар ишәхатәу адырқәа ыӡуеит.&#x0A;Еиқәырхатәума афаил &quot;$STR_REPLACE$&quot; ?"/>
 			<DoReloadOrNot               title="Афаил арҿыцра"                   message="&quot;$STR_REPLACE$&quot;&#x0A;&#x0A;Ари афаил ԥсахын даҽа программак ала.&#x0A;Ишәҭахума иара шәырҿыцыр?"/>
-			<DoReloadOrNotAndLooseChange title="Афаил арҿыцра"                   message="&quot;$STR_REPLACE$&quot;&#x0A;&#x0A;Ари афаил ԥсахын даҽа программак ала.&#x0A;Ишәҭахума иара шәырҿыцыр?&#x0A;Аха усҟан шәара ишәцәыӡуеит Notepad++ аҟны иҟашәҵаз аԥсахрақәа зегьы."/>
+			<DoReloadOrNotAndLooseChange title="Афаил арҿыцра"                   message="&quot;$STR_REPLACE$&quot;&#x0A;&#x0A;Ари афаил ԥсахын даҽа программак ала.&#x0A;Ишәҭахума иара шәырҿыцыр?&#x0A;Аха усҟан шәара ишәцәыӡуеит Mikepad++ аҟны иҟашәҵаз аԥсахрақәа зегьы."/>
 			<PrehistoricSystemDetected   title="Иԥшаауп ижәытәӡатәиу асистема"       message="Шәхы иашәырхәо асистема ажәхьеит. Ари афункциа ахархәара ахьауа иҿыцу асистемақәа рҟны ауп."/>
-			<XpUpdaterProblem            title="Notepad++ Арҿыцра"                   message="Notepad++ Арҿыцра ауам XP аҟны, иажәыз ашәарҭадара аҩаӡара иахҟьаны.&#x0A;Ишәҭахума Notepad++ адаҟьа ахь аиасра, аҵыхәтәантәи аверсиа аҭагалара азы?"/>
+			<XpUpdaterProblem            title="Mikepad++ Арҿыцра"                   message="Mikepad++ Арҿыцра ауам XP аҟны, иажәыз ашәарҭадара аҩаӡара иахҟьаны.&#x0A;Ишәҭахума Mikepad++ адаҟьа ахь аиасра, аҵыхәтәантәи аверсиа аҭагалара азы?"/>
 			<DocTooDirtyToMonitor        title="Амониторинг Апроблема"               message="Адокумент аус адулара цоит. Еиқәшәырха иҟаҵоу аԥсахрақәа, иара амониторинг аԥхьа."/>
 			<DocNoExistToMonitor         title="Амониторинг Апроблема"               message="Амониторинг азы афаил ыҟазароуп."/>
-			<FileTooBigToOpen            title="Афаил ашәагаа апроблема"             message="Афаил дуцәоуп, Notepad++ аҟны аартра азы"/>
+			<FileTooBigToOpen            title="Афаил ашәагаа апроблема"             message="Афаил дуцәоуп, Mikepad++ аҟны аартра азы"/>
 			<CreateNewFileOrNot          title="Афаил ҿыц аԥҵара"                    message="&quot;$STR_REPLACE$&quot; ыҟаӡам. Иаԥҵатәума?"/>
 			<CreateNewFileError          title="Афаил ҿыц аԥҵара"                    message="Иауам афаил &quot;$STR_REPLACE$&quot;аԥҵара."/>
 			<OpenFileError               title="АГХА"                                message="Иауам афаил &quot;$STR_REPLACE$&quot;аартра."/>
@@ -1241,12 +1241,12 @@ Updated to v8.1.4:
 			<UDLRemoveCurrentLang                title="Уажәтәи абызшәа аныхра"          message="Шәақәшаҳаҭума?"/>
 			<SCMapperDoDeleteOrNot               title="Акоманда аныхра"                 message="Ишәҭахума ари акоманда асиа аныхра?"/>
 			<FindCharRangeValueError             title="Адиапазон аҵакы апроблема"                  message="Шәара иҭажәгалароуп 0 инаркны 255 аҟынӡа."/>
-			<OpenInAdminMode                     title="Аиқәырхара Агха"                            message="Афаил аиқәырхара ауам, иҟалап ихьчазар.&#x0A;Ишәҭахума Notepad++ администратор ирежим ала адәықәҵара?"/>
-			<OpenInAdminModeWithoutCloseCurrent  title="Аиқәырхара Агха"                            message="Афаил аиқәырхара ауам, иҟалап ихьчазар.&#x0A;Ишәҭахума Notepad++ администратор ирежим ала адәықәҵара?"/>
-			<OpenInAdminModeFailed               title="Иамуӡеит аартра Администратор ирежим ала"   message="Notepad++ аартра ауам Администратор ирежим ала."/>
+			<OpenInAdminMode                     title="Аиқәырхара Агха"                            message="Афаил аиқәырхара ауам, иҟалап ихьчазар.&#x0A;Ишәҭахума Mikepad++ администратор ирежим ала адәықәҵара?"/>
+			<OpenInAdminModeWithoutCloseCurrent  title="Аиқәырхара Агха"                            message="Афаил аиқәырхара ауам, иҟалап ихьчазар.&#x0A;Ишәҭахума Mikepad++ администратор ирежим ала адәықәҵара?"/>
+			<OpenInAdminModeFailed               title="Иамуӡеит аартра Администратор ирежим ала"   message="Mikepad++ аартра ауам Администратор ирежим ала."/>
 			<ViewInBrowser                       title="Иаарттәуп абри афаил Абраузер аҟны"         message="Иаҭаху апрограмма ԥшаам шәара шәсистема аҟны."/>
-			<ExitToUpdatePlugins                 title="Notepad++ аусура ахыркәшара"                message="Аоперациа ацҵара азы Notepad++ аусура хнаркәшоит.&#x0A;Аоперациақәа зегьы рынагӡара ашьҭахь апрограмма ҿыц идәықәҵахоит.&#x0A;Иацҵатәума?"/>
-			<NeedToRestartToLoadPlugins          title="Ихымԥадатәиуп Notepad++ аиҭадәықәҵара"      message="Иҭагалоу аплагинқәа рықәыргыларазы ихымԥадатәиуп Notepad++ аиҭадәықәҵара."/>
+			<ExitToUpdatePlugins                 title="Mikepad++ аусура ахыркәшара"                message="Аоперациа ацҵара азы Mikepad++ аусура хнаркәшоит.&#x0A;Аоперациақәа зегьы рынагӡара ашьҭахь апрограмма ҿыц идәықәҵахоит.&#x0A;Иацҵатәума?"/>
+			<NeedToRestartToLoadPlugins          title="Ихымԥадатәиуп Mikepad++ аиҭадәықәҵара"      message="Иҭагалоу аплагинқәа рықәыргыларазы ихымԥадатәиуп Mikepad++ аиҭадәықәҵара."/>
 			<SaveAllConfirm                      title="Еиқәырхатәуп Зегьы Ашьақәырӷәӷәара"         message="Ишәҭахума адокументқәа зегьы реиқәырхара?&#x0A;&#x0A;Иалышәх &quot;Аҟәыхра&quot; еснагь аҭакс иҟашәҵозар &quot;Ааи&quot; усҟан уаҳәа азҵаара шәыҭахаӡом.&#x0A; Шәара ишәылшоит ари алиалог аԥенџьыр ҽазнык иактивны иҟашәҵарц амениу Архиарақәа хархәаны."/>
 		</MessageBox>
 		<ClipboardHistory>
@@ -1293,7 +1293,7 @@ Updated to v8.1.4:
 				<Item id="3512" name="Иқәгатәуп зегьы"/>
 				<Item id="3513" name="Иацҵатәуп акаталог"/>
 				<Item id="3514" name="Асистема ала адәықәҵара"/>
-				<Item id="3515" name="Иаарттәуп Notepad++ аҟны"/>
+				<Item id="3515" name="Иаарттәуп Mikepad++ аҟны"/>
 				<Item id="3516" name="Икопиатәуп амҩа"/>
 				<Item id="3517" name="Иԥшаатәуп Афаилқәа рҟны..."/>
 				<Item id="3518" name="Иаарттәуп аобиект акаталог"/>
@@ -1356,8 +1356,8 @@ Updated to v8.1.4:
 			<word-chars-list-tab-warning   value="TAB(қәа $INT_REPLACE$"/>
 			<word-chars-list-warning-end   value="  шәара шәсимволқәа рсиа аҟны."/>
 			<cloud-invalid-warning         value="Изымуа амҩа."/>
-			<cloud-restart-warning         value="Ҿыц идәықәышәҵа  Notepad++, аԥсахрақәа амч роурц азы."/>
-			<cloud-select-folder           value="Иалышәх акаталог, архиарақәа аԥхьара/аҭаҩра рзы Notepad++ ахы ианархәо."/>
+			<cloud-restart-warning         value="Ҿыц идәықәышәҵа  Mikepad++, аԥсахрақәа амч роурц азы."/>
+			<cloud-select-folder           value="Иалышәх акаталог, архиарақәа аԥхьара/аҭаҩра рзы Mikepad++ ахы ианархәо."/>
 			<shift-change-direction-tip    value="Шәхы иашәырхәа Shift+Enter шьҭахьҟатәи аԥшаара азы."/>
 			<two-find-buttons-tip          value="Аԥшаара ахырхарҭақәа"/>
 			<find-in-files-filter-tip      value="Иԥшаатәуп афаилқәа: *.cpp *.cxx *.h *.hxx *.hpp рҟны,hpp&#x0A;&#x0A;Афаилқәа:&#x0A;*.* !*.exe !*.obj !*.log аламҵакәа"/>

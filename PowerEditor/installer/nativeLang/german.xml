@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <!--
-	German localization for Notepad++
+	German localization for Mikepad++
 	last modified: 2021-09-15 by schnurlos (schnurlos@gmail.com)
 
 	Please e-mail errors, suggestions etc. to schnurlos@gmail.com or janschreiber(at)users.sf.net
@@ -331,13 +331,13 @@
 					<Item id="46180" name="Benutzerdefiniert"/>
 					<Item id="47000" name="&amp;Info …"/>
 					<Item id="47010" name="&amp;Kommandozeilenparameter …"/>
-					<Item id="47001" name="Notepad++ im &amp;Web"/>
-					<Item id="47002" name="Notepad++ bei &amp;GitHub"/>
-					<Item id="47003" name="Notepad++ Online-Dokumentation"/>
-					<Item id="47004" name="Notepad++ Online-Forum"/>
+					<Item id="47001" name="Mikepad++ im &amp;Web"/>
+					<Item id="47002" name="Mikepad++ bei &amp;GitHub"/>
+					<Item id="47003" name="Mikepad++ Online-Dokumentation"/>
+					<Item id="47004" name="Mikepad++ Online-Forum"/>
 					<Item id="47012" name="Debug-Info"/>
 					<Item id="47005" name="&amp;Erweiterungen"/>
-					<Item id="47006" name="Notepad++ &amp;aktualisieren"/>
+					<Item id="47006" name="Mikepad++ &amp;aktualisieren"/>
 					<Item id="47009" name="&amp;Proxy für Updater einstellen …"/>
 					<Item id="48005" name="Plugin(s) &amp;importieren …"/>
 					<Item id="48006" name="Stil-&amp;Thema(en) importieren …"/>
@@ -937,7 +937,7 @@ Mehrere Spaltenmarkierungen können definiert werden, indem die verschiedenen Za
 				</DefaultDir>
 
 				<FileAssoc title="Dateiverknüpfungen">
-					<Item id="4008" name="Um diese Option zu nutzen muss Notepad++ im Administrator-Modus neu gestartet werden."/>
+					<Item id="4008" name="Um diese Option zu nutzen muss Mikepad++ im Administrator-Modus neu gestartet werden."/>
 					<Item id="4009" name="Unterstützte Erw.:"/>
 					<Item id="4010" name="Registrierte Erw.:"/>
 				</FileAssoc>
@@ -1002,7 +1002,7 @@ Mehrere Spaltenmarkierungen können definiert werden, indem die verschiedenen Za
 
 				<Searching title="Suche">
 					<Item id="6901" name="Gewähltes Wort nicht ins Suchfenster der Suche"/>
-					<Item id="6902" name="Festbreitenschrift im Dialogfeld 'Suchen' verwenden (Neustart von Notepad++ erforderlich)."/>
+					<Item id="6902" name="Festbreitenschrift im Dialogfeld 'Suchen' verwenden (Neustart von Mikepad++ erforderlich)."/>
 					<Item id="6903" name="Der Suchdialog bleibt nach der Suche geöffnet, die im Ergebnisfenster ausgegeben wird"/>
 					<Item id="6904" name="Bestätigung für 'Alle Ersetzen' in allen offenen Dokumenten"/>
 					<Item id="6905" name="Ersetzen: Nicht zum folgenden Vorkommen springen"/>
@@ -1060,7 +1060,7 @@ Mehrere Spaltenmarkierungen können definiert werden, indem die verschiedenen Za
 					<Item id="6152" name="Sitzungsdateien in einer neuen Instanz öffnen"/>
 					<Item id="6153" name="Immer im Mehrinstanzmodus"/>
 					<Item id="6154" name="Standard (nur eine Instanz)"/>
-					<Item id="6155" name="Nach Änderung der Einstellung muss Notepad++ neu gestartet werden."/>
+					<Item id="6155" name="Nach Änderung der Einstellung muss Mikepad++ neu gestartet werden."/>
 				</MultiInstance>
 
 				<Delimiter title="Trennzeichen">
@@ -1111,7 +1111,7 @@ Mehrere Spaltenmarkierungen können definiert werden, indem die verschiedenen Za
 					<Item id="6324" name="Dokumentenumschalter (Strg+Tab)"/>
 					<Item id="6331" name="Nur Dateinamen in Titelleiste anzeigen"/>
 					<Item id="6334" name="Kodierung automatisch erkennen"/>
-					<Item id="6349" name="Verwende DirectWrite (kann die Darstellung von Sonderzeichen verbessern - Neustart von Notepad++ erforderlich)"/>
+					<Item id="6349" name="Verwende DirectWrite (kann die Darstellung von Sonderzeichen verbessern - Neustart von Mikepad++ erforderlich)"/>
 					<Item id="6337" name="Arbeitsbereich Dateierw.:"/>
 					<Item id="6114" name="Aktivieren"/>
 					<Item id="6117" name="In Reihenfolge der Benutzung"/>
@@ -1184,8 +1184,8 @@ Diese Wahl kann jederzeit in den Einstellungen angepasst werden."/>
 			</DoSaveAll> <!-- HowToReproduce: Check the 'Enable Save All confirm dialog' checkbox in Preference->MISC, now click 'Save all' -->
 		</Dialog>
 		<MessageBox> <!-- $INT_REPLACE$ is a place holder, don't translate it -->
-			<ContextMenuXmlEditWarning title="Kontextmenü anpassen" message="Durch Bearbeiten der Datei contextMenu.xml können Sie das Kontextmenü von Notepad++ anpassen.
-Nach dem Bearbeiten müssen Sie Notepad++ neu starten, damit die Änderungen wirksam werden."/>
+			<ContextMenuXmlEditWarning title="Kontextmenü anpassen" message="Durch Bearbeiten der Datei contextMenu.xml können Sie das Kontextmenü von Mikepad++ anpassen.
+Nach dem Bearbeiten müssen Sie Mikepad++ neu starten, damit die Änderungen wirksam werden."/>
 			<SaveCurrentModifWarning title="Änderungen speichern" message="Bitte speichern Sie Ihre Änderungen.
 Alle gespeicherten Änderungen können nicht rückgängig gemacht werden.
 
@@ -1195,13 +1195,13 @@ Alle gespeicherten Änderungen können nicht rückgängig gemacht werden.
 
 Fortfahren?"/> <!-- HowToReproduce: when you openned file is modified but unsaved yet, and you are changing file encoding. -->
 			<CannotMoveDoc title="In neue Instanz verschieben" message="Dokument wurde geändert.&#x0A;Bitte zuerst speichern und erneut versuchen."/>
-			<DocReloadWarning title="Datei wurde geändert!" message="Sind Sie sicher, dass Sie die Datei in der zuletzt&#x0A;gespeicherten Version erneut laden und die&#x0A;in Notepad++ gemachten Änderungen verwerfen wollen?"/>
-			<FileLockedWarning title="Speichern fehlgeschlagen!" message="Datei konnte von Notepad++ nicht gespeichert werden. &#x0A;Bitte überprüfen Sie, ob die Datei in einem anderen Programm geöffnet ist."/>
-			<FileAlreadyOpenedInNpp title="Datei bereits geöffnet" message="Die Datei ist bereits in Notepad++ geöffnet."/>
+			<DocReloadWarning title="Datei wurde geändert!" message="Sind Sie sicher, dass Sie die Datei in der zuletzt&#x0A;gespeicherten Version erneut laden und die&#x0A;in Mikepad++ gemachten Änderungen verwerfen wollen?"/>
+			<FileLockedWarning title="Speichern fehlgeschlagen!" message="Datei konnte von Mikepad++ nicht gespeichert werden. &#x0A;Bitte überprüfen Sie, ob die Datei in einem anderen Programm geöffnet ist."/>
+			<FileAlreadyOpenedInNpp title="Datei bereits geöffnet" message="Die Datei ist bereits in Mikepad++ geöffnet."/>
 			<RenameTabTemporaryNameAlreadyInUse title="Umbenennen fehlgeschlagen" message="Der angegebene Name wird bereits in einem anderen Tab verwendet."/> <!-- HowToReproduce: Rename the tab of an untitled document and provide a name that is the same as an already-existing tab of an untitled document. -->
 			<DeleteFileFailed title="Löschen fehlgeschlagen!" message="Datei konnte nicht gelöscht werden."/>
 
-			<NbFileToOpenImportantWarning title="Viele Dateien zu öffnen" message="$INT_REPLACE$ Dateien sollen in Notepad++ geöffnet werden.
+			<NbFileToOpenImportantWarning title="Viele Dateien zu öffnen" message="$INT_REPLACE$ Dateien sollen in Mikepad++ geöffnet werden.
 Sind Sie sicher?"/>
 			<SettingsOnCloudError title="Cloud-Einstellungen" message="Der Pfad zu den Einstellungen in der Cloud dürfte auf ein Laufwerk nur mit Leserechten
 oder auf ein Verzeichnis ohne die erforderlichen Schreibrechte zeigen.
@@ -1230,12 +1230,12 @@ Soll die Datei erneut geladen werden?"/>
 Diese Datei wurde durch ein anderes Programm geändert.
 Soll die Datei erneut geladen werden und die Änderungen ignoriert werden?"/>
 			<PrehistoricSystemDetected title="Altes Betriebssystem festgestellt" message="Anscheinend wird hier ein veraltetest Betriebssystem verwendet - diese Funktion geht leider nur mit einem modernen Betriebssystem."/>
-			<XpUpdaterProblem title="Automatisches Update" message="Die Update-Funktion von Notepad++ ist mit Windows XP wegen fehlender Sicherheitsebene nicht kompatibel.
-Soll auf die Homepage von Notepad++ gewechselt werden um die aktuellste Version herunterzuladen?"/>
-			<GUpProxyConfNeedAdminMode title="Proxyeinstellungen" message="Um Proxyeinstellungen vorzunehmen muss Notepad++ im Administrator-Modus neu gestartet werden."/>
+			<XpUpdaterProblem title="Automatisches Update" message="Die Update-Funktion von Mikepad++ ist mit Windows XP wegen fehlender Sicherheitsebene nicht kompatibel.
+Soll auf die Homepage von Mikepad++ gewechselt werden um die aktuellste Version herunterzuladen?"/>
+			<GUpProxyConfNeedAdminMode title="Proxyeinstellungen" message="Um Proxyeinstellungen vorzunehmen muss Mikepad++ im Administrator-Modus neu gestartet werden."/>
 			<DocTooDirtyToMonitor title="Überwachungsproblem" message="Die Datei ist unsauber. Bitte vor der Überwachung die Änderungen speichern."/>
 			<DocNoExistToMonitor title="Überwachungsproblem" message="Die Datei muss existieren um überwacht werden zu können."/>
-			<FileTooBigToOpen title="Problem mit Dateigröße" message="Die Datei ist zu groß um mit Notepad++ geöffnet zu werden."/>
+			<FileTooBigToOpen title="Problem mit Dateigröße" message="Die Datei ist zu groß um mit Mikepad++ geöffnet zu werden."/>
 			<CreateNewFileOrNot title="Neue Datei erstellen" message="&quot;$STR_REPLACE$&quot; existiert nicht. Soll die Datei erstellt werden?"/>
 			<CreateNewFileError title="Neue Datei erstellen" message="Kann Datei &quot;$STR_REPLACE$&quot; nicht erstellen."/>
 			<OpenFileError title="Fehler" message="Kann Datei &quot;$STR_REPLACE$&quot; nicht öffnen."/>
@@ -1268,15 +1268,15 @@ Bitte daher eine anderen Namen wählen."/>
 			<SCMapperDoDeleteOrNot title="Wirklich?" message="Soll die Tastenkombination wirklich gelöscht werden?"/>
 			<FindCharRangeValueError title="Problem mit Wertebereich" message="Der Wert muss zwischen 0 und 255 liegen."/>
 			<OpenInAdminMode title="Speichern fehlgeschlagen" message="Die Datei konnte nicht gespeichert werden, eventuell wegen vorhandenem Schreibschutz.
-Soll dazu Notepad++ im Administrator-Modus gestartet werden?"/>
+Soll dazu Mikepad++ im Administrator-Modus gestartet werden?"/>
 			<OpenInAdminModeWithoutCloseCurrent title="Speichern fehlgeschlagen" message="Die Datei konnte nicht gespeichert werden, eventuell wegen vorhandenem Schreibschutz.
-Soll dazu Notepad++ im Administrator-Modus gestartet werden?"/>
-			<OpenInAdminModeFailed title="Öffnen im Administrator-Modus fehlgeschlagen" message="Notepad++ konnte nicht im Administrator-Modus gestartet werden."/>
+Soll dazu Mikepad++ im Administrator-Modus gestartet werden?"/>
+			<OpenInAdminModeFailed title="Öffnen im Administrator-Modus fehlgeschlagen" message="Mikepad++ konnte nicht im Administrator-Modus gestartet werden."/>
 			<ViewInBrowser title="Aktuelle Datei im Browser betrachten" message="Die Anwendung konnte nicht gefunden werden."/>
-			<ExitToUpdatePlugins title="Notepad++ wird beendet" message="Beim Drücken auf 'JA' wird Notepad++ beendet um die Vorgänge abzuschließen.
-Notepad++ wird neu gestartet.
+			<ExitToUpdatePlugins title="Mikepad++ wird beendet" message="Beim Drücken auf 'JA' wird Mikepad++ beendet um die Vorgänge abzuschließen.
+Mikepad++ wird neu gestartet.
 Fortsetzen?"/>
-			<NeedToRestartToLoadPlugins title="Notepad++ muss neu gestartet werden" message="Ein Neustart von Notepad++ zum Laden der Plugins ist erforderlich."/>
+			<NeedToRestartToLoadPlugins title="Mikepad++ muss neu gestartet werden" message="Ein Neustart von Mikepad++ zum Laden der Plugins ist erforderlich."/>
 		</MessageBox>
 		<ClipboardHistory>
 			<PanelTitle name="Zwischenablage"/>
@@ -1387,8 +1387,8 @@ Fortsetzen?"/>
 			<word-chars-list-tab-warning value="$INT_REPLACE$ Tab(s)"/>
 			<word-chars-list-warning-end value=" in der Liste der Wortzeichen."/>
 			<cloud-invalid-warning value="Ungültiger Pfad."/>
-			<cloud-restart-warning value="Zum Übernehmen Notepad++ bitte neu starten."/>
-			<cloud-select-folder value="Verzeichnis wählen von wo/wohin Notepad++ seine Einstellungen liest bzw. schreibt"/>
+			<cloud-restart-warning value="Zum Übernehmen Mikepad++ bitte neu starten."/>
+			<cloud-select-folder value="Verzeichnis wählen von wo/wohin Mikepad++ seine Einstellungen liest bzw. schreibt"/>
 			<shift-change-direction-tip value="Shift+Enter verwenden um die Suchrichtung umzudrehen."/>
 			<two-find-buttons-tip value="Modus mit 2 Suchknöpfen"/>
 			<file-rename-title value="Umbenennen"/>

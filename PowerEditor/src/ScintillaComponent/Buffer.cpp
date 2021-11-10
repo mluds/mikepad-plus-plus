@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -757,12 +757,12 @@ bool FileManager::moveFile(BufferID id, const TCHAR * newFileName)
 
 /*
 Specs and Algorithm of session snapshot & periodic backup system:
-Notepad++ quits without asking for saving unsaved file.
+Mikepad++ quits without asking for saving unsaved file.
 It restores all the unsaved files and document as the states they left.
 
 For existing file (c:\tmp\foo.h)
 	- Open
-	In the next session, Notepad++
+	In the next session, Mikepad++
 	1. load backup\FILENAME@CREATION_TIMESTAMP (backup\foo.h@198776) if exist, otherwise load FILENAME (c:\tmp\foo.h).
 	2. if backup\FILENAME@CREATION_TIMESTAMP (backup\foo.h@198776) is loaded, set it dirty (red).
 	3. if backup\FILENAME@CREATION_TIMESTAMP (backup\foo.h@198776) is loaded, last modif timestamp of FILENAME (c:\tmp\foo.h), compare with tracked timestamp (in session.xml).
@@ -776,13 +776,13 @@ For existing file (c:\tmp\foo.h)
 	3. before switch off to another tab (or close files on exit), check 1 & 2 (sync with backup).
 
 	- Close
-	In the current session, Notepad++
+	In the current session, Mikepad++
 	1. track FILENAME@CREATION_TIMESTAMP (backup\foo.h@198776) if exist (in session.xml).
 	2. track last modified timestamp of FILENAME (c:\tmp\foo.h) if FILENAME@CREATION_TIMESTAMP (backup\foo.h@198776) was tracked  (in session.xml).
 
 For untitled document (new  4)
 	- Open
-	In the next session, Notepad++
+	In the next session, Mikepad++
 	1. open file UNTITLED_NAME@CREATION_TIMESTAMP (backup\new  4@198776)
 	2. set label as UNTITLED_NAME (new  4) and disk icon as red.
 
@@ -794,7 +794,7 @@ For untitled document (new  4)
 	3. before switch off to another tab (or close documents on exit), check 1 & 2 (sync with backup).
 
 	- CLOSE
-	In the current session, Notepad++
+	In the current session, Mikepad++
 	1. track UNTITLED_NAME@CREATION_TIMESTAMP (backup\new  4@198776) in session.xml.
 */
 
@@ -1281,7 +1281,7 @@ bool FileManager::loadFileData(Document doc, const TCHAR * filename, char* data,
 		NativeLangSpeaker *pNativeSpeaker = (NppParameters::getInstance()).getNativeLangSpeaker();
 		pNativeSpeaker->messageBox("FileTooBigToOpen",
 										NULL,
-										TEXT("File is too big to be opened by Notepad++"),
+										TEXT("File is too big to be opened by Mikepad++"),
 										TEXT("File size problem"),
 										MB_OK|MB_APPLMODAL);
 
@@ -1407,7 +1407,7 @@ bool FileManager::loadFileData(Document doc, const TCHAR * filename, char* data,
 		NativeLangSpeaker *pNativeSpeaker = (NppParameters::getInstance()).getNativeLangSpeaker();
 		pNativeSpeaker->messageBox("FileTooBigToOpen",
 			NULL,
-			TEXT("File is too big to be opened by Notepad++"),
+			TEXT("File is too big to be opened by Mikepad++"),
 			TEXT("File size problem"),
 			MB_OK | MB_APPLMODAL);
 		success = false;

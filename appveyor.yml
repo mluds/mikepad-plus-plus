@@ -48,24 +48,24 @@ for:
   after_build:
     # artifacts
     - ps: |
-        $nppFileName = "Notepad++.$env:platform.$env:configuration.exe"
+        $nppFileName = "Mikepad++.$env:platform.$env:configuration.exe"
         if ("$env:platform/$env:configuration" -eq "Win32/Release") {
-            Push-AppveyorArtifact "PowerEditor\bin\Notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "PowerEditor\bin\Mikepad++.exe" -FileName "$nppFileName"
         }
         if ("$env:platform/$env:configuration" -eq "Win32/Debug") {
-            Push-AppveyorArtifact "PowerEditor\visual.net\Debug\Notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "PowerEditor\visual.net\Debug\Mikepad++.exe" -FileName "$nppFileName"
         }
         if ("$env:platform/$env:configuration" -eq "x64/Release") {
-            Push-AppveyorArtifact "PowerEditor\bin64\Notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "PowerEditor\bin64\Mikepad++.exe" -FileName "$nppFileName"
         }
         if ("$env:platform/$env:configuration" -eq "x64/Debug") {
-            Push-AppveyorArtifact "PowerEditor\visual.net\x64\Debug\Notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "PowerEditor\visual.net\x64\Debug\Mikepad++.exe" -FileName "$nppFileName"
         }
         if ("$env:platform/$env:configuration" -eq "arm64/Release") {
-            Push-AppveyorArtifact "PowerEditor\binarm64\Notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "PowerEditor\binarm64\Mikepad++.exe" -FileName "$nppFileName"
         }
         if ("$env:platform/$env:configuration" -eq "arm64/Debug") {
-            Push-AppveyorArtifact "PowerEditor\visual.net\arm64\Debug\Notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "PowerEditor\visual.net\arm64\Debug\Mikepad++.exe" -FileName "$nppFileName"
         }
     # xml files syntax checks
     - if "%platform%/%configuration%" EQU "Win32/Debug" set PATH=C:\Python38;C:\Python38\Scripts;%PATH%
@@ -74,7 +74,7 @@ for:
     # tests
     - ps: |
         if ("$env:platform/$env:configuration" -eq "Win32/Debug") {
-            Copy-Item "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\visual.net\Debug\Notepad++.exe" -Destination "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\bin"
+            Copy-Item "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\visual.net\Debug\Mikepad++.exe" -Destination "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\bin"
             Copy-Item "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\src\langs.model.xml" -Destination "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\bin"
             Copy-Item "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\src\stylers.model.xml" -Destination "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\bin"
             Copy-Item "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\src\shortcuts.xml" -Destination "$env:APPVEYOR_BUILD_FOLDER\PowerEditor\bin"
@@ -105,10 +105,10 @@ for:
   after_build:
     # artifacts
     - ps: |
-        $nppFileName = "Notepad++.$env:compiler.$env:platform.$env:configuration.exe"
+        $nppFileName = "Mikepad++.$env:compiler.$env:platform.$env:configuration.exe"
         if ("$env:platform/$env:configuration" -eq "i686/Release") {
-            Push-AppveyorArtifact "bin.i686\notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "bin.i686\mikepad++.exe" -FileName "$nppFileName"
         }
         if ("$env:platform/$env:configuration" -eq "x86_64/Release") {
-            Push-AppveyorArtifact "bin.x86_64\notepad++.exe" -FileName "$nppFileName"
+            Push-AppveyorArtifact "bin.x86_64\mikepad++.exe" -FileName "$nppFileName"
         }

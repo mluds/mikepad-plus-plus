@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -321,7 +321,7 @@ private:
 	PluginsAdminDlg _pluginsAdminDlg;
 	DocumentPeeker _documentPeeker;
 
-	// a handle list of all the Notepad++ dialogs
+	// a handle list of all the Mikepad++ dialogs
 	std::vector<HWND> _hModelessDlgs;
 
 	LastRecentFileList _lastRecentFileList;
@@ -384,10 +384,10 @@ private:
 	bool _isAdministrator = false;
 
 	bool _isEndingSessionButNotReady = false; // If Windows 10 update needs to restart 
-                                              // and Notepad++ has one (some) dirty document(s)
+                                              // and Mikepad++ has one (some) dirty document(s)
                                               // and "Enable session snapshot and periodic backup" is not enabled
                                               // then WM_ENDSESSION is send with wParam == FALSE
-                                              // in this case this boolean is set true, so Notepad++ will quit and its current session will be saved 
+                                              // in this case this boolean is set true, so Mikepad++ will quit and its current session will be saved 
 	ScintillaCtrls _scintillaCtrls4Plugins;
 
 	std::vector<std::pair<int, int> > _hideLinesMarks;

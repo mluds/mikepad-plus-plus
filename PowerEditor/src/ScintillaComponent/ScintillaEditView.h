@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -119,7 +119,7 @@ const int MARK_HIDELINESEND = 22;
 const int MARK_HIDELINESUNDERLINE = 21;
 //const int MARK_LINEMODIFIEDUNSAVED = 20;
 //const int MARK_LINEMODIFIEDSAVED = 19;
-// 24 - 16 reserved for Notepad++ internal used
+// 24 - 16 reserved for Mikepad++ internal used
 // 15 - 0  are free to use for plugins
 
 
@@ -932,7 +932,7 @@ protected:
 
 	void setREBOLLexer() {
 		setLexer(SCLEX_REBOL, L_REBOL, LIST_0 | LIST_1 | LIST_2 | LIST_3 | LIST_4 | LIST_5 | LIST_6);
-		execute(SCI_SETWORDCHARS, 0, reinterpret_cast<LPARAM>("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!.’+-*&|=_~"));
+		execute(SCI_SETWORDCHARS, 0, reinterpret_cast<LPARAM>("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!.ï¿½+-*&|=_~"));
 	};
 
 	void setRegistryLexer() {

@@ -9,7 +9,7 @@
 
 cmake_minimum_required(VERSION 3.4)
 
-PROJECT(Notepad++)
+PROJECT(Mikepad++)
 
 SET(projIncludDir	../../scintilla/include/
 					./
@@ -186,7 +186,7 @@ SET(src_files
 			./WinControls/ColourPicker/WordStyleDlg.cpp
 			./ScintillaComponent/xmlMatchedTagsHighlighter.cpp
 			./dpiAware.manifest
-			./notepad++.exe.manifest
+			./mikepad++.exe.manifest
 )
 
 SET(include_files
@@ -396,8 +396,8 @@ find_library(SCILEXER_STATIC_LIBRARY
 	REQUIRED
 )
 
-ADD_EXECUTABLE(notepad++ ${option} ${src_files} ${include_files} ${rcFiles})
+ADD_EXECUTABLE(mikepad++ ${option} ${src_files} ${include_files} ${rcFiles})
 
 
-TARGET_LINK_LIBRARIES (notepad++ ${win32_LIBRARIES} ${SCILEXER_STATIC_LIBRARY})
+TARGET_LINK_LIBRARIES (mikepad++ ${win32_LIBRARIES} ${SCILEXER_STATIC_LIBRARY})
 

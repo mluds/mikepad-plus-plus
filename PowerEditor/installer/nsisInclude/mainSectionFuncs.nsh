@@ -1,4 +1,4 @@
-; This file is part of Notepad++ project
+; This file is part of Mikepad++ project
 ; Copyright (C)2021 Don HO <don.h@free.fr>
 ;
 ; This program is free software: you can redistribute it and/or modify
@@ -93,11 +93,11 @@ Function copyCommonFiles
 	File "..\bin\readme.txt"
 	
 !ifdef ARCH64
-	File "..\bin64\notepad++.exe"
+	File "..\bin64\mikepad++.exe"
 !else ifdef ARCHARM64
-	File "..\binarm64\notepad++.exe"
+	File "..\binarm64\mikepad++.exe"
 !else
-	File "..\bin\notepad++.exe"
+	File "..\bin\mikepad++.exe"
 !endif
 
 	; Markdown in user defined languages
@@ -219,7 +219,7 @@ Function removeUnstablePlugins
 	; remove unstable plugins
 	CreateDirectory "$INSTDIR\plugins\disabled"
 	
-	; NppSaveAsAdmin makes Notepad++ crash. "1.0.211.0" is its 1st version which contains the fix
+	; NppSaveAsAdmin makes Mikepad++ crash. "1.0.211.0" is its 1st version which contains the fix
 	IfFileExists "$INSTDIR\plugins\NppSaveAsAdmin\NppSaveAsAdmin.dll" 0 NppSaveAsAdminTestEnd
 		${GetFileVersion} "$INSTDIR\plugins\NppSaveAsAdmin\NppSaveAsAdmin.dll" $R0
 		${VersionCompare} $R0 "1.0.211.0" $R1 ;   0: equal to 1.0.211.0   1: $R0 is newer   2: 1.0.211.0 is newer
@@ -232,7 +232,7 @@ Function removeUnstablePlugins
 	
 	; https://github.com/chcg/NPP_HexEdit/issues/51
 	IfFileExists "$INSTDIR\plugins\HexEditor\HexEditor.dll" 0 HexEditorTestEnd
-		MessageBox MB_OK "Due to HexEditor plugin's crash issue on Notepad++ v8 (and later versions), HexEditor.dll will be removed." /SD IDOK
+		MessageBox MB_OK "Due to HexEditor plugin's crash issue on Mikepad++ v8 (and later versions), HexEditor.dll will be removed." /SD IDOK
 		Rename "$INSTDIR\plugins\HexEditor\HexEditor.dll" "$INSTDIR\plugins\disabled\HexEditor.dll"
 		Delete "$INSTDIR\plugins\HexEditor\HexEditor.dll"
 	HexEditorTestEnd:
@@ -272,9 +272,9 @@ FunctionEnd
 
 Function shortcutLinkManagement
 	; remove all the npp shortcuts from current user
-	Delete "$DESKTOP\Notepad++.lnk"
-	Delete "$SMPROGRAMS\Notepad++.lnk"
-	Delete "$SMPROGRAMS\${APPNAME}\Notepad++.lnk"
+	Delete "$DESKTOP\Mikepad++.lnk"
+	Delete "$SMPROGRAMS\Mikepad++.lnk"
+	Delete "$SMPROGRAMS\${APPNAME}\Mikepad++.lnk"
 	Delete "$SMPROGRAMS\${APPNAME}\readme.lnk"
 	Delete "$SMPROGRAMS\${APPNAME}\Uninstall.lnk"
 	RMDir "$SMPROGRAMS\${APPNAME}"
@@ -290,9 +290,9 @@ Function shortcutLinkManagement
 	SetOutPath "$INSTDIR\"
 	
 	; add all the npp shortcuts for all user or current user
-	CreateShortCut "$SMPROGRAMS\Notepad++.lnk" "$INSTDIR\notepad++.exe"
+	CreateShortCut "$SMPROGRAMS\Mikepad++.lnk" "$INSTDIR\mikepad++.exe"
 	${If} $createShortcutChecked == ${BST_CHECKED}
-		CreateShortCut "$DESKTOP\Notepad++.lnk" "$INSTDIR\notepad++.exe"
+		CreateShortCut "$DESKTOP\Mikepad++.lnk" "$INSTDIR\mikepad++.exe"
 	${EndIf}
 	
 	SetShellVarContext current

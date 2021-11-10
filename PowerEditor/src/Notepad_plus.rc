@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -37,12 +37,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE    "CompanyName",        "Don HO don.h@free.fr\0"
-            VALUE    "FileDescription",    "Notepad++ : a free (GPL) source code editor\0"
+            VALUE    "FileDescription",    "Mikepad++ : a free (GPL) source code editor\0"
             VALUE    "FileVersion",        VERSION_VALUE
-            VALUE    "InternalName",       "notepad++.exe\0"
+            VALUE    "InternalName",       "mikepad++.exe\0"
             VALUE    "LegalCopyright",     "Copyleft 1998-2021 by Don HO\0"
-            VALUE    "OriginalFilename",   "notepad++.exe\0"
-            VALUE    "ProductName",        "Notepad++\0"
+            VALUE    "OriginalFilename",   "mikepad++.exe\0"
+            VALUE    "ProductName",        "Mikepad++\0"
             VALUE    "ProductVersion",     VERSION_VALUE
         END
     END
@@ -1163,16 +1163,16 @@ BEGIN
     BEGIN
         MENUITEM "Command Line Arguments...",      IDM_CMDLINEARGUMENTS
         MENUITEM SEPARATOR
-        MENUITEM "Notepad++ Home",                 IDM_HOMESWEETHOME
-        MENUITEM "Notepad++ Project Page",         IDM_PROJECTPAGE
-        MENUITEM "Notepad++ Online User Manual",   IDM_ONLINEDOCUMENT
-        MENUITEM "Notepad++ Community (Forum)",    IDM_FORUM
+        MENUITEM "Mikepad++ Home",                 IDM_HOMESWEETHOME
+        MENUITEM "Mikepad++ Project Page",         IDM_PROJECTPAGE
+        MENUITEM "Mikepad++ Online User Manual",   IDM_ONLINEDOCUMENT
+        MENUITEM "Mikepad++ Community (Forum)",    IDM_FORUM
         MENUITEM SEPARATOR
-        MENUITEM "Update Notepad++",               IDM_UPDATE_NPP
+        MENUITEM "Update Mikepad++",               IDM_UPDATE_NPP
         MENUITEM "Set Updater Proxy...",           IDM_CONFUPDATERPROXY
         MENUITEM SEPARATOR
         MENUITEM "Debug Info...",                  IDM_DEBUGINFO
-        MENUITEM "About Notepad++",                IDM_ABOUT
+        MENUITEM "About Mikepad++",                IDM_ABOUT
     END
 
     MENUITEM "X",    IDM_FILE_CLOSE, HELP

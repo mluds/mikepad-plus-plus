@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -67,8 +67,8 @@ private:
 	bool checkSha256(const std::wstring& filePath, NppModule module2check);
 
 	// Code signing certificate
-	std::wstring _signer_display_name = TEXT("Notepad++");
-	std::wstring _signer_subject = TEXT("C=FR, S=Ile-de-France, L=Saint Cloud, O=\"Notepad++\", CN=\"Notepad++\"");
+	std::wstring _signer_display_name = TEXT("Mikepad++");
+	std::wstring _signer_subject = TEXT("C=FR, S=Ile-de-France, L=Saint Cloud, O=\"Mikepad++\", CN=\"Mikepad++\"");
 	std::wstring _signer_key_id = TEXT("ED255D9151912E40DF048A56288E969A8D0DAFA3");
 	bool _doCheckRevocation = false;
 	bool _doCheckChainOfTrust = false;

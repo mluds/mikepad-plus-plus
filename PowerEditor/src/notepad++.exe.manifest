@@ -4,10 +4,10 @@
 <assemblyIdentity
     version="1.0.0.0"
     processorArchitecture="*"
-    name="Notepad++"
+    name="Mikepad++"
     type="win32"
 />
-<description>Notepad++</description>
+<description>Mikepad++</description>
 <dependency>
     <dependentAssembly>
         <assemblyIdentity

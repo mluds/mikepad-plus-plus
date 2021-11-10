@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -73,7 +73,7 @@ public:
 
 	void beNotifiedOfBufferChange(Buffer * theBuf, int mask);
 
-	void closeBuffer(BufferID, ScintillaEditView * identifer);		//called by Notepad++
+	void closeBuffer(BufferID, ScintillaEditView * identifer);		//called by Mikepad++
 
 	void addBufferReference(BufferID id, ScintillaEditView * identifer);	//called by Scintilla etc indirectly
 
@@ -367,8 +367,8 @@ private:
 
 	bool _isUnsync = false; // Buffer should be always dirty (with any undo/redo operation) if the editing buffer is unsyncronized with file on disk.
 	                        // By "unsyncronized" it means :
-	                        // 1. the file is deleted outside but the buffer in Notepad++ is kept.
-	                        // 2. the file is modified by another app but the buffer is not reloaded in Notepad++.
+	                        // 1. the file is deleted outside but the buffer in Mikepad++ is kept.
+	                        // 2. the file is modified by another app but the buffer is not reloaded in Mikepad++.
 	                        // Note that if the buffer is untitled, there's no correspondent file on the disk so the buffer is considered as independent therefore synchronized.
 
 

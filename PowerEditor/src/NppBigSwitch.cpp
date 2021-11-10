@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -1351,11 +1351,11 @@ LRESULT Notepad_plus::process(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPa
 		{
 			//return _scintillaCtrls4Plugins.destroyScintilla(reinterpret_cast<HWND>(lParam));
 
-			// Destroying allocated Scintilla makes Notepad++ crash
+			// Destroying allocated Scintilla makes Mikepad++ crash
 			// because created Scintilla view's pointer is added into _referees of Buffer object automatically.
 			// The deallocated scintilla view in _referees is used in Buffer::nextUntitledNewNumber().
 
-			// So we do nothing here and let Notepad++ destroy allocated Scintilla while it exits
+			// So we do nothing here and let Mikepad++ destroy allocated Scintilla while it exits
 			// and we keep this message for the sake of compability withe the existing plugins.
 			return true;
 		}
@@ -1991,7 +1991,7 @@ LRESULT Notepad_plus::process(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPa
 				if (isSnapshotMode)
 					::LockWindowUpdate(NULL);
 
-				//Sends WM_DESTROY, Notepad++ will end
+				//Sends WM_DESTROY, Mikepad++ will end
 				if (message == WM_CLOSE)
 					::DestroyWindow(hwnd);
 
@@ -2004,7 +2004,7 @@ LRESULT Notepad_plus::process(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPa
 			}
 
 			// _isEndingSessionButNotReady is true means WM_QUERYENDSESSION is sent but no time to finish saving data
-            // then WM_ENDSESSION is sent with wParam == FALSE - Notepad++ should exit in this case
+            // then WM_ENDSESSION is sent with wParam == FALSE - Mikepad++ should exit in this case
 			if (_isEndingSessionButNotReady) 
 				::DestroyWindow(hwnd);
 

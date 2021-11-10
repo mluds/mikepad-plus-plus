@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -54,7 +54,7 @@ const bool dirDown = false;
 #define generic_fopen _wfopen
 #define generic_fgets fgetws
 #define COPYDATA_FILENAMES COPYDATA_FILENAMESW
-#define NPP_INTERNAL_FUCTION_STR TEXT("Notepad++::InternalFunction")
+#define NPP_INTERNAL_FUCTION_STR TEXT("Mikepad++::InternalFunction")
 
 typedef std::basic_string<TCHAR> generic_string;
 typedef std::basic_stringstream<TCHAR> generic_stringstream;

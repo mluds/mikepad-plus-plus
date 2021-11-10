@@ -166,8 +166,8 @@
 
 					<Item id = "46001" name = "Stiler ..." />
                     <Item id = "47000" name = "Om ...	F1"/>
-                    <Item id = "47001" name = "Notepad++ hjemmeside"/>
-                    <Item id = "47002" name = "Notepad++ prosjektside"/>
+                    <Item id = "47001" name = "Mikepad++ hjemmeside"/>
+                    <Item id = "47002" name = "Mikepad++ prosjektside"/>
                     <Item id = "47003" name = "Hjelp på internett"/>
                     <Item id = "47004" name = "Forum"/>
                     <Item id = "47005" name = "Hent flere tilleggsmoduler"/>
@@ -477,7 +477,7 @@
 					<Item id = "6319" name = "Bruk"/>
 					<Item id = "6320" name = "Ikke vis understreking"/>
 					<Item id = "6322" name = "Sesjon filetternavn:"/>
-					<Item id = "6323" name = "Notepad++ auto-oppdatering"/>
+					<Item id = "6323" name = "Mikepad++ auto-oppdatering"/>
 					<Item id = "6324" name = "Bytt dokument	(Ctrl+Tab)"/>
 					<Item id = "6326" name = "Aktiver smart utheving"/>
 					<Item id ="6329" name ="Uthev lignende tagger"/>

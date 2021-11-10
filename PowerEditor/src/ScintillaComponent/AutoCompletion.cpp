@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -608,7 +608,7 @@ void AutoCompletion::insertMatchedChars(int character, const MatchedPairConf & m
 		}
 	}
 
-	// if there's no user defined matched pair found, continue to check notepad++'s one
+	// if there's no user defined matched pair found, continue to check mikepad++'s one
 
 
 	char closeTag[tagMaxLen];

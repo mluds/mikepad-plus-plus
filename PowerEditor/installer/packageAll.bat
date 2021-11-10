@@ -1,5 +1,5 @@
 echo off
-rem This file is part of Notepad++ project
+rem This file is part of Mikepad++ project
 rem Copyright (C)2021 Don HO <don.h@free.fr>
 rem
 rem This program is free software: you can redistribute it and/or modify
@@ -19,60 +19,60 @@ echo on
 
 if %SIGN% == 0 goto NoSign
 
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\notepad++.exe
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\mikepad++.exe
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\notepad++.exe
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\mikepad++.exe
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\notepad++.exe
-If ErrorLevel 1 goto End
-
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\NppShell_06.dll
-If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\NppShell64_06.dll
-If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\NppShell64.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\mikepad++.exe
 If ErrorLevel 1 goto End
 
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\Config\nppPluginList.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\NppShell_06.dll
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\Config\nppPluginList.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\NppShell64_06.dll
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\Config\nppPluginList.dll
-If ErrorLevel 1 goto End
-
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\updater\GUP.exe
-If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\updater\GUP.exe
-If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\updater\GUP.exe
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\NppShell64.dll
 If ErrorLevel 1 goto End
 
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\updater\libcurl.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\Config\nppPluginList.dll
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\updater\libcurl.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\Config\nppPluginList.dll
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\updater\libcurl.dll
-If ErrorLevel 1 goto End
-
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\NppExport\NppExport.dll
-If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\NppExport\NppExport.dll
-If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\NppExport\NppExport.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\Config\nppPluginList.dll
 If ErrorLevel 1 goto End
 
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\mimeTools\mimeTools.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\updater\GUP.exe
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\mimeTools\mimeTools.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\updater\GUP.exe
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\mimeTools\mimeTools.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\updater\GUP.exe
 If ErrorLevel 1 goto End
 
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\NppConverter\NppConverter.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\updater\libcurl.dll
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\NppConverter\NppConverter.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\updater\libcurl.dll
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\NppConverter\NppConverter.dll
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\updater\libcurl.dll
+If ErrorLevel 1 goto End
+
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\NppExport\NppExport.dll
+If ErrorLevel 1 goto End
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\NppExport\NppExport.dll
+If ErrorLevel 1 goto End
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\NppExport\NppExport.dll
+If ErrorLevel 1 goto End
+
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\mimeTools\mimeTools.dll
+If ErrorLevel 1 goto End
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\mimeTools\mimeTools.dll
+If ErrorLevel 1 goto End
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\mimeTools\mimeTools.dll
+If ErrorLevel 1 goto End
+
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin\plugins\NppConverter\NppConverter.dll
+If ErrorLevel 1 goto End
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\bin64\plugins\NppConverter\NppConverter.dll
+If ErrorLevel 1 goto End
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ ..\binarm64\plugins\NppConverter\NppConverter.dll
 If ErrorLevel 1 goto End
 
 :NoSign
@@ -81,7 +81,7 @@ If ErrorLevel 1 goto End
 rmdir /S /Q .\build
 mkdir .\build
 
-rem Notepad++ minimalist package
+rem Mikepad++ minimalist package
 rmdir /S /Q .\minimalist
 mkdir .\minimalist
 mkdir .\minimalist\userDefineLangs
@@ -105,7 +105,7 @@ copy /Y ..\src\shortcuts.xml .\minimalist\
 If ErrorLevel 1 goto End
 copy /Y ..\bin\doLocalConf.xml .\minimalist\
 If ErrorLevel 1 goto End
-copy /Y ..\bin\"notepad++.exe" .\minimalist\
+copy /Y ..\bin\"mikepad++.exe" .\minimalist\
 If ErrorLevel 1 goto End
 copy /Y ".\themes\DarkModeDefault.xml" .\minimalist\themes\
 If ErrorLevel 1 goto End
@@ -134,7 +134,7 @@ copy /Y ..\src\shortcuts.xml .\minimalist64\
 If ErrorLevel 1 goto End
 copy /Y ..\bin\doLocalConf.xml .\minimalist64\
 If ErrorLevel 1 goto End
-copy /Y ..\bin64\"notepad++.exe" .\minimalist64\
+copy /Y ..\bin64\"mikepad++.exe" .\minimalist64\
 If ErrorLevel 1 goto End
 copy /Y ".\themes\DarkModeDefault.xml" .\minimalist64\themes\
 If ErrorLevel 1 goto End
@@ -163,16 +163,16 @@ copy /Y ..\src\shortcuts.xml .\minimalistArm64\
 If ErrorLevel 1 goto End
 copy /Y ..\bin\doLocalConf.xml .\minimalistArm64\
 If ErrorLevel 1 goto End
-copy /Y ..\binarm64\"notepad++.exe" .\minimalistArm64\
+copy /Y ..\binarm64\"mikepad++.exe" .\minimalistArm64\
 If ErrorLevel 1 goto End
 copy /Y ".\themes\DarkModeDefault.xml" .\minimalistArm64\themes\
 If ErrorLevel 1 goto End
 
 
-rem Remove old built Notepad++ 32-bit package
+rem Remove old built Mikepad++ 32-bit package
 rmdir /S /Q .\zipped.package.release
 
-rem Re-build Notepad++ 32-bit package folders
+rem Re-build Mikepad++ 32-bit package folders
 mkdir .\zipped.package.release
 mkdir .\zipped.package.release\updater
 mkdir .\zipped.package.release\localization
@@ -188,10 +188,10 @@ mkdir .\zipped.package.release\plugins\Config
 mkdir .\zipped.package.release\plugins\doc
 
 
-rem Remove old built Notepad++ 64-bit package
+rem Remove old built Mikepad++ 64-bit package
 rmdir /S /Q .\zipped.package.release64
 
-rem Re-build Notepad++ 64-bit package folders
+rem Re-build Mikepad++ 64-bit package folders
 mkdir .\zipped.package.release64
 mkdir .\zipped.package.release64\updater
 mkdir .\zipped.package.release64\localization
@@ -207,10 +207,10 @@ mkdir .\zipped.package.release64\plugins\Config
 mkdir .\zipped.package.release64\plugins\doc
 
 
-rem Remove old built Notepad++ ARM64-bit package
+rem Remove old built Mikepad++ ARM64-bit package
 rmdir /S /Q .\zipped.package.releaseArm64
 
-rem Re-build Notepad++ ARM64-bit package folders
+rem Re-build Mikepad++ ARM64-bit package folders
 mkdir .\zipped.package.releaseArm64
 mkdir .\zipped.package.releaseArm64\updater
 mkdir .\zipped.package.releaseArm64\localization
@@ -226,7 +226,7 @@ mkdir .\zipped.package.releaseArm64\plugins\Config
 mkdir .\zipped.package.releaseArm64\plugins\doc
 
 
-rem Basic: Copy needed files into Notepad++ 32-bit package folders
+rem Basic: Copy needed files into Mikepad++ 32-bit package folders
 copy /Y ..\..\LICENSE .\zipped.package.release\license.txt
 If ErrorLevel 1 goto End
 copy /Y ..\bin\readme.txt .\zipped.package.release\
@@ -243,11 +243,11 @@ copy /Y ..\src\shortcuts.xml .\zipped.package.release\
 If ErrorLevel 1 goto End
 copy /Y ..\bin\doLocalConf.xml .\zipped.package.release\
 If ErrorLevel 1 goto End
-copy /Y ..\bin\"notepad++.exe" .\zipped.package.release\
+copy /Y ..\bin\"mikepad++.exe" .\zipped.package.release\
 If ErrorLevel 1 goto End
 
 
-rem Basic Copy needed files into Notepad++ 64-bit package folders
+rem Basic Copy needed files into Mikepad++ 64-bit package folders
 copy /Y ..\..\LICENSE .\zipped.package.release64\license.txt
 If ErrorLevel 1 goto End
 copy /Y ..\bin\readme.txt .\zipped.package.release64\
@@ -264,11 +264,11 @@ copy /Y ..\src\shortcuts.xml .\zipped.package.release64\
 If ErrorLevel 1 goto End
 copy /Y ..\bin\doLocalConf.xml .\zipped.package.release64\
 If ErrorLevel 1 goto End
-copy /Y ..\bin64\"notepad++.exe" .\zipped.package.release64\
+copy /Y ..\bin64\"mikepad++.exe" .\zipped.package.release64\
 If ErrorLevel 1 goto End
 
 
-rem Basic Copy needed files into Notepad++ ARM64 package folders
+rem Basic Copy needed files into Mikepad++ ARM64 package folders
 copy /Y ..\..\LICENSE .\zipped.package.releaseArm64\license.txt
 If ErrorLevel 1 goto End
 copy /Y ..\bin\readme.txt .\zipped.package.releaseArm64\
@@ -285,11 +285,11 @@ copy /Y ..\src\shortcuts.xml .\zipped.package.releaseArm64\
 If ErrorLevel 1 goto End
 copy /Y ..\bin\doLocalConf.xml .\zipped.package.releaseArm64\
 If ErrorLevel 1 goto End
-copy /Y ..\binarm64\"notepad++.exe" .\zipped.package.releaseArm64\
+copy /Y ..\binarm64\"mikepad++.exe" .\zipped.package.releaseArm64\
 If ErrorLevel 1 goto End
 
 
-rem Plugins: Copy needed files into Notepad++ 32-bit package folders
+rem Plugins: Copy needed files into Mikepad++ 32-bit package folders
 copy /Y "..\bin\plugins\NppExport\NppExport.dll" .\zipped.package.release\plugins\NppExport\
 If ErrorLevel 1 goto End
 copy /Y "..\bin\plugins\mimeTools\mimeTools.dll" .\zipped.package.release\plugins\mimeTools\
@@ -297,7 +297,7 @@ If ErrorLevel 1 goto End
 copy /Y "..\bin\plugins\NppConverter\NppConverter.dll" .\zipped.package.release\plugins\NppConverter\
 If ErrorLevel 1 goto End
 
-rem Plugins: Copy needed files into Notepad++ 64-bit package folders
+rem Plugins: Copy needed files into Mikepad++ 64-bit package folders
 copy /Y "..\bin64\plugins\NppExport\NppExport.dll" .\zipped.package.release64\plugins\NppExport\
 If ErrorLevel 1 goto End
 copy /Y "..\bin64\plugins\mimeTools\mimeTools.dll" .\zipped.package.release64\plugins\mimeTools\
@@ -305,7 +305,7 @@ If ErrorLevel 1 goto End
 copy /Y "..\bin64\plugins\NppConverter\NppConverter.dll" .\zipped.package.release64\plugins\NppConverter\
 If ErrorLevel 1 goto End
 
-rem Plugins: Copy needed files into Notepad++ 64-bit package folders
+rem Plugins: Copy needed files into Mikepad++ 64-bit package folders
 copy /Y "..\binarm64\plugins\NppExport\NppExport.dll" .\zipped.package.releaseArm64\plugins\NppExport\
 If ErrorLevel 1 goto End
 copy /Y "..\binarm64\plugins\mimeTools\mimeTools.dll" .\zipped.package.releaseArm64\plugins\mimeTools\
@@ -314,7 +314,7 @@ copy /Y "..\binarm64\plugins\NppConverter\NppConverter.dll" .\zipped.package.rel
 If ErrorLevel 1 goto End
 
 
-rem localizations: Copy all files into Notepad++ 32-bit/64-bit package folders
+rem localizations: Copy all files into Mikepad++ 32-bit/64-bit package folders
 copy /Y ".\nativeLang\*.xml" .\zipped.package.release\localization\
 If ErrorLevel 1 goto End
 copy /Y ".\nativeLang\*.xml" .\zipped.package.release64\localization\
@@ -322,7 +322,7 @@ If ErrorLevel 1 goto End
 copy /Y ".\nativeLang\*.xml" .\zipped.package.releaseArm64\localization\
 If ErrorLevel 1 goto End
 
-rem files API: Copy all files into Notepad++ 32-bit/64-bit package folders
+rem files API: Copy all files into Mikepad++ 32-bit/64-bit package folders
 copy /Y ".\APIs\*.xml" .\zipped.package.release\autoCompletion\
 If ErrorLevel 1 goto End
 copy /Y ".\APIs\*.xml" .\zipped.package.release64\autoCompletion\
@@ -330,7 +330,7 @@ If ErrorLevel 1 goto End
 copy /Y ".\APIs\*.xml" .\zipped.package.releaseArm64\autoCompletion\
 If ErrorLevel 1 goto End
 
-rem FunctionList files: Copy all files into Notepad++ 32-bit/64-bit package folders
+rem FunctionList files: Copy all files into Mikepad++ 32-bit/64-bit package folders
 copy /Y ".\functionList\*.xml" .\zipped.package.release\functionList\
 If ErrorLevel 1 goto End
 copy /Y ".\functionList\*.xml" .\zipped.package.release64\functionList\
@@ -338,7 +338,7 @@ If ErrorLevel 1 goto End
 copy /Y ".\functionList\*.xml" .\zipped.package.releaseArm64\functionList\
 If ErrorLevel 1 goto End
 
-rem Markdown as UserDefineLanguge: Markdown syntax highlighter into Notepad++ 32-bit/64-bit package folders
+rem Markdown as UserDefineLanguge: Markdown syntax highlighter into Mikepad++ 32-bit/64-bit package folders
 copy /Y "..\bin\userDefineLangs\markdown._preinstalled.udl.xml" .\zipped.package.release\userDefineLangs\
 If ErrorLevel 1 goto End
 copy /Y "..\bin\userDefineLangs\markdown._preinstalled.udl.xml" .\zipped.package.release64\userDefineLangs\
@@ -352,7 +352,7 @@ If ErrorLevel 1 goto End
 copy /Y "..\bin\userDefineLangs\markdown._preinstalled_DM.udl.xml" .\zipped.package.releaseArm64\userDefineLangs\
 If ErrorLevel 1 goto End
 
-rem theme: Copy all files into Notepad++ 32-bit/64-bit package folders
+rem theme: Copy all files into Mikepad++ 32-bit/64-bit package folders
 copy /Y ".\themes\*.xml" .\zipped.package.release\themes\
 If ErrorLevel 1 goto End
 copy /Y ".\themes\*.xml" .\zipped.package.release64\themes\
@@ -495,11 +495,11 @@ ren npp.portable.minimalist.x64.7z !7zvarMin64!
 ren npp.portable.minimalist.arm64.7z !7zvarMinArm64!
 
 if %SIGN% == 0 goto NoSignInstaller
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++ Installer" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ !nppInstallerVar!
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++ Installer" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ !nppInstallerVar!
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++ Installer" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ !nppInstallerVar64!
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++ Installer" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ !nppInstallerVar64!
 If ErrorLevel 1 goto End
-signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Notepad++ Installer" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ !nppInstallerVarArm64!
+signtool.exe sign /f %NPP_CERT% /p %NPP_CERT_PWD% /d "Mikepad++ Installer" /du https://notepad-plus-plus.org/ /t http://timestamp.digicert.com/ !nppInstallerVarArm64!
 If ErrorLevel 1 goto End
 :NoSignInstaller
 

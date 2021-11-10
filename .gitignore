@@ -53,7 +53,7 @@ UpgradeLog*.htm
 *.pidb
 *.vcxproj.filters
 
-PowerEditor/bin/notepad++.exe
+PowerEditor/bin/mikepad++.exe
 PowerEditor/bin/SciLexer.dll
 PowerEditor/bin/config.xml
 PowerEditor/bin/stylers.xml

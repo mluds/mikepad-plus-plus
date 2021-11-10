@@ -1,16 +1,16 @@
-Notepad++ v8.1.9 bug-fixes:
+Mikepad++ v8.1.9 bug-fixes:
 
 1.  Fix empty file with non-Unicode encoding cannot be saved issue.
 2.  Fix language list in Style Configurator not being reloaded issue.
 
 
-Notepad++ v8.1.8 bug-fixes:
+Mikepad++ v8.1.8 bug-fixes:
 
 1.  Fix config files (XML) saving performance regression.
 2.  Workaround Microsoft dark mode API bug of Windows 11.
 
 
-Notepad++ v8.1.7 bug-fixes:
+Mikepad++ v8.1.7 bug-fixes:
 
 1.  Fix empty file not being saved regression.
 2.  Fix white flash in dark mode on CMD launch with position parameters.
@@ -20,13 +20,13 @@ Notepad++ v8.1.7 bug-fixes:
 6.  Fix docking problem for dockable panel in RTL mode.
 
 
-Notepad++ v8.1.6 bug-fixes:
+Mikepad++ v8.1.6 bug-fixes:
 
 1.  Fix NUL file-corruption issue after system shutting down brutally (power cuts).
 2.  Fix session lost issue after MS update restarting Windows.
 3.  Make Markdown UDL work in every dark theme.
 4.  Fix file can be marked as saved even it's been deleted outside. 
-5.  Fix white flash on Notepad++ startup in dark mode issue.
+5.  Fix white flash on Mikepad++ startup in dark mode issue.
 6.  Fix status bar text display glitchy in dark mode.
 7.  Fix docked window sizing problem in RTL mode.
 8.  Fix floating panel movement problem in RTL mode.
@@ -46,4 +46,4 @@ Included plugins:
 
 Updater (Installer only):
 
-* WinGup (for Notepad++) v5.2.1
+* WinGup (for Mikepad++) v5.2.1

@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
 
 using namespace std;
 
-const TCHAR * USERMSG = TEXT(" is not compatible with the current version of Notepad++.\n\n\
+const TCHAR * USERMSG = TEXT(" is not compatible with the current version of Mikepad++.\n\n\
 Do you want to remove this plugin from the plugins directory to prevent this message from the next launch?");
 
 
@@ -135,7 +135,7 @@ int PluginsManager::loadPlugin(const TCHAR *pluginFilePath)
         
 		pi->_pFuncIsUnicode = (PFUNCISUNICODE)GetProcAddress(pi->_hLib, "isUnicode");
 		if (!pi->_pFuncIsUnicode || !pi->_pFuncIsUnicode())
-			throw generic_string(TEXT("This ANSI plugin is not compatible with your Unicode Notepad++."));
+			throw generic_string(TEXT("This ANSI plugin is not compatible with your Unicode Mikepad++."));
 
 		pi->_pFuncSetInfo = (PFUNCSETINFO)GetProcAddress(pi->_hLib, "setInfo");
 

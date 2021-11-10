@@ -1,4 +1,4 @@
-# This file is part of Notepad++ project
+# This file is part of Mikepad++ project
 # Copyright (C)2021 Ivan U7n <jprofic@yandex.ru>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ SRC_EXCLUDE := $(SRC_DIRECTORY)/tools/%
 BIN_DIRECTORY := ../bin
 INSTALLER_DIRECTORY := ../installer
 
-TARGET_BINARY := notepad++.exe
+TARGET_BINARY := mikepad++.exe
 SRC_DATA := contextMenu.xml langs.model.xml shortcuts.xml stylers.model.xml
 BIN_DATA := change.log doLocalConf.xml readme.txt userDefineLangs/
 INSTALLER_DATA := autoCompletion/ functionList/ localization/ themes/

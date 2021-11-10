@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Russian translation for Notepad++
+<!-- Russian translation for Mikepad++
 Updated to v8.1.5:
 - added new lines
 -->
@@ -389,11 +389,11 @@ Updated to v8.1.5:
 					<Item id="48014" name="Открыть папку плагинов..."/>
 
 					<Item id="47010" name="Параметры командной строки"/>
-					<Item id="47001" name="Сайт проекта Notepad++"/>
-					<Item id="47002" name="Страница проекта Notepad++"/>
+					<Item id="47001" name="Сайт проекта Mikepad++"/>
+					<Item id="47002" name="Страница проекта Mikepad++"/>
 					<Item id="47003" name="Руководство онлайн"/>
 					<Item id="47004" name="Форум"/>
-					<Item id="47006" name="Обновить Notepad++"/>
+					<Item id="47006" name="Обновить Mikepad++"/>
 					<Item id="47009" name="Задать прокси обновления..."/>
 					<Item id="47012" name="Отладочная информация"/>
 					<Item id="47000" name="О программе..."/>
@@ -964,10 +964,10 @@ Updated to v8.1.5:
 					<Item id="6413" name="Директория Сохранения и Открытия Файла"/>
 					<Item id="6414" name="Директория текущего на данный момент документа"/>
 					<Item id="6415" name="Запоминать последнюю используемую директорию"/>
-					<Item id="6431" name="Открывать все файлы папки при перетаскивании в окно Notepad++"/>
+					<Item id="6431" name="Открывать все файлы папки при перетаскивании в окно Mikepad++"/>
 				</DefaultDir>
 				<FileAssoc title = "Ассоциация Файлов">
-					<Item id="4008" name="Пожалуйста, перезапустите Notepad++ в режиме Администратора, чтобы использовать эту функцию."/>
+					<Item id="4008" name="Пожалуйста, перезапустите Mikepad++ в режиме Администратора, чтобы использовать эту функцию."/>
 					<Item id="4009" name="Поддерживаемые:"/>
 					<Item id="4010" name="Зарегистрированные:"/>
 				</FileAssoc>
@@ -1002,7 +1002,7 @@ Updated to v8.1.5:
 				</Print>
 				<Searching title="Поиск">
 					<Item id="6901" name="Не заполнять поле выделенным текстом в окне Поиска"/>
-					<Item id="6902" name="Моноширинный шрифт в окне поиска (требуется перезапуск Notepad++)"/>
+					<Item id="6902" name="Моноширинный шрифт в окне поиска (требуется перезапуск Mikepad++)"/>
 					<Item id="6903" name="Оставлять окно Поиска открытым после окончания поиска"/>
 					<Item id="6904" name="Запрашивать подтверждение операции &quot;Заменить все во Всех Открытых Документах&quot;"/>
 					<Item id="6905" name="Замена: не переходить к следующему совпадению."/>
@@ -1074,7 +1074,7 @@ Updated to v8.1.5:
 					<Item id="6152" name="Только сессии открываются в новом окне"/>
 					<Item id="6153" name="Каждый файл открывается в новом окне"/>
 					<Item id="6154" name="Все файлы открываются в одном окне"/>
-					<Item id="6155" name="* Изменения вступят в силу после перезапуска Notepad++"/>
+					<Item id="6155" name="* Изменения вступят в силу после перезапуска Mikepad++"/>
 					<Item id="6171" name="Настроить дату и время вставки"/>
 					<Item id="6175" name="Обратный порядок даты и времени (короткий и длинный формат)"/>
 					<Item id="6172" name="Польз. формат:"/>
@@ -1205,17 +1205,17 @@ Updated to v8.1.5:
 			</DoSaveAll>
 		</Dialog>
 		<MessageBox>
-			<ContextMenuXmlEditWarning  title="Редактирование contextMenu"            message="Редактирование contextMenu.xml позволяет настроить свое всплывающее контекстное меню в Notepad++.&#x0A;Вы должны перезапустить Notepad++, чтобы изменения вступили в силу."/>
+			<ContextMenuXmlEditWarning  title="Редактирование contextMenu"            message="Редактирование contextMenu.xml позволяет настроить свое всплывающее контекстное меню в Mikepad++.&#x0A;Вы должны перезапустить Mikepad++, чтобы изменения вступили в силу."/>
 			<SaveCurrentModifWarning    title="Сохранение Текущих Изменений"          message="Вы должны сохранить текущие изменения.&#x0A;Все сохраненные изменения не смогут быть отменены.&#x0A;&#x0A;Продолжить?"/>
 			<LoseUndoAbilityWarning     title="Потеря Возможности Отката"             message="Вы должны сохранить текущие изменения.&#x0A;Все сохраненные изменения не смогут быть отменены.&#x0A;&#x0A;Продолжить?"/>
-			<CannotMoveDoc              title="Переход к новому экземпляру Notepad++" message="Документ был изменен, сохраните его и повторите попытку."/>
+			<CannotMoveDoc              title="Переход к новому экземпляру Mikepad++" message="Документ был изменен, сохраните его и повторите попытку."/>
 			<DocReloadWarning           title="Перезагрузка"                          message="Все внесенные изменения будут потеряны!&#x0A;Продолжить?"/>
 			<FileLockedWarning          title="Сохранение не удалось"                 message="Пожалуйста, проверьте открыт ли этот файл в другом приложении."/>
-			<FileAlreadyOpenedInNpp     title=""                                      message="Файл уже открыт в Notepad++."/>
+			<FileAlreadyOpenedInNpp     title=""                                      message="Файл уже открыт в Mikepad++."/>
 			<DeleteFileFailed           title="Удаление Файла"                        message="Не удалось удалить файл"/>
 
 			<RenameTabTemporaryNameAlreadyInUse title="Не удалось переименовать"        message="Указанное имя уже используется другой вкладкой."/>
-			<GUpConfNeedAdminMode               title="Настройки Прокси"                message="Пожалуйста, перезапустите Notepad++ в режиме администратора для настройки прокси."/>
+			<GUpConfNeedAdminMode               title="Настройки Прокси"                message="Пожалуйста, перезапустите Mikepad++ в режиме администратора для настройки прокси."/>
 			<NbFileToOpenImportantWarning       title="Очень большое количество файлов" message="Вы точно хотите открыть $INT_REPLACE$ файла(ов)?"/>
 			<SettingsOnCloudError               title="Параметры Облака"                message="Похоже, что путь облака указан на диск или папку, с пометкой &quot;Только Чтение&quot;.&#x0A;Вам необходимо открыть доступ или получить права на запись.&#x0A;Ваши параметры облака будут отменены. Пожалуйста, сбросьте значение в окне Настройки..."/>
 			<FilePathNotFoundWarning            title="Открытие Файла"                  message="Файл, который вы пытаетесь открыть, не существует."/>
@@ -1228,12 +1228,12 @@ Updated to v8.1.5:
 			<DoDeleteOrNot               title="Удаление файла"                  message="Файл &quot;$STR_REPLACE$&quot;&#x0A;будет закрыт и удалён в Корзину.&#x0A;Продолжить?"/>
 			<NoBackupDoSaveFile          title="Сохранение ..."                  message="Файл резервной копии не найден (удалён извне).&#x0A;Сохраните его, иначе ваши данные будут потеряны.&#x0A;Вы хотите сохранить файл &quot;$STR_REPLACE$&quot; ?"/>
 			<DoReloadOrNot               title="Обновление файла"                message="&quot;$STR_REPLACE$&quot;&#x0A;&#x0A;Этот файл был изменен другой программой.&#x0A;Вы хотите обновить его?"/>
-			<DoReloadOrNotAndLooseChange title="Обновление файла"                message="&quot;$STR_REPLACE$&quot;&#x0A;&#x0A;Этот файл был изменен другой программой.&#x0A;Вы хотите обновить его?&#x0A;Но вы потеряете все внесенные изменения в Notepad++?"/>
+			<DoReloadOrNotAndLooseChange title="Обновление файла"                message="&quot;$STR_REPLACE$&quot;&#x0A;&#x0A;Этот файл был изменен другой программой.&#x0A;Вы хотите обновить его?&#x0A;Но вы потеряете все внесенные изменения в Mikepad++?"/>
 			<PrehistoricSystemDetected   title="Обнаружена доисторическая система"   message="Кажется, вы все еще используете доисторическую систему. Извините, но эта функция работает только на современных системах."/>
-			<XpUpdaterProblem            title="Обновление Notepad++"                message="Обновление Notepad++ не совместимо с XP из-за устаревшего уровня безопасности.&#x0A;Хотите перейти на страницу Notepad++, чтобы загрузить последнюю версию?"/>
+			<XpUpdaterProblem            title="Обновление Mikepad++"                message="Обновление Mikepad++ не совместимо с XP из-за устаревшего уровня безопасности.&#x0A;Хотите перейти на страницу Mikepad++, чтобы загрузить последнюю версию?"/>
 			<DocTooDirtyToMonitor        title="Проблема Мониторинга"                message="Документ в работе. Сохраните внесённые изменения перед его мониторингом."/>
 			<DocNoExistToMonitor         title="Проблема Мониторинга"                message="Для мониторинга файл должен существовать."/>
-			<FileTooBigToOpen            title="Проблема с размером файла"           message="Файл слишком велик, чтобы открыть его в Notepad++"/>
+			<FileTooBigToOpen            title="Проблема с размером файла"           message="Файл слишком велик, чтобы открыть его в Mikepad++"/>
 			<CreateNewFileOrNot          title="Создание нового файла"               message="&quot;$STR_REPLACE$&quot; не существует. Создать его?"/>
 			<CreateNewFileError          title="Создание нового файла"               message="Не удается создать файл &quot;$STR_REPLACE$&quot;."/>
 			<OpenFileError               title="ОШИБКА"                              message="Невозможно открыть файл &quot;$STR_REPLACE$&quot;."/>
@@ -1257,12 +1257,12 @@ Updated to v8.1.5:
 			<UDLRemoveCurrentLang                title="Удаление текущего языка"      message="Вы уверены?"/>
 			<SCMapperDoDeleteOrNot               title="Удаление команды"             message="Вы точно хотите удалить эту команду из списка?"/>
 			<FindCharRangeValueError             title="Проблема со значением диапазона"            message="Вы должны ввести от 0 и до 255."/>
-			<OpenInAdminMode                     title="Ошибка сохранения"                          message="Файл не может быть сохранен и может быть защищён.&#x0A;Хотите запустить Notepad++ в режиме администратора?"/>
-			<OpenInAdminModeWithoutCloseCurrent  title="Ошибка сохранения"                          message="Файл не может быть сохранен и может быть защищён.&#x0A;Хотите запустить Notepad++ в режиме администратора?"/>
-			<OpenInAdminModeFailed               title="Не удалось открыть в режиме Администратора" message="Notepad++ не может быть открыто в режиме Администратора."/>
+			<OpenInAdminMode                     title="Ошибка сохранения"                          message="Файл не может быть сохранен и может быть защищён.&#x0A;Хотите запустить Mikepad++ в режиме администратора?"/>
+			<OpenInAdminModeWithoutCloseCurrent  title="Ошибка сохранения"                          message="Файл не может быть сохранен и может быть защищён.&#x0A;Хотите запустить Mikepad++ в режиме администратора?"/>
+			<OpenInAdminModeFailed               title="Не удалось открыть в режиме Администратора" message="Mikepad++ не может быть открыто в режиме Администратора."/>
 			<ViewInBrowser                       title="Открыть текущий файл в Браузере"            message="Приложение не найдено в вашей системе."/>
-			<ExitToUpdatePlugins                 title="Завершение работы Notepad++"                message="Notepad++ завершит работу для продолжения операции.&#x0A;Программа будет перезапущена после завершения всех операций.&#x0A;Продолжить?"/>
-			<NeedToRestartToLoadPlugins          title="Необходимо перезапустить Notepad++"         message="Необходимо перезапустить Notepad++ для установки загруженных плагинов."/>
+			<ExitToUpdatePlugins                 title="Завершение работы Mikepad++"                message="Mikepad++ завершит работу для продолжения операции.&#x0A;Программа будет перезапущена после завершения всех операций.&#x0A;Продолжить?"/>
+			<NeedToRestartToLoadPlugins          title="Необходимо перезапустить Mikepad++"         message="Необходимо перезапустить Mikepad++ для установки загруженных плагинов."/>
 		</MessageBox>
 		<ClipboardHistory>
 			<PanelTitle name="История Буфера"/>
@@ -1309,7 +1309,7 @@ Updated to v8.1.5:
 				<Item id="3512" name="Убрать всё"/>
 				<Item id="3513" name="Добавить папку"/>
 				<Item id="3514" name="Запустить системой"/>
-				<Item id="3515" name="Открыть в Notepad++"/>
+				<Item id="3515" name="Открыть в Mikepad++"/>
 				<Item id="3516" name="Копировать путь"/>
 				<Item id="3517" name="Найти в Файлах..."/>
 				<Item id="3518" name="Открыть папку объекта"/>
@@ -1372,8 +1372,8 @@ Updated to v8.1.5:
 			<word-chars-list-tab-warning   value="$INT_REPLACE$ TAB(ов)"/>
 			<word-chars-list-warning-end   value="  в вашем списке символов."/>
 			<cloud-invalid-warning         value="Недопустимый путь."/>
-			<cloud-restart-warning         value="Перезапустите Notepad++, чтобы изменения вступили в силу."/>
-			<cloud-select-folder           value="Выберите папку, которую Notepad++ будет использовать для чтения/записи своих настроек."/>
+			<cloud-restart-warning         value="Перезапустите Mikepad++, чтобы изменения вступили в силу."/>
+			<cloud-select-folder           value="Выберите папку, которую Mikepad++ будет использовать для чтения/записи своих настроек."/>
 			<shift-change-direction-tip    value="Используйте Shift+Enter для поиска в обратном направлении."/>
 			<two-find-buttons-tip          value="2 направления поиска"/>
 			<find-in-files-filter-tip      value="Найти в файлах с расширением:&#x0A;*.cpp *.cxx *.h *.hxx *.hpp&#x0A;&#x0A;Кроме файлов:&#x0A;*.* !*.exe !*.obj !*.log"/>

@@ -323,13 +323,13 @@
                     <Item id="46250" name="Définir votre langage..."/>
                     <Item id="46300" name="Ouvrir le dossier des Langages utilisateur..."/>
                     <Item id="46180" name="Langage utilisateur"/>
-                    <Item id="47000" name="À propos de Notepad++..."/>
-                    <Item id="47001" name="Site officiel Notepad++"/>
-                    <Item id="47002" name="Projet de développement de Notepad++"/>
+                    <Item id="47000" name="À propos de Mikepad++..."/>
+                    <Item id="47001" name="Site officiel Mikepad++"/>
+                    <Item id="47002" name="Projet de développement de Mikepad++"/>
                     <Item id="47003" name="Aide en ligne"/>
                     <Item id="47004" name="Forum"/>
                     <Item id="47005" name="Obtenir d'autres compléments"/>
-                    <Item id="47006" name="Mettre à jour Notepad++"/>
+                    <Item id="47006" name="Mettre à jour Mikepad++"/>
                     <Item id="47009" name="Paramétrer le proxy de mise à jour..."/>
                     <Item id="47010" name="Arguments de la ligne de commande..."/>
                     <Item id="47012" name="Informations de débogage..."/>
@@ -913,7 +913,7 @@ Vous pouvez définir plusieurs marqueurs de colonne en utilisant un espace pour 
                 </DefaultDir>
 
                 <FileAssoc title="Extensions de fichier">
-                  <Item id="4008" name="Veuillez quitter Notepad++ et relancer Notepad++ en mode Administrateur pour utiliser cette fonctionnalité."/>
+                  <Item id="4008" name="Veuillez quitter Mikepad++ et relancer Mikepad++ en mode Administrateur pour utiliser cette fonctionnalité."/>
                   <Item id="4009" name="Extensions :"/>
                   <Item id="4010" name="Extensions associées :"/>
                 </FileAssoc>
@@ -1031,7 +1031,7 @@ Vous pouvez définir plusieurs marqueurs de colonne en utilisant un espace pour 
                     <Item id="6152" name="Ouverture de session dans une nouvelle instance"/>
                     <Item id="6153" name="Toujours en mode instance multiple"/>
                     <Item id="6154" name="Défaut (instance unique)"/>
-                    <Item id="6155" name="* Redémarrez Notepad++ pour prendre en compte la modification"/>
+                    <Item id="6155" name="* Redémarrez Mikepad++ pour prendre en compte la modification"/>
                     <Item id="6171" name="Personnalisation d'insertion de la date et l'heure"/>
                     <Item id="6175" name="Inverser l'ordre de la date et l'heure par défaut (format court &amp;&amp; long)"/>
                     <Item id="6172" name="Format personnalisé :"/>
@@ -1158,12 +1158,12 @@ Vous pouvez réactiver cette boîte de dialogue dans les Préférences ultérieu
             </DoSaveAll>
         </Dialog>
         <MessageBox>
-            <CannotMoveDoc title="Déplacement vers une nouvelle instance Notepad++" message="Le document est en cours d'utilisation, le sauvegarder puis réessayer."/>
+            <CannotMoveDoc title="Déplacement vers une nouvelle instance Mikepad++" message="Le document est en cours d'utilisation, le sauvegarder puis réessayer."/>
             <ColumnModeTip title="Sélection en mode colonnes" message="Utiliser 'Alt+sélection souris' ou 'Alt+Maj+flèches' pour activer le mode colonne."/>
-            <ContextMenuXmlEditWarning title="Édition du Menu Contextuel" message="L'édition de &quot;contextMenu.xml&quot; vous permet de modifier la fenêtre de menu contextuel de Notepad++. Vous devez redémarrer votre Notepad++ pour prendre en compte les modifications du fichier."/>
+            <ContextMenuXmlEditWarning title="Édition du Menu Contextuel" message="L'édition de &quot;contextMenu.xml&quot; vous permet de modifier la fenêtre de menu contextuel de Mikepad++. Vous devez redémarrer votre Mikepad++ pour prendre en compte les modifications du fichier."/>
             <DeleteFileFailed title="Suppression du fichier" message="La suppression du fichier a échoué."/>
-            <DocReloadWarning title="Recharger" message="Êtes-vous sûr de vouloir recharger le fichier en cours et de perdre les modifications apportées dans Notepad++ ?"/>
-            <FileAlreadyOpenedInNpp title="" message="Le fichier est toujours ouvert dans Notepad++."/>
+            <DocReloadWarning title="Recharger" message="Êtes-vous sûr de vouloir recharger le fichier en cours et de perdre les modifications apportées dans Mikepad++ ?"/>
+            <FileAlreadyOpenedInNpp title="" message="Le fichier est toujours ouvert dans Mikepad++."/>
             <FileLockedWarning title="Échec de la sauvegarde" message="Veuillez vérifier si ce fichier est ouvert par un autre programme"/>
             <LoseUndoAbilityWarning title="Perte de la capacité d'annulation" message="Vous devez enregistrer la modification en cours. Toutes les modifications enregistrées ne peuvent pas être annulées. Continuer ?"/>
             <!-- $INT_REPLACE$ is a place holder, don't translate it -->
@@ -1193,14 +1193,14 @@ Voulez-vous le recharger ?"/>
             <DoReloadOrNotAndLooseChange title="Recharger" message="&quot;$STR_REPLACE$&quot;
 
 Ce fichier a été modifié par un autre programme.
-Voulez-vous le recharger et perdre les modifications effectuées dans Notepad++ ?"/>
+Voulez-vous le recharger et perdre les modifications effectuées dans Mikepad++ ?"/>
             <PrehistoricSystemDetected title="Système préhistorique détecté" message="Il semble que vous utilisez toujours un système préhistorique, cette fonctionnalité ne fonctionne que sur un système moderne, désolé."/>
-            <XpUpdaterProblem title="Mettre à jour Notepad++" message="Le metteur à jour de Notepad++ est incompatible avec XP en raison de la couche de sécurité obsolète de XP.
-Voulez-vous télécharger la dernière version de Notepad++ sur le site officiel ?"/>
-            <GUpProxyConfNeedAdminMode title="Paramétrage de Proxy" message=" Afin de pouvoir configurer le proxy, relancez Notepad++ en mode d'administrateur."/>
+            <XpUpdaterProblem title="Mettre à jour Mikepad++" message="Le metteur à jour de Mikepad++ est incompatible avec XP en raison de la couche de sécurité obsolète de XP.
+Voulez-vous télécharger la dernière version de Mikepad++ sur le site officiel ?"/>
+            <GUpProxyConfNeedAdminMode title="Paramétrage de Proxy" message=" Afin de pouvoir configurer le proxy, relancez Mikepad++ en mode d'administrateur."/>
             <DocTooDirtyToMonitor title="Surveillance de Log" message="Le document a été modifié. Veuillez l'enregistrer d'abord."/>
             <DocNoExistToMonitor title="Surveillance de Log" message="Le fichier doit exister pour être surveillé."/>
-            <FileTooBigToOpen title="Fichier trop volumineux" message="Ce fichier est trop volumineux pour être ouvert avec Notepad++."/>
+            <FileTooBigToOpen title="Fichier trop volumineux" message="Ce fichier est trop volumineux pour être ouvert avec Mikepad++."/>
             <CreateNewFileOrNot title="Créer un nouveau fichier" message="Le fichier &quot;$STR_REPLACE$&quot; n'existe pas.
 Voulez-vous le créer maintenant ?"/>
             <CreateNewFileError title="Créer un nouveau fichier" message="Le fichier &quot;$STR_REPLACE$&quot; n'a pas pu être créé."/>
@@ -1233,15 +1233,15 @@ veuillez en donner un autre."/>
             <SCMapperDoDeleteOrNot title="Supprimer un raccourci clavier" message="Êtes-vous sûr de vouloir supprimer ce raccourci clavier ?"/>
             <FindCharRangeValueError title="Valeur en dehors des limites" message="Veuillez entrer une valeur entre 0 et 255."/>
             <OpenInAdminMode title="L'enregistrement a échoué" message="Le fichier ne peut pas être enregistré et il est peut-être protégé.
-Voulez-vous lancer Notepad++ en mode Administrateur ?"/>
+Voulez-vous lancer Mikepad++ en mode Administrateur ?"/>
             <OpenInAdminModeWithoutCloseCurrent title="L'enregistrement a échoué" message="Le fichier ne peut pas être enregistré et il est peut-être protégé.
-Voulez-vous lancer Notepad++ en mode Administrateur ?"/>
-            <OpenInAdminModeFailed title="L'ouverture en mode Administrateur a échoué" message="Notepad++ ne peut pas être lancé en mode Administrateur."/>
+Voulez-vous lancer Mikepad++ en mode Administrateur ?"/>
+            <OpenInAdminModeFailed title="L'ouverture en mode Administrateur a échoué" message="Mikepad++ ne peut pas être lancé en mode Administrateur."/>
             <ViewInBrowser title="Afficher le fichier actuel dans le navigateur" message="Application introuvable sur votre ordinateur."/>
-            <ExitToUpdatePlugins title="Notepad++ sera fermé" message="Si vous cliquez Oui, vous allez quitter Notepad++ pour poursuivre les opérations.
-Notepad++ sera relancé après.
+            <ExitToUpdatePlugins title="Mikepad++ sera fermé" message="Si vous cliquez Oui, vous allez quitter Mikepad++ pour poursuivre les opérations.
+Mikepad++ sera relancé après.
 Voulez-vous les poursuivez ?"/>
-            <NeedToRestartToLoadPlugins title="Vous devez redémarrer Notepad++" message="Vous devez redémarrer Notepad++ pour charger les modules d'extension installés."/>
+            <NeedToRestartToLoadPlugins title="Vous devez redémarrer Mikepad++" message="Vous devez redémarrer Mikepad++ pour charger les modules d'extension installés."/>
         </MessageBox>
         <ClipboardHistory>
             <PanelTitle name="Historique du presse-papiers"/>
@@ -1352,7 +1352,7 @@ Voulez-vous les poursuivez ?"/>
             <word-chars-list-tab-warning value="$INT_REPLACE$ TAB(s)"/>
             <word-chars-list-warning-end value="  dans votre liste des caractères."/>
             <cloud-invalid-warning value="Chemin invalide."/>
-            <cloud-restart-warning value="Veuillez redémarrer Notepad++ afin que le changement prenne effet."/>
+            <cloud-restart-warning value="Veuillez redémarrer Mikepad++ afin que le changement prenne effet."/>
             <shift-change-direction-tip value="Utilisez Shift + Entrée pour rechercher dans le sens inverse"/>
             <two-find-buttons-tip value="2 boutons Recherche"/>
             <find-in-files-filter-tip value="Rechercher dans cpp, cxx, h, hxx &amp;&amp; hpp:
@@ -1360,7 +1360,7 @@ Voulez-vous les poursuivez ?"/>
 
 Rechercher dans tous les fichiers sauf exe, obj &amp;&amp; log:
 *.* !*.exe !*.obj !*.log"/>
-            <cloud-select-folder value="Sélectionner un répertoire où Notepad++ lit ou écrit ses paramètres"/>
+            <cloud-select-folder value="Sélectionner un répertoire où Mikepad++ lit ou écrit ses paramètres"/>
             <find-status-top-reached value="Rechercher : La 1ère occurrence a été trouvée depuis le bas. Le début du document a été atteint"/>
             <find-status-end-reached value="Rechercher : La 1ère occurrence a été trouvée depuis le haut. La fin du document a été atteinte"/>
             <find-status-replaceinfiles-1-replaced value="Remplacer dans les fichiers : 1 occurrence a été remplacée"/>

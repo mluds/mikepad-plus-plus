@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Don HO <don.h@free.fr>
 
 // This program is free software: you can redistribute it and/or modify
@@ -309,7 +309,7 @@ STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     CONTROL         "Don't fill find field in Find dialog with selected word", IDC_CHECK_STOPFILLINGFINDFIELD, "Button", BS_AUTOCHECKBOX | WS_TABSTOP,37,10,350,10
-    CONTROL         "Use Monospaced font in Find dialog (Need to restart Notepad++)",IDC_CHECK_MONOSPACEDFONT_FINDDLG, "Button", BS_AUTOCHECKBOX | WS_TABSTOP,37,25,350,10
+    CONTROL         "Use Monospaced font in Find dialog (Need to restart Mikepad++)",IDC_CHECK_MONOSPACEDFONT_FINDDLG, "Button", BS_AUTOCHECKBOX | WS_TABSTOP,37,25,350,10
     CONTROL         "Find dialog remains open after search that outputs to results window",IDC_CHECK_FINDDLG_ALWAYS_VISIBLE, "Button", BS_AUTOCHECKBOX | WS_TABSTOP,37,40,350,10
     CONTROL         "Confirm Replace All in All Opened Documents",IDC_CHECK_CONFIRMREPLOPENDOCS, "Button", BS_AUTOCHECKBOX | WS_TABSTOP,37,55,350,10
     CONTROL         "Replace: Don't move to the following occurrence", IDC_CHECK_REPLACEANDSTOP, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 37, 70, 350, 10
@@ -383,10 +383,10 @@ STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     GROUPBOX        "Multi-instance settings",IDC_MULTIINST_GB_STATIC,89,3,268,89,BS_CENTER
-    CONTROL         "Open session in a new instance of Notepad++",IDC_SESSIONININST_RADIO,"Button",BS_AUTORADIOBUTTON,122,17,226,10
+    CONTROL         "Open session in a new instance of Mikepad++",IDC_SESSIONININST_RADIO,"Button",BS_AUTORADIOBUTTON,122,17,226,10
     CONTROL         "Always in multi-instance mode",IDC_MULTIINST_RADIO,"Button",BS_AUTORADIOBUTTON,122,34,218,10
     CONTROL         "Default (mono-instance)",IDC_MONOINST_RADIO,"Button",BS_AUTORADIOBUTTON,122,51,196,10
-    LTEXT           "* The modification of this setting needs to restart Notepad++",IDD_STATIC_RESTARTNOTE,110,70,239,20
+    LTEXT           "* The modification of this setting needs to restart Mikepad++",IDD_STATIC_RESTARTNOTE,110,70,239,20
     GROUPBOX        "Customize insert Date Time",IDC_DATETIMEFORMAT_GB_STATIC,90,97,268,105,BS_CENTER
     CONTROL         "Reverse default date time order (short && long formats)",IDD_DATETIMEFORMAT_REVERSEORDER_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,113,241,10
     RTEXT           "yyyy-MM-dd HH:mm:ss\nH:m d/M/yyyy\nMMM d, yyyy  tt h:m",IDC_STATIC,134,142,77,25
@@ -464,13 +464,13 @@ BEGIN
     CONTROL         "Peek on tab",IDC_CHECK_ENABLEDOCPEEKER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,269,58,140,10
     CONTROL         "Peek on document map",IDC_CHECK_ENABLEDOCPEEKONMAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,269,71,140,10
 
-	// "Enable Notepad++ auto-updater" should be always the 1st item, because it'll be hidden if GUP.exe is absent
-    CONTROL         "Enable Notepad++ auto-updater",IDC_CHECK_AUTOUPDATE,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP, 37, 94, 210, 10
+	// "Enable Mikepad++ auto-updater" should be always the 1st item, because it'll be hidden if GUP.exe is absent
+    CONTROL         "Enable Mikepad++ auto-updater",IDC_CHECK_AUTOUPDATE,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP, 37, 94, 210, 10
     CONTROL         "Mute all sounds", IDC_CHECK_MUTE_SOUNDS, "Button", BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP, 37, 109, 217, 10
     CONTROL         "Autodetect character encoding",IDC_CHECK_DETECTENCODING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,124,217,10
     CONTROL         "Minimize to system tray",IDC_CHECK_MIN2SYSTRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,139,217,10
     CONTROL         "Show only filename in title bar",IDC_CHECK_SHORTTITLE,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,37,154,217,10
-    CONTROL         "Use DirectWrite (May improve rendering special characters, need to restart Notepad++)",IDC_CHECK_DIRECTWRITE_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,169,377,10
+    CONTROL         "Use DirectWrite (May improve rendering special characters, need to restart Mikepad++)",IDC_CHECK_DIRECTWRITE_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,169,377,10
     CONTROL         "Enable Save All confirm dialog", IDC_CHECK_SAVEALLCONFIRM, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 37, 184, 217, 10
     COMBOBOX        IDC_COMBO_FILEUPDATECHOICE,44,16,140,100,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     CONTROL         "Update silently",IDC_CHECK_UPDATESILENTLY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,44,32,140,10

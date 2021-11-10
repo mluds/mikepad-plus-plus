@@ -290,15 +290,15 @@
                     <Item id="46250" name="Азначце сваю мову..."/>
                     <Item id="46300" name="Адкрыць карыстальніцкую папку мовы..."/>
                     <Item id="46180" name="Вызначаныя карыстальнікам"/>
-                    <Item id="47000" name="Пра Notepad++"/>
+                    <Item id="47000" name="Пра Mikepad++"/>
                     <Item id="47010" name="Аргументы каманднага радка..."/>
-                    <Item id="47001" name="Хатняя старонка Notepad++"/>
-                    <Item id="47002" name="Старонка праекта Notepad++"/>
+                    <Item id="47001" name="Хатняя старонка Mikepad++"/>
+                    <Item id="47002" name="Старонка праекта Mikepad++"/>
                     <Item id="47003" name="Дакументацыя ў сетцы"/>
-                    <Item id="47004" name="Супольнасць Notepad++ (форум)"/>
+                    <Item id="47004" name="Супольнасць Mikepad++ (форум)"/>
                     <Item id="47012" name="Адладачная інфармацыя..."/>
                     <Item id="47005" name="Атрымаць больш убудоў"/>
-                    <Item id="47006" name="Абнавіць Notepad++"/>
+                    <Item id="47006" name="Абнавіць Mikepad++"/>
                     <Item id="47009" name="Прызначыць проксі абнаўлення..."/>
                     <Item id="48005" name="Імпарт убудоў..."/>
                     <Item id="48006" name="Імпарт тэм стыляў..."/>
@@ -889,10 +889,10 @@
 
                 <MultiInstance title="Рэжым вокан">
                     <Item id="6151" name="Рэжым адкрыцця файлаў"/>
-                    <Item id="6152" name="Адкрыць сеанс у новым акне Notepad++"/>
+                    <Item id="6152" name="Адкрыць сеанс у новым акне Mikepad++"/>
                     <Item id="6153" name="Заўсёды адкрываць у новым акне"/>
                     <Item id="6154" name="Усе ў адным акне (звычайна)"/>
-                    <Item id="6155" name="* Змена гэтых наладаў патрабуе перазапуску Notepad++"/>
+                    <Item id="6155" name="* Змена гэтых наладаў патрабуе перазапуску Mikepad++"/>
                 </MultiInstance>
 
                 <Delimiter title="Раздзяляльнік">
@@ -1004,9 +1004,9 @@
             </DoSaveOrNot>
         </Dialog>
         <MessageBox> <!-- $INT_REPLACE$ is a place holder, don't translate it -->
-            <ContextMenuXmlEditWarning title="Змяненне contextMenu" message="Змяненне contextMenu.xml дазволіць вам змяніць усплывальнае меню Notepad++.\rПасля змянення contextMenu.xml неабходна перазапусціць Notepad++, каб адбыліся змены."/>
+            <ContextMenuXmlEditWarning title="Змяненне contextMenu" message="Змяненне contextMenu.xml дазволіць вам змяніць усплывальнае меню Mikepad++.\rПасля змянення contextMenu.xml неабходна перазапусціць Mikepad++, каб адбыліся змены."/>
             <NppHelpAbsentWarning title="Файл не існуе" message="
-не існуе. Спампуйце яго з сайта Notepad++."/>
+не існуе. Спампуйце яго з сайта Mikepad++."/>
             <SaveCurrentModifWarning title="Захаваць бягучую мадыфікацыю" message="Вы павінны захаваць бягучую мадыфікацыю.
 Аднавіць усе зробленыя вамі змяненні будзе немагчыма.
 
@@ -1015,10 +1015,10 @@
 Аднавіць усе зробленыя вамі змяненні будзе немагчыма.
 
 Працягнуць?"/>
-            <CannotMoveDoc title="Перамясціць у новае акно Notepad++" message="Дакумент зменены. Захавайце яго і паспрабуйце зноў."/>
-            <DocReloadWarning title="Перазагрузіць" message="Вы ўпэўненыя, што хочаце перазагрузіць бягучы файл і згубіць усе змены, якія былі зробленыя ў Notepad++?"/>
+            <CannotMoveDoc title="Перамясціць у новае акно Mikepad++" message="Дакумент зменены. Захавайце яго і паспрабуйце зноў."/>
+            <DocReloadWarning title="Перазагрузіць" message="Вы ўпэўненыя, што хочаце перазагрузіць бягучы файл і згубіць усе змены, якія былі зробленыя ў Mikepad++?"/>
             <FileLockedWarning title="Памылка захавання" message="Праверце, ці не адкрыты гэты файл у іншай праграме"/>
-            <FileAlreadyOpenedInNpp title="" message="Файл ужо адкрыты ў Notepad++."/>
+            <FileAlreadyOpenedInNpp title="" message="Файл ужо адкрыты ў Mikepad++."/>
             <DeleteFileFailed title="Выдаліць файл" message="Не атрымалася выдаліць файл"/>
 
             <NbFileToOpenImportantWarning title="Надта вялікая колькасць файлаў для адкрыцця" message="$INT_REPLACE$ файлаў неўзабаве будзе адкрыта.
@@ -1045,14 +1045,14 @@
             <DoReloadOrNotAndLooseChange title="Перазагрузіць" message="&quot;$STR_REPLACE$&quot;
 
 Файл быў мадыфікаваны іншай праграмай.
-Хочаце перазагрузіць яго са стратай змен зробленых у Notepad++?"/>
+Хочаце перазагрузіць яго са стратай змен зробленых у Mikepad++?"/>
             <PrehistoricSystemDetected title="Выяўлена састарэлая сістэма" message="Відавочна, што вы ўсё яшчэ выкарыстоўваеце састарэлую сістэму. Прабачце, але гэта функцыя працуе толькі ў сучаснай сістэме."/>
-            <XpUpdaterProblem title="Сістэма абнаўлення Notepad++" message="Сістэма абнаўлення Notepad++ несумяшчальная з АС Windows XP з-за састарэлага ўзроўню бяспекі ў гэтай сістэме.
-Перайсці на старонку Notepad++ для таго, каб спампаваць апошнюю версію праграмы?"/>
-            <GUpProxyConfNeedAdminMode title="Налады проксі" message="Перазапусціце Notepad++ у рэжыме адміністратара, каб наладзіць проксі."/>
+            <XpUpdaterProblem title="Сістэма абнаўлення Mikepad++" message="Сістэма абнаўлення Mikepad++ несумяшчальная з АС Windows XP з-за састарэлага ўзроўню бяспекі ў гэтай сістэме.
+Перайсці на старонку Mikepad++ для таго, каб спампаваць апошнюю версію праграмы?"/>
+            <GUpProxyConfNeedAdminMode title="Налады проксі" message="Перазапусціце Mikepad++ у рэжыме адміністратара, каб наладзіць проксі."/>
             <DocTooDirtyToMonitor title="Праблема маніторынгу" message="&quot;Брудны&quot; дакумент. Калі ласка, захавайце змяненні перад пачаткам яго маніторынгу."/>
             <DocNoExistToMonitor title="Праблема маніторынгу" message="Файл павінен існаваць для яго маніторынгу."/>
-            <FileTooBigToOpen title="Праблема памеру файла" message="Надта вялікі файл для адкрыцця ў Notepad++"/>
+            <FileTooBigToOpen title="Праблема памеру файла" message="Надта вялікі файл для адкрыцця ў Mikepad++"/>
             <CreateNewFileOrNot title="Стварыць новы файл" message="&quot;$STR_REPLACE$&quot; не існуе. Стварыць яго?"/>
             <CreateNewFileError title="Стварыць новы файл" message="Не атрымалася стварыць файл &quot;$STR_REPLACE$&quot;."/>
             <OpenFileError title="ПАМЫЛКА" message="Не атрымалася адкрыць файл &quot;$STR_REPLACE$&quot;."/>
@@ -1085,10 +1085,10 @@
             <SCMapperDoDeleteOrNot title="Вы ўпэўненыя?" message="Вы ўпэўненыя, што хочаце выдаліць гэты ярлык?"/>
             <FindCharRangeValueError title="Праблема ў дыяпазоне значэнняў" message="Увядзіце значэнне ад 0 да 255."/>
             <OpenInAdminMode title="Памылка захавання" message="Не атрымалася захаваць файл. Магчыма ён абаронены.
-Запусціць Notepad++ у рэжыме адміністратара?"/>
+Запусціць Mikepad++ у рэжыме адміністратара?"/>
             <OpenInAdminModeWithoutCloseCurrent title="Памылка захавання" message="Не атрымалася захаваць файл. Магчыма ён абаронены.
-Запусціць Notepad++ у рэжыме адміністратара?"/>
-            <OpenInAdminModeFailed title="Не атрымалася запусціць у рэжыме адміністратара" message="Notepad++ не можа быць адкрыты ў рэжыме адміністратара."/>
+Запусціць Mikepad++ у рэжыме адміністратара?"/>
+            <OpenInAdminModeFailed title="Не атрымалася запусціць у рэжыме адміністратара" message="Mikepad++ не можа быць адкрыты ў рэжыме адміністратара."/>
             <ViewInBrowser title="Паглядзець бягучы файл у браўзеры" message="У вашай сістэме не атрымалася знайсці праграму."/>
             <ExitToUpdatePlugins title="Вы збіраецеся закрыць праграму" message="Калі вы націсніце ТАК, то вы выйдзеце з праграмы, каб працягнуць аперацыю. 
 Пасля таго, як усе аперацыі будуць завершаныя праграма запусціцца зноў. 
@@ -1195,8 +1195,8 @@
             <word-chars-list-tab-warning value="$INT_REPLACE$ TAB"/>
             <word-chars-list-warning-end value="  у вашым спісе сімвалаў."/>
             <cloud-invalid-warning value="Памылковы шлях."/>
-            <cloud-restart-warning value="Перазапусціце Notepad++, каб адбыліся змены."/>
-            <cloud-select-folder value="Выберыце папку, адкуль/куды ў Notepad++ чытаць/запісваць свае налады"/>
+            <cloud-restart-warning value="Перазапусціце Mikepad++, каб адбыліся змены."/>
+            <cloud-select-folder value="Выберыце папку, адкуль/куды ў Mikepad++ чытаць/запісваць свае налады"/>
             <shift-change-direction-tip value="Выкарыстоўвайце Shift+Enter для пошуку ў адваротным напрамку"/>
             <two-find-buttons-tip value="2-клавішны рэжым пошуку"/>
             <find-in-files-filter-tip value="Знайсці ў cpp, cxx, h, hxx &amp;&amp; hpp:

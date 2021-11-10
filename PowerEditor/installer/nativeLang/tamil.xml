@@ -215,13 +215,13 @@
 
                     <Item id="46001" name="பாணி மாற்றி..."/>
                     <Item id="46180" name="பயனர் வரையறுத்த"/>
-                    <Item id="47000" name="Notepad++ ப்பை பற்றி "/>
-                    <Item id="47001" name="Notepad++ முகப்பு"/>
-                    <Item id="47002" name="Notepad++ செயல்திட்ட பக்கம்"/>
+                    <Item id="47000" name="Mikepad++ ப்பை பற்றி "/>
+                    <Item id="47001" name="Mikepad++ முகப்பு"/>
+                    <Item id="47002" name="Mikepad++ செயல்திட்ட பக்கம்"/>
                     <Item id="47003" name="NpWiki++ (வலை உதவி)"/>
                     <Item id="47004" name="வலைஅரங்கு"/>
                     <Item id="47005" name="அதிக உள்இடுக்கி பெறு"/>
-                    <Item id="47006" name="Notepad++ இற்றைபடுத்தல்"/>
+                    <Item id="47006" name="Mikepad++ இற்றைபடுத்தல்"/>
                     <Item id="47008" name="உதவி தொகுப்புகள்"/>
                     <Item id="48005" name="உள்இடுக்கி ஏற்று ..."/>
                     <Item id="48006" name="Theme(s)யை ஏற்று ..."/>
@@ -540,7 +540,7 @@
                     <Item id="6319" name="இயளுமைபடுத்து"/>
                     <Item id="6320" name="அடிக்கோடு வேண்டாம்"/>
                     <Item id="6322" name="Session file ext.:"/>
-                    <Item id="6323" name="Notepad++ auto-updater யை இயளுமைபடுத்து"/>
+                    <Item id="6323" name="Mikepad++ auto-updater யை இயளுமைபடுத்து"/>
                     <Item id="6324" name="Document Switcher (Ctrl+TAB)"/>
                     <Item id="6326" name="smart highlighting யை இயளுமைபடுத்து"/>
                     <Item id="6329" name="Highlight Matching Tags"/>
@@ -602,14 +602,14 @@
             </ColumnEditor>
 		</Dialog>
 		<MessageBox>
-			<ContextMenuXmlEditWarning title="Editing contextMenu" message="Editing contextMenu.xml allows you to modify your Notepad++ popup context menu.\rYou have to restart your Notepad++ to take effect after modifying contextMenu.xml."/>
-			<NppHelpAbsentWarning title="File does not exist" message="\rஇங்கு இல்லை. Notepad++ தளத்திலிருந்து இறக்கம் செய்து கொள்ளுங்கள்."/>
+			<ContextMenuXmlEditWarning title="Editing contextMenu" message="Editing contextMenu.xml allows you to modify your Mikepad++ popup context menu.\rYou have to restart your Mikepad++ to take effect after modifying contextMenu.xml."/>
+			<NppHelpAbsentWarning title="File does not exist" message="\rஇங்கு இல்லை. Mikepad++ தளத்திலிருந்து இறக்கம் செய்து கொள்ளுங்கள்."/>
 			<SaveCurrentModifWarning title="Save Current Modification" message="நீங்கள் நடப்பு மாற்றங்களை சேமிக்கவேண்டும்.\rஅனைத்து சேமித்த மாற்றங்களும் திறும்ப பெற இயலாது.\r\rதொடரவா?"/>
 			<LoseUndoAbilityWarning title="Lose Undo Ability Waning" message="நீங்கள் நடப்பு மாற்றங்களை சேமிக்கவேண்டும்.\rஅனைத்து சேமித்த மாற்றங்களும் திறும்ப பெற இயலாது.\r\rதொடரவா?"/>
-			<CannotMoveDoc title="Move to new Notepad++ Instance" message="கோப்பு மாற்றப்பட்டூள்ளது. சேமி, பிறகு முயற்சி செய்"/>
+			<CannotMoveDoc title="Move to new Mikepad++ Instance" message="கோப்பு மாற்றப்பட்டூள்ளது. சேமி, பிறகு முயற்சி செய்"/>
 			<DocReloadWarning title="Reload" message="உறுதியாக நடப்பு கோப்பை மறு ஏற்றம் செய்யவா? செய்த மாற்றங்களை இழப்பீர்கள்"/>
 			<FileLockedWarning title="Save failed" message="இந்த கோப்பு மற்றுமொறு நிரலில் திறக்கப்பட்டுள்ளதா எனச் சோதி"/>
-			<FileAlreadyOpenedInNpp title="" message="இந்த கோப்பு ஏற்கனவே Notepad++ல் திறக்கப்பட்டுள்ளது."/>
+			<FileAlreadyOpenedInNpp title="" message="இந்த கோப்பு ஏற்கனவே Mikepad++ல் திறக்கப்பட்டுள்ளது."/>
 			<DeleteFileFailed title="Delete File" message="கோப்பு 'நீக்கம் வெற்றியடையவில்லை"/>
 
 			<!-- $INT_REPLACE$ is a place holder, don't translate it -->

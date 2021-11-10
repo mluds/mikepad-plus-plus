@@ -1,4 +1,4 @@
-// This file is part of Notepad++ project
+// This file is part of Mikepad++ project
 // Copyright (C)2021 Pavel Nedev (pg.nedev@gmail.com)
 
 // This program is free software: you can redistribute it and/or modify
@@ -117,7 +117,7 @@ bool Win32_IO_File::write(const void *wbuf, unsigned long buf_size)
 }
 
 
-// Helper function to auto-fill CreateFile params optimized for Notepad++ usage.
+// Helper function to auto-fill CreateFile params optimized for Mikepad++ usage.
 void Win32_IO_File::fillCreateParams(DWORD &access, DWORD &share, DWORD &disp, DWORD &attrib)
 {
 	access	= GENERIC_READ;
